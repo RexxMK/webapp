@@ -17,7 +17,7 @@
 
 /* HTML */
 html {
-  background-color: var(--black);
+  background-color: var(--white);
 }
 
 /* BODY */
@@ -62,6 +62,16 @@ h4 {
 /* KNAP */
 .testKnap {
   background-color: var(--green);
+  color: var(--black);
+
+  font-size: 1.4rem;
+  text-decoration: none;
+
+  width: 90%;
+  margin-left: 5%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  border-radius: 50px;
 }
 .mobilewrap {
   max-width: 480px;
