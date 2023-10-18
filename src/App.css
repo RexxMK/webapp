@@ -63,3 +63,7 @@ h4 {
 .testKnap {
   background-color: var(--green);
 }
+.mobilewrap {
+  max-width: 480px;
+  background-color: var(--black);
+}

@@ -10,7 +10,7 @@ import Favoritter from "./pages/Favoritter";
 
 function App() {
   return (
-    <>
+    <div className="mobilewrap">
       <Navigation/>
       <Routes>
         <Route path="/" element={<Hjem/>}/>
@@ -20,7 +20,7 @@ function App() {
         <Route path="/favoritter" element={<Favoritter/>}/>
         <Route path="*" element={<Navigate to="/"/>}/>
       </Routes>
-    </>
+    </div>
   );
 }
 
