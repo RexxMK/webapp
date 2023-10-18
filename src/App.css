@@ -1,38 +1,42 @@
 /* BASIC CSS RESET */
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
 }
 
 /* FARVER */
 :root {
-    --background-color: #2A2A2A;
-    --menu-color: #E9E9E9;
-    --font-color: #F9F9F9;
-    --accent-color: #8DBE5C;
+  --background-color: #2a2a2a;
+  --menu-color: #e9e9e9;
+  --font-color: #f9f9f9;
+  --accent-color: #8dbe5c;
 }
 
 [data-theme="light"] {
-    --font-color: #2A2A2A;
-    --menu-color: #838383;
-    --background-color: #F9F9F9;
-    --accent-color: #8DBE5C;
+  --font-color: #2a2a2a;
+  --menu-color: #838383;
+  --background-color: #f9f9f9;
+  --accent-color: #8dbe5c;
 }
 
 /* HTML */
 html {
+<<<<<<< HEAD
     background-color: var(--background-color);
+=======
+  background-color: var(--white);
+>>>>>>> c1bfaf8ee4aac04f7f40d12a7c2547ab0b50c4fb
 }
 
 /* BODY */
 body {
-    max-width: 100%;
-    margin: 0 auto;
-    font-family: "Poppins", sans-serif;
-    font-size: 1rem;
-    color: var(--white);
+  max-width: 100%;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: var(--white);
 }
 
 /* FONT REGLER */
@@ -40,40 +44,92 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    color: var(--white);
-    font-family: "Poppins", sans-serif;
-    color: var(--white);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: var(--white);
+  font-family: "Poppins", sans-serif;
+  color: var(--white);
 }
 
 h1 {
-    font-size: 1.8rem;
+  font-size: 1.8rem;
 }
 
 h2 {
-    font-size: 1.6rem;
+  font-size: 1.6rem;
 }
 
 h3 {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
 }
 
 h4 {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .fixedMargin {
-    margin-left: 5%;
-    margin-right: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
-/* KNAP */
-.testKnap {
-    background-color: var(--green);
+/* KNAP (RMK) */
+.buttonFull {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+
+  font-size: 1.4rem;
+  text-decoration: none;
+
+  display: flex;
+  justify-content: center;
+
+  width: 90%;
+  margin-left: 5%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  border-radius: 50px;
 }
 
+/*=============== NAVIGATION, SD ===============*/
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: end;
+  position: fixed;
+  bottom: 0;
+  width: 480px;
+  padding: 15px 10px;
+  background-color: var(--background-color);
+}
+
+.menupunkt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--menu-color);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.menupunkt.active {
+  color: var(--accent-color);
+}
+
+.menupunkt svg {
+  font-size: 35px;
+}
+
+.sticon svg {
+  font-size: 40px;
+}
+
+.menupunkt p {
+  padding-top: 3px;
+}
 .mobilewrap {
-    max-width: 480px;
-    background-color: var(--black);
+  max-width: 480px;
+  background-color: var(--background-color);
 }
