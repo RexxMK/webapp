@@ -11,9 +11,8 @@ import LightMode from "./components/LightMode";
 
 function App() {
   return (
-    <>
-      <LightMode />
     <div className="mobilewrap">
+      <LightMode />
       <Navigation/>
       <Routes>
         <Route path="/" element={<Hjem/>}/>
