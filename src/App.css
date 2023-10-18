@@ -29,6 +29,7 @@ body {
   color: var(--white);
 }
 
+/* FONT REGLER */
 h1,
 h2,
 h3,
@@ -56,4 +57,9 @@ h4 {
 .fixedMargin {
   margin-left: 5%;
   margin-right: 5%;
+}
+
+/* KNAP */
+.testKnap {
+  background-color: var(--green);
 }
