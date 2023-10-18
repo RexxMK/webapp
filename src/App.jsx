@@ -7,10 +7,13 @@ import Lykken from "./pages/Lykken";
 import Find from "./pages/Find";
 import Tilfoj from "./pages/Tilfoj";
 import Favoritter from "./pages/Favoritter";
+import LightMode from "./components/LightMode";
 
 function App() {
   return (
     <div className="mobilewrap">
+      <LightMode />
+      <Navigation/>
       <Routes>
         <Route path="/" element={<Hjem/>}/>
         <Route path="/lykken" element={<Lykken/>}/>
