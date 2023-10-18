@@ -7,6 +7,7 @@ export default function Favoritter() {
       <h1>Favoritter</h1>
 
       <Knap className="buttonFull" label="Tilbage til forsiden" to="/" />
+      <Knap className="buttonEmpty" label="Tilbage til forsiden" to="/" />
     </section>
   );
 }
