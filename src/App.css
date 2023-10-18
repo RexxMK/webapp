@@ -8,16 +8,17 @@
 
 /* FARVER */
 :root {
-    --black: #2A2A2A;
-    --darkgrey: #838383;
-    --lightgrey: #E9E9E9;
-    --white: #F9F9F9;
-    --green: #8DBE5C;
+    --background-color: #2A2A2A;
+    --menu-color: #E9E9E9;
+    --font-color: #F9F9F9;
+    --accent-color: #8DBE5C;
 }
 
-/* HTML */
-html {
-    background-color: var(--black);
+[data-theme="light"] {
+    --font-color: #2A2A2A;
+    --menu-color: #838383;
+    --background-color: #F9F9F9;
+    --accent-color: #8DBE5C;
 }
 
 /* BODY */
@@ -34,6 +35,7 @@ h2,
 h3,
 h4 {
     font-family: 'Poppins', sans-serif;
+    font-weight: 400;
     color: var(--white);
 }
 
