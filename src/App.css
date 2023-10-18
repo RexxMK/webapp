@@ -15,11 +15,6 @@
     --green: #8DBE5C;
 }
 
-/* HTML */
-html {
-    background-color: var(--black);
-}
-
 /* BODY */
 body {
     max-width: 100%;
@@ -58,5 +53,7 @@ h4 {
     margin-right: 5%;
 }
 
-
-
+.mobilewrap {
+    max-width: 480px;
+    background-color: var(--black);
+}
