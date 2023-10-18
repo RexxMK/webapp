@@ -22,6 +22,7 @@ function App() {
         <Route path="/favoritter" element={<Favoritter />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
+      <Navigation/>
     </div>
   );
 }
