@@ -30,7 +30,7 @@ function App() {
       </p>
       <p>HEJ RIKKE</p>
       <p>HEJ DORTHE</p>
-      <p>HEJ</p>
+      <p>HEJ SVANNA</p>
     </>
   );
 }
