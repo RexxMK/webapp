@@ -7,7 +7,6 @@ export default function Favoritter() {
       <h1>Favoritter</h1>
 
       <Knap className="testKnap" label="gå til hjem" destination="/" />
-      <p>test</p>
     </section>
   );
 }
