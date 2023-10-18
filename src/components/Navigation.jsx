@@ -5,6 +5,8 @@ import LocalBarIcon from '@mui/icons-material/LocalBar';
 import AddIcon from '@mui/icons-material/Add';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
+//SD
+
 export default function Navigation() {
     return (
         <nav className="navbar">
@@ -20,7 +22,7 @@ export default function Navigation() {
             <LocalBarIcon/>
                 <p>Find drink</p>
             </NavLink>
-            <NavLink to="/tilfoj" className="menupunkt">
+            <NavLink to="/tilfoj" className="menupunkt sticon">
             <AddIcon/>
                 <p>Tilføj</p>
             </NavLink>
