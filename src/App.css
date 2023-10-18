@@ -21,21 +21,29 @@
     --accent-color: #8DBE5C;
 }
 
+/* HTML */
+html {
+    background-color: var(--black);
+}
+
 /* BODY */
 body {
     max-width: 100%;
     margin: 0 auto;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 1rem;
     color: var(--white);
 }
 
+/* FONT REGLER */
 h1,
 h2,
 h3,
 h4 {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
+    color: var(--white);
+    font-family: "Poppins", sans-serif;
     color: var(--white);
 }
 
@@ -60,5 +68,12 @@ h4 {
     margin-right: 5%;
 }
 
+/* KNAP */
+.testKnap {
+    background-color: var(--green);
+}
 
-
+.mobilewrap {
+    max-width: 480px;
+    background-color: var(--black);
+}
