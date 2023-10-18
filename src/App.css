@@ -15,11 +15,6 @@
   --green: #8dbe5c;
 }
 
-/* HTML */
-html {
-  background-color: var(--black);
-}
-
 /* BODY */
 body {
   max-width: 100%;
@@ -60,5 +55,32 @@ h4 {
 
 .mobilewrap {
     max-width: 480px;
+    min-height: 800px;
     background-color: var(--black);
+}
+
+/*=============== NAVIGATION ===============*/
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: end;
+    position: fixed;
+    bottom: 0;
+    width: 480px;
+}
+
+.menupunkt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--lightgrey);
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.menupunkt svg {
+    font-size: 30px;
 }
