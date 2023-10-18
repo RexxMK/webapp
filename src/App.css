@@ -23,11 +23,7 @@
 
 /* HTML */
 html {
-<<<<<<< HEAD
-    background-color: var(--background-color);
-=======
-  background-color: var(--white);
->>>>>>> c1bfaf8ee4aac04f7f40d12a7c2547ab0b50c4fb
+  background-color: var(--background-color);
 }
 
 /* BODY */
