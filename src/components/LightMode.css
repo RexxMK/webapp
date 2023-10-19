@@ -33,7 +33,7 @@
 }
 
 .light_mode_input:checked+.light_mode_label {
-    background: #838383;
+    background: #F9F9F9;
 }
 
 .light_mode_input:checked+.light_mode_label:after {
@@ -48,14 +48,14 @@
     z-index: 10;
 }
 
-.sunIcon {
+.moonIcon {
     left: 4px;
     top: 4px;
     color: #2A2A2A;
     transition: 0.3s;
 }
 
-.moonIcon {
+.sunIcon {
     left: 32px;
     top: 4px;
     color: #2A2A2A;
@@ -63,9 +63,9 @@
 }
 
 .light_mode_input:checked + .sunIcon {
-    color: #F9F9F9;
+    color: #838383;
 }
 
 .light_mode_input:checked + .moonIcon {
-    color: #F9F9F9;
+    color: #838383;
 }

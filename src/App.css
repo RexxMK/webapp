@@ -27,7 +27,7 @@ body {
   margin: 0 auto;
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
-  color: var(--white);
+  color: var(--font-color);
 }
 
 /* FONT REGLER */
@@ -37,9 +37,9 @@ h3,
 h4 {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-  color: var(--white);
+  color: var(--font-color);
   font-family: "Poppins", sans-serif;
-  color: var(--white);
+  color: var(--font-color);
 }
 
 h1 {
@@ -105,6 +105,8 @@ h4 {
 }
 
 /*=============== NAVIGATION, SD ===============*/
+
+
 .navbar {
   display: flex;
   flex-direction: row;
@@ -124,7 +126,7 @@ h4 {
   align-items: center;
   text-decoration: none;
   color: var(--menu-color);
-  font-size: 12px;
+  font-size: 10px;
   text-transform: uppercase;
 }
 
@@ -143,4 +145,56 @@ h4 {
 
 .menupunkt p {
   padding-top: 3px;
+}
+
+/*=============== DRINK CARD, SD ===============*/
+
+.drinkcard {
+  width: 165px;
+  height: 235px;
+  background-color: var(--background-color);
+  filter: drop-shadow(0 0 0.50rem rgb(0, 0, 0, 0.5));
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 13px 40px 13px;
+}
+
+.like {
+  background-color: #838383;
+  padding: 5px;
+  border-radius: 25px;
+  height: 37px;
+  width: 37px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.like svg {
+  margin-top: 2px;
+  font-size: 1.5rem;
+}
+
+.drinkimg {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-top: 10px;
+}
+
+.drinkheader {
+  font-size: 16px;
+  padding: 5px 0;
+}
+
+.star-wrap svg {
+  margin: 0 1px;
+  color: var(--menu-color);
+  font-size: 1.5rem;
 }
