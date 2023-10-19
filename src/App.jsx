@@ -7,12 +7,12 @@ import Lykken from "./pages/Lykken";
 import Find from "./pages/Find";
 import Tilfoj from "./pages/Tilfoj";
 import Favoritter from "./pages/Favoritter";
-import LightMode from "./components/LightMode";
+import Header from "./components/Header";
 
 function App() {
   return (
     <div className="mobilewrap">
-      <LightMode />
+      <Header />
       {/* SD */}
       <Navigation />
       <Routes>
