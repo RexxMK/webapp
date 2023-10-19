@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom"
-import HomeIcon from '@mui/icons-material/Home';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import CasinoIcon from '@mui/icons-material/Casino';
-import LocalBarIcon from '@mui/icons-material/LocalBar';
-import AddIcon from '@mui/icons-material/Add';
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import LocalBarRoundedIcon from '@mui/icons-material/LocalBarRounded';
+import AddRoundedIcon from '@mui/icons-material/AddRounded';
+import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
+
 
 //SD
 
@@ -11,7 +12,7 @@ export default function Navigation() {
     return (
         <nav className="navbar">
             <NavLink to="/" className="menupunkt">
-                <HomeIcon/>
+                <HomeRoundedIcon/>
                 <p>Hjem</p>
             </NavLink>
             <NavLink to="/lykken" className="menupunkt">
@@ -19,15 +20,15 @@ export default function Navigation() {
                 <p>Prøv lykken</p>
             </NavLink>
             <NavLink to="/find" className="menupunkt">
-                <LocalBarIcon/>
+                <LocalBarRoundedIcon/>
                 <p>Find drink</p>
             </NavLink>
             <NavLink to="/tilfoj" className="menupunkt sticon">
-                <AddIcon/>
+                <AddRoundedIcon/>
                 <p>Tilføj</p>
             </NavLink>
             <NavLink to="/favoritter" className="menupunkt">
-                <FavoriteIcon/>
+                <FavoriteRoundedIcon/>
                 <p>Favoritter</p>
             </NavLink>
         </nav>
