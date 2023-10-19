@@ -13,6 +13,7 @@ function App() {
   return (
     <div className="mobilewrap">
       <LightMode />
+      {/* SD */}
       <Navigation />
       <Routes>
         <Route path="/" element={<Hjem />} />

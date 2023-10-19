@@ -68,6 +68,11 @@ h4 {
   margin-right: 5%;
 }
 
+.mobilewrap {
+  max-width: 480px;
+  background-color: var(--background-color);
+}
+
 /* KNAP (RMK) */
 .buttonFull {
   background-color: var(--accent-color);
@@ -127,6 +132,7 @@ h4 {
   text-transform: uppercase;
 }
 
+/* Skifter farve på active link/menupunkt */
 .menupunkt.active {
   color: var(--accent-color);
 }
@@ -141,8 +147,4 @@ h4 {
 
 .menupunkt p {
   padding-top: 3px;
-}
-.mobilewrap {
-  max-width: 480px;
-  background-color: var(--background-color);
 }

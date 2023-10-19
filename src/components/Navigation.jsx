@@ -15,19 +15,19 @@ export default function Navigation() {
                 <p>Hjem</p>
             </NavLink>
             <NavLink to="/lykken" className="menupunkt">
-            <CasinoIcon/>
+                <CasinoIcon/>
                 <p>Prøv lykken</p>
             </NavLink>
             <NavLink to="/find" className="menupunkt">
-            <LocalBarIcon/>
+                <LocalBarIcon/>
                 <p>Find drink</p>
             </NavLink>
             <NavLink to="/tilfoj" className="menupunkt sticon">
-            <AddIcon/>
+                <AddIcon/>
                 <p>Tilføj</p>
             </NavLink>
             <NavLink to="/favoritter" className="menupunkt">
-            <FavoriteIcon/>
+                <FavoriteIcon/>
                 <p>Favoritter</p>
             </NavLink>
         </nav>
