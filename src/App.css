@@ -21,11 +21,6 @@
   --accent-color: #8dbe5c;
 }
 
-/* HTML */
-html {
-  background-color: var(--background-color);
-}
-
 /* BODY */
 body {
   max-width: 100%;
