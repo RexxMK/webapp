@@ -1,5 +1,5 @@
-import StarBorderIcon from '@mui/icons-material/StarBorder';
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import StarBorderRoundedIcon from '@mui/icons-material/StarBorderRounded';
+import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
 
 //SD
 
@@ -7,16 +7,16 @@ export default function DrinkCard (props) {
     return (
         <div className='drinkcard'>
             <div className='like'>
-            <FavoriteIcon/>
+            <FavoriteRoundedIcon/>
             </div>
             <img src={props.img} className='drinkimg'/>
             <h3 className='drinkheader'>{props.titel}</h3>
             <div className='star-wrap'>
-                <StarBorderIcon/>
-                <StarBorderIcon/>
-                <StarBorderIcon/>
-                <StarBorderIcon/>
-                <StarBorderIcon/>
+                <StarBorderRoundedIcon/>
+                <StarBorderRoundedIcon/>
+                <StarBorderRoundedIcon/>
+                <StarBorderRoundedIcon/>
+                <StarBorderRoundedIcon/>
             </div>
         </div>
     )

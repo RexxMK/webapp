@@ -1,7 +1,10 @@
+import Opskrift from "../components/Opskrift";
+
+
 export default function Tilfoj () {
     return (
         <section>
-        <h1>Tilføj</h1>
+        <Opskrift/>
         </section>
     )
 }
