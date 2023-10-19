@@ -65,6 +65,7 @@ h4 {
 
 .mobilewrap {
   max-width: 480px;
+  min-height: 800px;
   background-color: var(--background-color);
 }
 
