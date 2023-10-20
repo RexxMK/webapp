@@ -1,0 +1,45 @@
+{
+  "drinks": [
+    {
+      "billede": "gs://webapp-68213.appspot.com/drinkbilleder/mojito.jpeg",
+      "navn": "Mojito",
+      "ingredienser": [
+        "4 cl hvid rom",
+        "2 cl friskpresset limejuice",
+        "2 tsk sukker",
+        "6-8 friske mynteblade",
+        "Sodavand",
+        "Knust is"
+      ],
+      "fremgangsmåde": [
+        "1. Knus mynteblade og sukker i et glas.",
+        "Tilsæt limejuice og hvid rom.",
+        "Tilsæt knust is og fyld op med sodavand",
+        "Rør forsigtigt og pynt med mynteblade og en skive lime."
+      ]
+    },
+    {
+      "billede": "https://eksempel.com/drink2.jpg",
+      "navn": "Piña Colada",
+      "ingredienser": [
+        "6 cl hvid rom",
+        "3 cl kokoscreme",
+        "9 cl ananasjuice",
+        "Knust is"
+      ],
+      "fremgangsmåde": "1. Blend alle ingredienser med knust is.\n2. Serveres i et højt glas med en skive ananas og en cocktailparaply."
+    },
+    {
+      "billede": "https://eksempel.com/drink3.jpg",
+      "navn": "Margarita",
+      "ingredienser": [
+        "4.5 cl tequila",
+        "1.5 cl Cointreau",
+        "3 cl friskpresset limejuice",
+        "Knust is",
+        "Salt til kanten af glasset"
+      ],
+      "fremgangsmåde": "1. Fugt kanten af et cocktailglas og dyp det i salt.\n2. Bland tequila, Cointreau og limejuice med knust is i en shaker.\n3. Si blandingen i glasset og server med en skive lime."
+    }
+  ]
+}
