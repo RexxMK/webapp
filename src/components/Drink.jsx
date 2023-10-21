@@ -4,7 +4,7 @@ import StarRating from "./StarRating";
 import { useNavigate } from "react-router-dom";
 
 // RMK
-export default function DrinkOpskrift({ drink }) {
+export default function Drink({ drink }) {
   const navigate = useNavigate();
 
   function handleClick() {
