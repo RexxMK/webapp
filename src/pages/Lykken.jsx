@@ -61,7 +61,7 @@ export default function Lykken() {
 
     // Når der klikkes på knapperne "Eller klik her!" og "Shake for at prøve igen!" skal der genereres en random drink.
 
-    // Først defineres drinks, der kan genereres random. - Dette burde kunne slettes, når jeg kan henvie til JSON filen -!-!-!-!-!-!-!-!-!-!-!-!-
+    // Først defineres drinks, der kan genereres random. - Dette burde kunne slettes, når jeg kan henvise til JSON filen -!-!-!-!-!-!-!-!-!-!-!-!-
     const jsonData = [
       { billede: drink1, navn: 'Love Spray' },
       { billede: drink2, navn: 'Pink Grape & Gin' },
