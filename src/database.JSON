@@ -1,45 +1,370 @@
 {
   "drinks": [
     {
-      "billede": "gs://webapp-68213.appspot.com/drinkbilleder/mojito.jpeg",
+      "billede": "https://firebasestorage.googleapis.com/v0/b/webapp-68213.appspot.com/o/drinkbilleder%2FcandyCane.jpeg?alt=media&token=5533d1d8-836f-4aed-b6ba-cdf77fe4ebcc&_gl=1*voerv*_ga*MTcyNzAxMDU3Ny4xNjk2NDAzODUy*_ga_CW55HF8NVT*MTY5Nzg4NDE4Ny4xNi4xLjE2OTc4ODQyNTQuNjAuMC4w",
+      "navn": "Candy Cane",
+      "ingredienser": [
+        "4 cl Candy Cane Vodka",
+        "3 cl Créme de Cacao",
+        "Et skvæt Angostura Bitters",
+        "1 Sukkerstok (15 cm)"
+      ],
+      "metode": [
+        "Blend sukkerstokken helt fint, og dyb kanten af glasset i sukkermassen",
+        "Hæld Candy Cane Vodka, Créme de Cacao, Bitters og i en shaker; ryst og sigt i glasset"
+      ]
+    },
+
+    {
+      "billede": "https://firebasestorage.googleapis.com/v0/b/webapp-68213.appspot.com/o/drinkbilleder%2Fcosmopolitan.jpeg?alt=media&token=cfffb60e-b472-4408-8498-b5e5104f87e0&_gl=1*61f287*_ga*MTcyNzAxMDU3Ny4xNjk2NDAzODUy*_ga_CW55HF8NVT*MTY5Nzg4NDE4Ny4xNi4xLjE2OTc4ODQ0MzYuNDQuMC4w",
+      "navn": "Cosmopolitan",
+      "ingredienser": [
+        "2 cl Cointreau",
+        "3 cl Vodka",
+        "4 cl Tranebærjuice",
+        "Isterninger",
+        "Saften fra 1 Lime",
+        "Martiniglas"
+      ],
+      "metode": [
+        "Hæld alle ingredienserne i en shaker, inkl isterningerne og ryst den godt sammen",
+        "Hæld den iskolde cocktail i et afkølet martiniglas"
+      ]
+    },
+
+    {
+      "billede": "https://firebasestorage.googleapis.com/v0/b/webapp-68213.appspot.com/o/drinkbilleder%2FcranberryMimosa.jpeg?alt=media&token=1cb574f5-737a-4949-943d-b7e25091484c&_gl=1*4gulfu*_ga*MTcyNzAxMDU3Ny4xNjk2NDAzODUy*_ga_CW55HF8NVT*MTY5Nzg4NDE4Ny4xNi4xLjE2OTc4ODQ0NTAuMzAuMC4w",
+      "navn": "Cranberry Mimosa",
+      "ingredienser": [
+        "6 cl Tranebærjuice",
+        "12 cl mousserende vin, champagne eller prosecco",
+        "Sukker",
+        "Friske Tranebær",
+        "1 stilk Rosmarin",
+        "Champagneglas"
+      ],
+      "metode": [
+        "Dyp kanten af champagneglasset i lidt vand, og derefter i sukker",
+        "Hæld tranebærjuice og mousserende vin i glasser",
+        "Pynt med lidt tranebær og en rosmarinstilk"
+      ]
+    },
+
+    {
+      "billede": "https://firebasestorage.googleapis.com/v0/b/webapp-68213.appspot.com/o/drinkbilleder%2FcubaLibra.jpeg?alt=media&token=85300f18-004b-4459-9886-7526101efa03&_gl=1*kwz3sl*_ga*MTcyNzAxMDU3Ny4xNjk2NDAzODUy*_ga_CW55HF8NVT*MTY5NzgwMTk5MC4xNC4xLjE2OTc4MDMzMTguNDIuMC4w",
+      "navn": "Cuba Libre",
+      "ingredienser": [
+        "5 cl rom",
+        "12 cl cola",
+        "1 lime, skåret i både",
+        "Isterninger",
+        "Højt glas"
+      ],
+      "metode": [
+        "Fyld et højt glas med isterninger",
+        "Klem saften ud af 2 limebåde (1/2 lime) udover isterningerne, og anbring de brugte limebåde i glasset",
+        "Fyld resten af glasset med Cola"
+      ]
+    },
+
+    {
+      "billede": "https://firebasestorage.googleapis.com/v0/b/webapp-68213.appspot.com/o/drinkbilleder%2FginTonic.jpeg?alt=media&token=527598ff-25f0-4b79-b744-d423037b0867&_gl=1*peryuj*_ga*MTcyNzAxMDU3Ny4xNjk2NDAzODUy*_ga_CW55HF8NVT*MTY5Nzg4NDE4Ny4xNi4xLjE2OTc4ODQ0NjguMTIuMC4w",
+      "navn": "Gin Tonic",
+      "ingredienser": [
+        "4 cl Gin",
+        "10 cl Tonic",
+        "1 Limebåd, eller 1 skive Agurk",
+        "Isterninger",
+        "Højt glas"
+      ],
+      "metode": [
+        "Fyld et højt glas med isterninger",
+        "Hæld gin og tonic i glasset",
+        "Pynt med limebåden, eller agurkeskiven"
+      ]
+    },
+
+    {
+      "billede": "https://firebasestorage.googleapis.com/v0/b/webapp-68213.appspot.com/o/drinkbilleder%2FjackFrost.jpeg?alt=media&token=3921bb60-f6ea-4f76-b4e4-20dc7cc26540&_gl=1*1ixajuh*_ga*MTcyNzAxMDU3Ny4xNjk2NDAzODUy*_ga_CW55HF8NVT*MTY5Nzg4NDE4Ny4xNi4xLjE2OTc4ODQ0ODEuNjAuMC4w",
+      "navn": "Jack Frost",
+      "ingredienser": [
+        "4 cl Ananasjuice",
+        "2 cl Blue Curacao",
+        "2 cl Vodka, eller Lys Rom",
+        "2 cl Kokoscreme",
+        "Isterninger, antal afhænger af den øsnkede konsistens",
+        "Honning",
+        "Kokosmel"
+      ],
+      "metode": [
+        "Dyp kanten af glasset i lidt honning, og derefter i kokosmel",
+        "Hæld resten af ingredienserne i en blender, og blend til den ønskede konsistens",
+        "Hæld den iskolde cocktail i glasset"
+      ]
+    },
+
+    {
+      "billede": "https://firebasestorage.googleapis.com/v0/b/webapp-68213.appspot.com/o/drinkbilleder%2FlonIslandIcedTea.jpeg?alt=media&token=1f6cf6f2-154a-4acb-9e3f-914d83388c03&_gl=1*j8y1z6*_ga*MTcyNzAxMDU3Ny4xNjk2NDAzODUy*_ga_CW55HF8NVT*MTY5Nzg4NDE4Ny4xNi4xLjE2OTc4ODQ1MDguMzMuMC4w",
+      "navn": "Long Island Iced Tea",
+      "ingredienser": [
+        "2 cl Gin",
+        "2 cl Vodka",
+        "2 cl Rom - mørk rom",
+        "2 cl Tequila",
+        "2 cl Cointreau",
+        "2 cl Rose's lime",
+        "10 cl Cola",
+        "Isterninger",
+        "1 skive Lime",
+        "Højt glas"
+      ],
+      "metode": [
+        "Fyld glasset næsten op med is",
+        "Hæld gin, vodka, rom, Tequila og Cointreau over isen",
+        "Kom så Rose's Lime i sammen med kold cola",
+        "Pynt med en skive lime"
+      ]
+    },
+
+    {
+      "billede": "https://firebasestorage.googleapis.com/v0/b/webapp-68213.appspot.com/o/drinkbilleder%2Fmargarita.jpeg?alt=media&token=a5594579-1b99-4bd4-8072-07100c3cab8f&_gl=1*161mmzz*_ga*MTcyNzAxMDU3Ny4xNjk2NDAzODUy*_ga_CW55HF8NVT*MTY5Nzg4NDE4Ny4xNi4xLjE2OTc4ODQ1MjYuMTUuMC4w",
+      "navn": "Margarita",
+      "ingredienser": [
+        "4 cl Tequila",
+        "2 cl Cointreau",
+        "1 Lime",
+        "Knust is, kan undlades"
+      ],
+      "metode": [
+        "Find et koldt glas frem og kom tequila og Cointreau i glasset",
+        "Del limefrugten på midten og pres saften af den ene halve lime i glasset",
+        "Skær et par skiver af den anden halve lime",
+        "Fyld op med is og et par limeskiver"
+      ]
+    },
+
+    {
+      "billede": "https://firebasestorage.googleapis.com/v0/b/webapp-68213.appspot.com/o/drinkbilleder%2FmistletoeMartini.webp?alt=media&token=d70907d7-afcc-4783-8d6d-3886bca32e00&_gl=1*1crcxr*_ga*MTcyNzAxMDU3Ny4xNjk2NDAzODUy*_ga_CW55HF8NVT*MTY5Nzg4NDE4Ny4xNi4xLjE2OTc4ODQ1MzYuNS4wLjA.",
+      "navn": "Mistletoe Martini",
+      "ingredienser": [
+        "4 cl Vodka",
+        "1,5 cl Hyldeblomstlikør",
+        "4 cl Tranebærjuice",
+        "1,5 cl Sirup",
+        "Tranebær",
+        "Mynteblade",
+        "Isterninger",
+        "Martiniglas"
+      ],
+      "metode": [
+        "Fyld en shaker halvt med isterninger",
+        "Hæld vodka, hyldeblomslikør, tranebærjuice og sirup i shakeren",
+        "Ryst og hæld i et martiniglas",
+        "Pynt med tranebær og mynteblade"
+      ]
+    },
+
+    {
+      "billede": "https://firebasestorage.googleapis.com/v0/b/webapp-68213.appspot.com/o/drinkbilleder%2Fmojito.jpeg?alt=media&token=4cf5fd25-bf10-4659-a013-367f2954aa8c&_gl=1*akilsa*_ga*MTcyNzAxMDU3Ny4xNjk2NDAzODUy*_ga_CW55HF8NVT*MTY5NzgwMTk5MC4xNC4xLjE2OTc4MDIwMDYuNDQuMC4w",
       "navn": "Mojito",
       "ingredienser": [
         "4 cl hvid rom",
         "2 cl friskpresset limejuice",
         "2 tsk sukker",
         "6-8 friske mynteblade",
-        "Sodavand",
+        "Danskvand",
         "Knust is"
       ],
-      "fremgangsmåde": [
-        "1. Knus mynteblade og sukker i et glas.",
+      "metode": [
+        "Knus mynteblade og sukker i et glas.",
         "Tilsæt limejuice og hvid rom.",
         "Tilsæt knust is og fyld op med sodavand",
         "Rør forsigtigt og pynt med mynteblade og en skive lime."
       ]
     },
+
     {
-      "billede": "https://eksempel.com/drink2.jpg",
-      "navn": "Piña Colada",
+      "billede": "https://firebasestorage.googleapis.com/v0/b/webapp-68213.appspot.com/o/drinkbilleder%2Fpaloma.jpeg?alt=media&token=d34aa4b3-c53e-4c81-af19-13e41fa737d7&_gl=1*i0aws8*_ga*MTcyNzAxMDU3Ny4xNjk2NDAzODUy*_ga_CW55HF8NVT*MTY5Nzg4NDE4Ny4xNi4xLjE2OTc4ODQ1NTAuNjAuMC4w",
+      "navn": "Paloma",
       "ingredienser": [
-        "6 cl hvid rom",
-        "3 cl kokoscreme",
-        "9 cl ananasjuice",
-        "Knust is"
+        "4 cl Tequila",
+        "2 cl friskpresset limesaft",
+        "12 cl Pink grapefrugt sodavand",
+        "1/2 skive Grapefrugt",
+        "Isterninger",
+        "Højt glas"
       ],
-      "fremgangsmåde": "1. Blend alle ingredienser med knust is.\n2. Serveres i et højt glas med en skive ananas og en cocktailparaply."
+      "metode": [
+        "Fyld et højt glas med isterninger",
+        "Hæld tequila og limesaft i glasser",
+        "Top op med pink grapefrugt sodavand",
+        "Rør rundt, og pynt med en halv skive grapefrugt"
+      ]
     },
+
     {
-      "billede": "https://eksempel.com/drink3.jpg",
-      "navn": "Margarita",
+      "billede": "https://firebasestorage.googleapis.com/v0/b/webapp-68213.appspot.com/o/drinkbilleder%2FpinkLady.jpeg?alt=media&token=0c83e5b3-66cf-4de1-a256-31521ace885f&_gl=1*5boegl*_ga*MTcyNzAxMDU3Ny4xNjk2NDAzODUy*_ga_CW55HF8NVT*MTY5Nzg4NDE4Ny4xNi4xLjE2OTc4ODQ1NzIuMzguMC4w",
+      "navn": "Pink Lady",
       "ingredienser": [
-        "4.5 cl tequila",
-        "1.5 cl Cointreau",
-        "3 cl friskpresset limejuice",
-        "Knust is",
-        "Salt til kanten af glasset"
+        "5 cl Gin",
+        "2 cl Limesaft",
+        "2 cl Grenadine",
+        "1 Æggehvide",
+        "Isterninger",
+        "Martiniglas"
       ],
-      "fremgangsmåde": "1. Fugt kanten af et cocktailglas og dyp det i salt.\n2. Bland tequila, Cointreau og limejuice med knust is i en shaker.\n3. Si blandingen i glasset og server med en skive lime."
+      "metode": [
+        "Hæld alle ingredienserne i en shaker, inkl isterningerne og ryst den godt sammen",
+        "Si blandingen over i et martiniglas"
+      ]
+    },
+
+    {
+      "billede": "https://firebasestorage.googleapis.com/v0/b/webapp-68213.appspot.com/o/drinkbilleder%2FpinkPantyPulldowns.jpeg?alt=media&token=33e99807-e098-4529-a247-bb22dfd0472c&_gl=1*1x75m0b*_ga*MTcyNzAxMDU3Ny4xNjk2NDAzODUy*_ga_CW55HF8NVT*MTY5Nzg4NDE4Ny4xNi4xLjE2OTc4ODQ1ODguMjIuMC4w",
+      "navn": "Pink Panty Pulldowns",
+      "ingredienser": [
+        "3 cl Vodka",
+        "6 cl Pink Lemonade",
+        "9 cl Lemon/Lime sodavand",
+        "Isterninger",
+        "Højt glas"
+      ],
+      "metode": [
+        "Fyld et højt glas med isterninger",
+        "Hæld vodka over isen",
+        "Hæld pink lemonade og lemon/lime sodavand i glasset"
+      ]
+    },
+
+    {
+      "billede": "https://firebasestorage.googleapis.com/v0/b/webapp-68213.appspot.com/o/drinkbilleder%2FsexOnTheBeach.jpeg?alt=media&token=f0359fe7-6edf-4e61-a613-ec1c94adc436&_gl=1*1r5svnh*_ga*MTcyNzAxMDU3Ny4xNjk2NDAzODUy*_ga_CW55HF8NVT*MTY5Nzg4NDE4Ny4xNi4xLjE2OTc4ODQ2MDIuOC4wLjA.",
+      "navn": "Sex on the Beach",
+      "ingredienser": [
+        "5 cl Vodka",
+        "4,5 cl Tranebærjuice",
+        "4,5 cl Appelsinjuice",
+        "1,5 cl Ferskenlikør",
+        "1,5 cl Solbærlikør",
+        "Isterninger",
+        "Højt glas"
+      ],
+      "metode": [
+        "Hæld alle ingredienserne i en shaker, inkl isterningerne og ryst den godt sammen",
+        "Si blandingen over i et højt glas"
+      ]
+    },
+
+    {
+      "billede": "https://firebasestorage.googleapis.com/v0/b/webapp-68213.appspot.com/o/drinkbilleder%2FstrawberryDaquiri.jpeg?alt=media&token=520ed839-ab7f-4e98-9a90-9d8c310319b5&_gl=1*guvr8m*_ga*MTcyNzAxMDU3Ny4xNjk2NDAzODUy*_ga_CW55HF8NVT*MTY5Nzg4NDE4Ny4xNi4xLjE2OTc4ODQ2MTMuNjAuMC4w",
+      "navn": "Strawberry Daquiri",
+      "ingredienser": [
+        "4 cl Lys Rom",
+        "1/2 Lime",
+        "2 tsk. Flormelis",
+        "175 g Frosne Jordbær",
+        "4 Isterninger",
+        "Jordbær"
+      ],
+      "metode": [
+        "Tilsæt lys rom, saft fra lime, frosne jordbær, flormelis og isterninger til en blender",
+        "Blend det hele godt sammen. Smag evt. til med mere flormelis eller limesaft",
+        "Anret i glas og pynt evt. med friske jordbær"
+      ]
+    },
+
+    {
+      "billede": "https://firebasestorage.googleapis.com/v0/b/webapp-68213.appspot.com/o/drinkbilleder%2FstrawberryMojito.jpg?alt=media&token=79362451-5183-4888-992a-2e6856563581&_gl=1*ar3afl*_ga*MTcyNzAxMDU3Ny4xNjk2NDAzODUy*_ga_CW55HF8NVT*MTY5Nzg4NDE4Ny4xNi4xLjE2OTc4ODQ2MjQuNDkuMC4w",
+      "navn": "Strawberry Mojito",
+      "ingredienser": [
+        "5 cl Hvid Rom",
+        "2 cl Jordbærsirup",
+        "3 cl Friskpresset Limesaft",
+        "1 tsk. Rørsukker",
+        "8 cl Danskvand",
+        "Mynteblade",
+        "Jordbær",
+        "Knust is",
+        "Højt glas"
+      ],
+      "metode": [
+        "Nulre mynteblade mellem fingrene  og kom i glasset",
+        "Hæld hvid rom, jordbærsirup, limesaft og rørsukker i glasset",
+        "Top med danskvand",
+        "Pynt med jordbær og mynteblade"
+      ]
+    },
+
+    {
+      "billede": "https://firebasestorage.googleapis.com/v0/b/webapp-68213.appspot.com/o/drinkbilleder%2FtequilaFizz.jpeg?alt=media&token=52260b4a-43db-4cc9-9d2d-a6b59fdfb261&_gl=1*19wtudw*_ga*MTcyNzAxMDU3Ny4xNjk2NDAzODUy*_ga_CW55HF8NVT*MTY5Nzg4NDE4Ny4xNi4xLjE2OTc4ODQ2MzguMzUuMC4w",
+      "navn": "Tequila Fizz",
+      "ingredienser": [
+        "6 cl Tequila",
+        "1 spsk Citronsaft",
+        "2 cl Grenadine",
+        "1 Æggehvide",
+        "Ginger Ale",
+        "Isterninger",
+        "Højt glas"
+      ],
+      "metode": [
+        "Hæld tequila, citronsaft, grenadine, æggehvide og isterninger i en shaker, ryst godt sammen",
+        "Si blandingen over i et højt glas med isterninger",
+        "Top op med ginger ale og rør rundt"
+      ]
+    },
+
+    {
+      "billede": "https://firebasestorage.googleapis.com/v0/b/webapp-68213.appspot.com/o/drinkbilleder%2FtequilaSunrise.jpeg?alt=media&token=0f3ae7b5-138d-4072-be07-94231415ea5a&_gl=1*1g86gyf*_ga*MTcyNzAxMDU3Ny4xNjk2NDAzODUy*_ga_CW55HF8NVT*MTY5Nzg4NDE4Ny4xNi4xLjE2OTc4ODQ2NTUuMTguMC4w",
+      "navn": "Tequila Sunrise",
+      "ingredienser": [
+        "4 cl Tequila",
+        "10 cl Appelsinjuice",
+        "2 cl Grenadine",
+        "Isterninger"
+      ],
+      "metode": [
+        "Fyld et glas op med isterninger",
+        "Hæld tequila i glasset sammen med appelsinjucie og rør rundt",
+        "Tilsæt forsigtigt grenadine"
+      ]
+    },
+
+    {
+      "billede": "https://firebasestorage.googleapis.com/v0/b/webapp-68213.appspot.com/o/drinkbilleder%2FtheGrinch.jpeg?alt=media&token=e3e7a32a-1853-47a0-942f-a592a1d640ba&_gl=1*1iyxfsr*_ga*MTcyNzAxMDU3Ny4xNjk2NDAzODUy*_ga_CW55HF8NVT*MTY5Nzg4NDE4Ny4xNi4xLjE2OTc4ODQ2NzQuNjAuMC4w",
+      "navn": "The Grinch",
+      "ingredienser": [
+        "4 cl Midori Likør",
+        "3 cl Hvid Rom",
+        "15 cl Lemon/Lime sodavand",
+        "1 Cocktail Kirsebær",
+        "Isterninger"
+      ],
+      "metode": [
+        "Fyld et glas op med isterninger",
+        "Hæld midori likør og hvid rom i glasset",
+        "Top med lemon/lime sodavand og rør rundt",
+        "Pynt med et cocktail kirsebær"
+      ]
+    },
+
+    {
+      "billede": "https://firebasestorage.googleapis.com/v0/b/webapp-68213.appspot.com/o/drinkbilleder%2FwinterRita.jpeg?alt=media&token=201ee46d-08b0-4a57-b8c8-74465673062b&_gl=1*1mhcy8y*_ga*MTcyNzAxMDU3Ny4xNjk2NDAzODUy*_ga_CW55HF8NVT*MTY5Nzg4NDE4Ny4xNi4xLjE2OTc4ODQ2OTYuMzguMC4w",
+      "navn": "Winter Rita",
+      "ingredienser": [
+        "5 cl Tequila",
+        "1 cl Campari",
+        "3 cl Limesaft",
+        "1,5 cl Appelsinjuice",
+        "1,5 cl Rosmarin sirup",
+        "Lidt Salt",
+        "Isterninger",
+        "Højt glas"
+      ],
+      "metode": [
+        "Salt kanten af glasset",
+        "Hæld tequila, campari, limesaft, appelsinjuice, rosmarin sirup og isterninger i en shaker, ryst godt sammen",
+        "Si blandingen over i glasset med isterninger"
+      ]
     }
   ]
 }

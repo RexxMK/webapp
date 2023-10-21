@@ -1,6 +1,3 @@
-import React from "react";
-import Knap from "../components/Knap";
-
 import { useEffect, useState } from "react";
 import Drink from "../components/Drink";
 
@@ -52,13 +49,3 @@ export default function DrinkOpskrift() {
     </article>
   );
 }
-
-/*export default function Favoritter() {
-  return (
-    <section>
-      <h1>Favoritter</h1>
-
-      
-    </section>
-  );
-}*/

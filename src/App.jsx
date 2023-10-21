@@ -8,6 +8,7 @@ import Find from "./pages/Find";
 import Tilfoj from "./pages/Tilfoj";
 import Favoritter from "./pages/Favoritter";
 import Header from "./components/Header";
+import DrinkOpskrift from "./pages/DrinkOpskrift";
 
 function App() {
   return (
