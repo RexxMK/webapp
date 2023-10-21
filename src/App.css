@@ -45,7 +45,7 @@ h4 {
 }
 
 h1 {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
 }
 
 h2 {
@@ -163,6 +163,7 @@ h4 {
 }
 
 /*======================================== KNAP ========================================*/
+
 .buttonFull {
   background-color: var(--accent-color);
   color: #2a2a2a;
@@ -182,6 +183,7 @@ h4 {
 
 .buttonEmpty {
   border: 3px solid var(--accent-color);
+  background-color: var(--background-color);
   color: var(--font-color);
 
   font-size: 1.4rem;
@@ -197,6 +199,8 @@ h4 {
   border-radius: 50px;
 }
 
+
+
 /*======================================== NAVIGATION ========================================*/
 
 .navbar {
@@ -206,7 +210,7 @@ h4 {
   align-items: end;
   position: fixed;
   bottom: 0;
-  width: 480px;
+  width: 100%;
   padding: 15px 10px;
   background-color: var(--background-color);
   z-index: 2;
@@ -242,9 +246,9 @@ h4 {
 
 /*======================================== PRØV LYKKEN ========================================*/
 
-.lykkenImg {
+#shakerbillede {
   width: 100%;
-  margin: 50px 0;
+  margin: 30px 0;
 }
 
 .shakeTxt {
@@ -252,7 +256,23 @@ h4 {
   margin-bottom: 30px;
 }
 
-/*=============== DRINK CARD, SD ===============*/
+.lykkenButton {
+  margin-bottom: 20px;
+}
+
+.randomName {
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+
+.randomImg {
+  width: 100%;
+  margin-top: 30px;
+}
+
+
+
+/*======================================== DRINK CARD ========================================*/
 
 .drinkcard {
   width: 165px;
@@ -304,7 +324,10 @@ h4 {
   font-size: 1.5rem;
 }
 
-/*=============== OPSKRIFT, SD ===============*/
+
+
+/*======================================== OPSKRIFT ========================================*/
+
 .op-wrap {
   overflow: hidden;
 }
@@ -391,7 +414,9 @@ h4 {
   color: #f9f9f9;
 }
 
-/*=============== RATING, SD ===============*/
+
+
+/*======================================== RATING ========================================*/
 
 .rate input[type="radio"] {
   display: none;
