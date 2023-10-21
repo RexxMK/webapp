@@ -5,6 +5,8 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import lightShaker from "../img/lightmodeShaker.gif";
 import darkShaker from "../img/darkmodeShaker.gif";
+import tomsideLight from "../img/tomside-light.png";
+import tomsideDark from "../img/tomside-dark.png";
 
 // DKK
 
@@ -28,6 +30,9 @@ const LightMode = () => {
         // Definer shakerbillede (ligger under Prøv Lykken).
         const shakerbillede = document.getElementById("shakerbillede");
 
+        // Definer tomsidebillede.
+        const tomsidebillede = document.getElementById("tomsidebillede");
+
         if (e.target.checked) {
             setLightMode();
             console.log("Theme set to light");
@@ -37,6 +42,11 @@ const LightMode = () => {
                 shakerbillede.src = lightShaker;
             }
 
+            // Hvis tomsidebilledet vises på skærmen, så skift det til light, hvis brugeren ændrer til lightmode.
+            if (tomsidebillede) {
+                tomsidebillede.src = tomsideLight;
+            }
+
         } else {
             setDarkMode();
             console.log("Theme set to dark");
@@ -44,6 +54,11 @@ const LightMode = () => {
             // Hvis shakerbilledet vises på skærmen, så skift det til darkShaker, hvis brugeren ændrer til darkmode.
             if (shakerbillede) {
                 shakerbillede.src = darkShaker;
+            }
+
+            // Hvis tomsidebilledet vises på skærmen, så skift det til dark, hvis brugeren ændrer til darkmode.
+            if (tomsidebillede) {
+                tomsidebillede.src = tomsideDark;
             }
         }
     };
