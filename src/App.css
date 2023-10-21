@@ -213,6 +213,7 @@ h4 {
   width: 100%;
   padding: 15px 10px;
   background-color: var(--background-color);
+  z-index: 2;
 }
 
 .menupunkt {
