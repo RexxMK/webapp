@@ -3,8 +3,11 @@
 import React from "react";
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
+import lightShaker from "../img/lightmodeShaker.gif";
+import darkShaker from "../img/darkmodeShaker.gif";
 
 // DKK
+
 // Funktion til at kunne skifte mellem light og dark mode.
 const LightMode = () => {
     
@@ -19,13 +22,29 @@ const LightMode = () => {
     };
 
     // Hvis input HTML-tagget under return er checked, skal temaet være light mode. Ellers dark mode.
+    // Her sørger vi også for at billeder, der afhænger af light/dark mode skifter.
     const toggleTheme = e => {
-        if (e.target.checked) { 
+
+        // Definer shakerbillede (ligger under Prøv Lykken).
+        const shakerbillede = document.getElementById("shakerbillede");
+
+        if (e.target.checked) {
             setLightMode();
             console.log("Theme set to light");
-        } else { 
+
+            // Hvis shakerbilledet vises på skærmen, så skift det til lightShaker, hvis brugeren ændrer til lightmode.
+            if (shakerbillede) {
+                shakerbillede.src = lightShaker;
+            }
+
+        } else {
             setDarkMode();
             console.log("Theme set to dark");
+
+            // Hvis shakerbilledet vises på skærmen, så skift det til darkShaker, hvis brugeren ændrer til darkmode.
+            if (shakerbillede) {
+                shakerbillede.src = darkShaker;
+            }
         }
     };
     
