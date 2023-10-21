@@ -29,14 +29,14 @@ export default function Lykken() {
     useEffect(() => {
         const currentTheme = document.querySelector("body").getAttribute('data-theme');
 
-          // Hvis temaet i body er light sættes theme til light. Ellers dark.
-          if (currentTheme === "light") {
-            setTheme("light");
-          } else {
-            setTheme("dark");
-          }
+    // Hvis temaet i body er light sættes theme til light. Ellers dark.
+    if (currentTheme === "light") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
 
-          console.log("Current Theme:", theme);
+    console.log("Current Theme:", theme);
 
         // useEffect skal køre én gang når siden loades. Derfor de tomme [].
         }, []);
@@ -132,10 +132,9 @@ export default function Lykken() {
     
 
 
-        return (
-            <section className="fixedMargin">
-
-              <h1>Prøv Lykken!</h1>
+  return (
+    <section className="fixedMargin">
+      <h1>Prøv Lykken!</h1>
 
               {/* GIF'en der vises afhænger af theme. Hvis theme er light vises lightShaker, ellers darkShaker */}
               {visKnap && (<img src={theme === "light" ? lightShaker : darkShaker} alt="Tegnet GIF af en drinkshaker, der shaker" id="shakerbillede"/>)}

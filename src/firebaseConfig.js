@@ -1,4 +1,4 @@
-const firebase = require("firebase/app");
+/*const firebase = require("firebase/app");
 require("firebase/database");
 
 // Import the functions you need from the SDKs you need
@@ -47,4 +47,4 @@ ref.push({
     "Hæld rom i glasset, rør godt rundt og fyld derefter glasset med knuste isterninger." <
     br >
     "Top med danskvand og pynt med sugerør, limebåde og mynteblade på toppen inden servering",
-});
+});*/
