@@ -85,6 +85,17 @@ export default function Lykken() {
 
 
 
+    // Da to funktioner skal køre ved klik på knappen "Eller klik her!" samles disse to funktioner i én.
+
+    function handleBothFunctions() {
+      lykkenLayout();
+      randomDrink();
+    }
+    
+    
+    
+    
+    
     // Der skal også genereres en random drink, når brugeren ryster sin mobil. Samtidig skal lykkenLayout-funktionen køre.
 
     const [randomNumber, setRandomNumber] = useState(null);
@@ -102,8 +113,7 @@ export default function Lykken() {
         // Hvis brugeren ryster sin mobil mere en sensitivity, genereres et random tal som ved randomDrink-funktionen og lykkenLayout køres.
         // Med Math.abs sikrer vi, at vi kigger på bevægelsens absolutte (postive) værdi.
         if (Math.abs(acceleration.x) > sensitivity || Math.abs(acceleration.y) > sensitivity || Math.abs(acceleration.z) > sensitivity) {
-          setRandomNumber(Math.floor(Math.random() * jsonData.length));
-          lykkenLayout();
+          handleBothFunctions();
         };
       };
   
@@ -115,19 +125,6 @@ export default function Lykken() {
       };
 
     }, []);
-
-    const randomShakeDrink = jsonData[randomNumber];
-
-
-
-
-
-    // Da to funktioner skal køre ved klik på knappen "Eller klik her!" samles disse to funktioner i én.
-
-    function handleBothFunctions() {
-      lykkenLayout();
-      randomDrink();
-    }
     
     
     
@@ -142,18 +139,12 @@ export default function Lykken() {
 
               {visKnap && (<h3 className="shakeTxt">Shake din mobil!</h3>)}
 
-              {/* Billede og navn på en random drink */}
+              {/* Billede og navn på en random drink
+              Indholdet mellem tuborgklammerne vises kun når currentDrink er true. */}
               {currentDrink && (
                 <div>
                   <img src={currentDrink.billede} alt={currentDrink.navn} className="randomImg"/>
                   <h2 className="randomName">{currentDrink.navn}</h2>
-                </div>
-              )}
-
-              {randomShakeDrink && (
-                <div>
-                  <img src={randomShakeDrink.billede} alt={randomShakeDrink.navn} className="randomImg"/>
-                  <h2 className="randomName">{randomShakeDrink.navn}</h2>
                 </div>
               )}
 
