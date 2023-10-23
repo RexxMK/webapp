@@ -228,7 +228,7 @@ h4 {
   text-decoration: none;
   color: var(--menu-color);
   font-size: 10px;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 /* Skifter farve på active link/menupunkt */
@@ -327,8 +327,6 @@ h4 {
   color: var(--menu-color);
   font-size: 1.5rem;
 }
-
-/*======================================== OPSKRIFT ========================================*/
 
 
 /*======================================== OPSKRIFT ========================================*/
