@@ -1,9 +1,6 @@
 import lightShaker from "../img/lightmodeShaker.gif";
 import darkShaker from "../img/darkmodeShaker.gif";
 import React, { useState, useEffect } from "react";
-import drink1 from "../img/drink1.png";
-import drink2 from "../img/drink2.png";
-import drink3 from "../img/drink3.png";
 
 
 // DKK
@@ -55,22 +52,53 @@ export default function Lykken() {
 
 
 
+    // JSON-dataet hentes fra Firebase.
+
+    // getDrinks-funktionen er kopieret fra RK.
+    // Her opretter jeg to tilstandsvariabler ved hjælp af "useState".
+    //"drinks" bruges til at lagre listen over drinks, og "isDrinks" bruges til at kontrollere, om der er drinks at vise.
+    const [jsonData, setDrinks] = useState([]);
+    const [isDrinks, setIsDrinks] = useState(true);
+    
+    useEffect(() => {
+      async function getDrinks() {
+        //Der defineres en URL til at hente drinks-data fra vores Firebase-database.
+        const url =
+          "https://webapp-68213-default-rtdb.europe-west1.firebasedatabase.app/drinks.json";
+    
+        //Her bruges "fetch" til hente drinks-data fra vores Firebase-database og konvertere dem til JSON-format.
+        const response = await fetch(url);
+        const data = await response.json();
+    
+        //Hvis der er data tilgængelig, laves dataerne til et array og opdaterer "drinks" til at indeholde denne liste af drinks.
+        if (data !== null) {
+          const drinksArray = Object.keys(data).map((key) => ({
+            id: key,
+            ...data[key],
+          }));
+          setDrinks(drinksArray);
+        }
+    
+        //Hvis der ikke er nogen data tilgængelig, opdateres "isDrinks" til "false" for at vise en meddelelse om, at der ikke er noget at vise.
+        else {
+          setIsDrinks(false);
+        }
+      }
+      getDrinks();
+    }, []);
+
+
+
+
 
     // Når der klikkes på knapperne "Eller klik her!" og "Shake for at prøve igen!" skal der genereres en random drink.
-
-    // Først defineres drinks, der kan genereres random. - Dette burde kunne slettes, når jeg kan henvise til JSON filen -!-!-!-!-!-!-!-!-!-!-!-!-
-    const jsonData = [
-      { billede: drink1, navn: 'Love Spray' },
-      { billede: drink2, navn: 'Pink Grape & Gin' },
-      { billede: drink3, navn: 'Mojito' }
-    ];
 
     // Vi starter med at have currentDrink = null, så der ikke vises noget på skærmen.
     const [currentDrink, setCurrentDrink] = useState(null);
 
     /* Med Math.random genereres et tilfældigt tal mellem 0 og 1. Dette ganges med længden af jsonData, dvs. antallet af drinks, 
     sådan at alle drinksene i jsonData har mulighed for at blive genereret. Med Math.floor sikrer vi, at vi får et heltal. 
-    Dette heltal, randomIndex bruges til at udvælge en drink fra jsonData-listen ved at vælge den drink med index lig randomIndex. 
+    Dette heltal, randomIndex, bruges til at udvælge en drink fra jsonData-listen ved at vælge den drink med index lig randomIndex. 
     Denne drink sættes lig currentDrink, sådan at vi kan få drinken frem på skærmen. */
     function randomDrink() {    
       const randomIndex = Math.floor(Math.random() * jsonData.length);
@@ -131,28 +159,28 @@ export default function Lykken() {
     <section className="fixedMargin">
       <h1>Prøv Lykken!</h1>
 
-              {/* GIF'en der vises afhænger af theme. Hvis theme er light vises lightShaker, ellers darkShaker */}
-              {visKnap && (<img src={theme === "light" ? lightShaker : darkShaker} alt="Tegnet GIF af en drinkshaker, der shaker" id="shakerbillede"/>)}
+        {/* GIF'en der vises afhænger af theme. Hvis theme er light vises lightShaker, ellers darkShaker */}
+        {visKnap && (<img src={theme === "light" ? lightShaker : darkShaker} alt="Tegnet GIF af en drinkshaker, der shaker" id="shakerbillede"/>)}
 
-              {visKnap && (<h3 className="shakeTxt">Shake din mobil!</h3>)}
+        {visKnap && (<h3 className="shakeTxt">Shake din mobil!</h3>)}
 
-              {/* Billede og navn på en random drink
-              Indholdet mellem tuborgklammerne vises kun når currentDrink er true. */}
-              {currentDrink && (
-                <div>
-                  <img src={currentDrink.billede} alt={currentDrink.navn} className="randomImg"/>
-                  <h2 className="randomName">{currentDrink.navn}</h2>
-                </div>
-              )}
+        {/* Billede og navn på en random drink
+          Indholdet mellem tuborgklammerne vises kun når currentDrink er true. */}
+        {currentDrink && (
+          <div className="randomContainer">
+            <img src={currentDrink.billede} alt={currentDrink.navn} className="randomImg"/>
+            <h2 className="randomName">{currentDrink.navn}</h2>
+          </div>
+        )}
 
-              {/* Indholdet mellem tuborgklammerne vises kun når visKnap er true (hvilket den er defineret til fra start). 
-                Når der klikkes på knappen starter funktionen LykkenLayout, så denne knap får visKnap = false og dermed forsvinder. */}
-              {visKnap && (<button className="buttonFull" onClick={handleBothFunctions}>Eller klik her!</button>)}
+        {/* Indholdet mellem tuborgklammerne vises kun når visKnap er true (hvilket den er defineret til fra start). 
+          Når der klikkes på knappen starter funktionen LykkenLayout, så denne knap får visKnap = false og dermed forsvinder. */}
+        {visKnap && (<button className="buttonFull" onClick={handleBothFunctions}>Eller klik her!</button>)}
 
-              {/* !visKnap omvender tilstanden af visKnap, så disse knapper er først false og bliver true ved klik på ovenstående knap. */}
-              {!visKnap && (<button className="buttonFull lykkenButton">Se opskrift!</button>)}
-              {!visKnap && (<button className="buttonEmpty lykkenButton" onClick={randomDrink}>Shake for at prøve igen!</button>)}
+        {/* !visKnap omvender tilstanden af visKnap, så disse knapper er først false og bliver true ved klik på ovenstående knap. */}
+        {!visKnap && (<button className="buttonFull lykkenButton">Se opskrift!</button>)}
+        {!visKnap && (<button className="buttonEmpty lykkenButton" onClick={randomDrink}>Shake for at prøve igen!</button>)}
            
-            </section>
-          );
+    </section>
+  );
 }
