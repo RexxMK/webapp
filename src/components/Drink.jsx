@@ -23,11 +23,18 @@ export default function Drink({ drink }) {
   ));
 
   console.log(drink.billede);
+  
+  // SD
+  // Ved brug af use navigate kan vi lave en go back knap
+  // Så ved tryk af knappen navigerer hjemmesiden dig til den side du var sidst på
+  const history = useNavigate()
 
   // RMK & SD
   return (
     <section className="op-wrap">
-      <button className="back">
+      {/*Vi laver en onclick function
+      Så ved klik af knappen så går du et tilbage (-1) af din webbrowser historik*/}
+      <button className="back" onClick={() => history(-1)}>
         <ArrowBackRoundedIcon />
       </button>
       <img className="opimg" src={drink.billede} alt="Billede af drink" />

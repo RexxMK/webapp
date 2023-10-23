@@ -5,9 +5,6 @@ import drink1 from "../img/drink1.png";
 import drink2 from "../img/drink2.png";
 import drink3 from "../img/drink3.png";
 
-// IMPORTER JSON DATA I STEDET:
-// import jsonData from "../drinks.json";
-
 
 // DKK
 
@@ -85,7 +82,7 @@ export default function Lykken() {
 
 
 
-    // Da to funktioner skal køre ved klik på knappen "Eller klik her!" samles disse to funktioner i én.
+    // Da to funktioner skal køre ved klik på knappen "Eller klik her!" og ved ryst af mobilen samles disse to funktioner i én.
 
     function handleBothFunctions() {
       lykkenLayout();
@@ -148,7 +145,7 @@ export default function Lykken() {
                 </div>
               )}
 
-              {/* Indholdet mellem tuborgklammerne vises kun når visKnap er true (hvilket den er fra start). 
+              {/* Indholdet mellem tuborgklammerne vises kun når visKnap er true (hvilket den er defineret til fra start). 
                 Når der klikkes på knappen starter funktionen LykkenLayout, så denne knap får visKnap = false og dermed forsvinder. */}
               {visKnap && (<button className="buttonFull" onClick={handleBothFunctions}>Eller klik her!</button>)}
 
