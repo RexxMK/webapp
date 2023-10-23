@@ -3,6 +3,7 @@ import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import StarRating from "./StarRating";
 import { useNavigate } from "react-router-dom";
 
+
 // RMK
 export default function Drink({ drink }) {
   const navigate = useNavigate();
