@@ -354,7 +354,7 @@ h4 {
 
 .items,
 .howto {
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 
 .items {
@@ -410,6 +410,7 @@ h4 {
   left: 15px;
   top: 120px;
   z-index: 2;
+  cursor: pointer;
 }
 
 .back svg {
