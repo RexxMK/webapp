@@ -3,14 +3,14 @@ import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import StarRating from "./StarRating";
 import { useNavigate } from "react-router-dom";
 
-
 // RMK
 export default function Drink({ drink }) {
-  const navigate = useNavigate();
+  /*const navigate = useNavigate();*/
 
-  function handleClick() {
+  //Skal måske være under komponenten til drinkkort??
+  /*function handleClick() {
     navigate(`drinks/${drink.id}`);
-  }
+  }*/
 
   // Deler ingredienserne i en liste
   const ingredienserListe = drink.ingredienser.map((ingrediens, index) => (
@@ -26,7 +26,7 @@ export default function Drink({ drink }) {
 
   // RMK & SD
   return (
-    <section className="op-wrap" onClick={handleClick}>
+    <section className="op-wrap">
       <button className="back">
         <ArrowBackRoundedIcon />
       </button>
