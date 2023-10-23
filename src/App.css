@@ -328,6 +328,7 @@ h4 {
   font-size: 1.5rem;
 }
 
+/*======================================== OPSKRIFT ========================================*/
 
 
 /*======================================== OPSKRIFT ========================================*/
@@ -409,7 +410,7 @@ h4 {
   align-items: center;
   position: absolute;
   left: 15px;
-  top: 110px;
+  top: 120px;
   z-index: 2;
 }
 
@@ -427,6 +428,6 @@ h4 {
 }
 
 .rate svg {
-  font-size: 3rem;
-  color: var(--menu-color);
+  cursor: pointer;
+  margin-left: 5px;
 }
