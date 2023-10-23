@@ -5,11 +5,12 @@ import { useNavigate } from "react-router-dom";
 
 // RMK
 export default function Drink({ drink }) {
-  const navigate = useNavigate();
+  /*const navigate = useNavigate();*/
 
-  function handleClick() {
+  //Skal måske være under komponenten til drinkkort??
+  /*function handleClick() {
     navigate(`drinks/${drink.id}`);
-  }
+  }*/
 
   // Deler ingredienserne i en liste
   const ingredienserListe = drink.ingredienser.map((ingrediens, index) => (
