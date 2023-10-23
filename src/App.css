@@ -259,7 +259,7 @@ h4 {
 }
 
 
-/*=============== DRINK CARD, SD ===============*/
+/*======================================== DRINK CARD ========================================*/
 
 .drinkcard {
   width: 165px;
@@ -311,7 +311,7 @@ h4 {
   font-size: 1.5rem;
 }
 
-/*=============== OPSKRIFT, SD ===============*/
+/*======================================== OPSKRIFT ========================================*/
 .op-wrap {
   overflow: hidden;
 }
@@ -387,7 +387,7 @@ h4 {
   align-items: center;
   position: absolute;
   left: 15px;
-  top: 110px;
+  top: 120px;
   z-index: 2;
 }
 
@@ -396,13 +396,13 @@ h4 {
   color: #f9f9f9;
 }
 
-/*=============== RATING, SD ===============*/
+/*======================================== RATING ========================================*/
 
 .rate input[type="radio"] {
   display: none;
 }
 
 .rate svg {
-  font-size: 3rem;
-  color: var(--menu-color);
+  cursor: pointer;
+  margin-left: 5px;
 }
