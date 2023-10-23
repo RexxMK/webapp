@@ -13,7 +13,8 @@
       "metode": [
         "Blend sukkerstokken helt fint, og dyb kanten af glasset i sukkermassen",
         "Hæld Candy Cane Vodka, Créme de Cacao, Bitters og i en shaker; ryst og sigt i glasset"
-      ]
+      ],
+      "kategori": ["jul"]
     },
 
     {
@@ -31,7 +32,8 @@
       "metode": [
         "Hæld alle ingredienserne i en shaker, inkl isterningerne og ryst den godt sammen",
         "Hæld den iskolde cocktail i et afkølet martiniglas"
-      ]
+      ],
+      "kategori": ["barbie", "popular"]
     },
 
     {
@@ -50,7 +52,8 @@
         "Dyp kanten af champagneglasset i lidt vand, og derefter i sukker",
         "Hæld tranebærjuice og mousserende vin i glasser",
         "Pynt med lidt tranebær og en rosmarinstilk"
-      ]
+      ],
+      "kategori": ["jul"]
     },
 
     {
@@ -68,7 +71,8 @@
         "Fyld et højt glas med isterninger",
         "Klem saften ud af 2 limebåde (1/2 lime) udover isterningerne, og anbring de brugte limebåde i glasset",
         "Fyld resten af glasset med Cola"
-      ]
+      ],
+      "kategori": ["popular"]
     },
 
     {
@@ -86,7 +90,8 @@
         "Fyld et højt glas med isterninger",
         "Hæld gin og tonic i glasset",
         "Pynt med limebåden, eller agurkeskiven"
-      ]
+      ],
+      "kategori": ["popular"]
     },
 
     {
@@ -106,7 +111,8 @@
         "Dyp kanten af glasset i lidt honning, og derefter i kokosmel",
         "Hæld resten af ingredienserne i en blender, og blend til den ønskede konsistens",
         "Hæld den iskolde cocktail i glasset"
-      ]
+      ],
+      "kategori": ["jul"]
     },
 
     {
@@ -130,7 +136,8 @@
         "Hæld gin, vodka, rom, Tequila og Cointreau over isen",
         "Kom så Rose's Lime i sammen med kold cola",
         "Pynt med en skive lime"
-      ]
+      ],
+      "kategori": ["tequila", "popular"]
     },
 
     {
@@ -148,7 +155,8 @@
         "Del limefrugten på midten og pres saften af den ene halve lime i glasset",
         "Skær et par skiver af den anden halve lime",
         "Fyld op med is og et par limeskiver"
-      ]
+      ],
+      "kategori": ["tequila", "popular"]
     },
 
     {
@@ -170,7 +178,8 @@
         "Hæld vodka, hyldeblomslikør, tranebærjuice og sirup i shakeren",
         "Ryst og hæld i et martiniglas",
         "Pynt med tranebær og mynteblade"
-      ]
+      ],
+      "kategori": ["jul", "barbie"]
     },
 
     {
@@ -190,7 +199,8 @@
         "Tilsæt limejuice og hvid rom.",
         "Tilsæt knust is og fyld op med sodavand",
         "Rør forsigtigt og pynt med mynteblade og en skive lime."
-      ]
+      ],
+      "kategori": ["popular"]
     },
 
     {
@@ -210,7 +220,8 @@
         "Hæld tequila og limesaft i glasser",
         "Top op med pink grapefrugt sodavand",
         "Rør rundt, og pynt med en halv skive grapefrugt"
-      ]
+      ],
+      "kategori": ["barbie", "tequila", "popular"]
     },
 
     {
@@ -228,7 +239,8 @@
       "metode": [
         "Hæld alle ingredienserne i en shaker, inkl isterningerne og ryst den godt sammen",
         "Si blandingen over i et martiniglas"
-      ]
+      ],
+      "kategori": ["barbie", "new"]
     },
 
     {
@@ -246,7 +258,8 @@
         "Fyld et højt glas med isterninger",
         "Hæld vodka over isen",
         "Hæld pink lemonade og lemon/lime sodavand i glasset"
-      ]
+      ],
+      "kategori": ["barbie", "new"]
     },
 
     {
@@ -265,7 +278,8 @@
       "metode": [
         "Hæld alle ingredienserne i en shaker, inkl isterningerne og ryst den godt sammen",
         "Si blandingen over i et højt glas"
-      ]
+      ],
+      "kategori": ["barbie", "popular"]
     },
 
     {
@@ -284,7 +298,8 @@
         "Tilsæt lys rom, saft fra lime, frosne jordbær, flormelis og isterninger til en blender",
         "Blend det hele godt sammen. Smag evt. til med mere flormelis eller limesaft",
         "Anret i glas og pynt evt. med friske jordbær"
-      ]
+      ],
+      "kategori": ["popular"]
     },
 
     {
@@ -307,7 +322,8 @@
         "Hæld hvid rom, jordbærsirup, limesaft og rørsukker i glasset",
         "Top med danskvand",
         "Pynt med jordbær og mynteblade"
-      ]
+      ],
+      "kategori": ["barbie", "new"]
     },
 
     {
@@ -327,7 +343,8 @@
         "Hæld tequila, citronsaft, grenadine, æggehvide og isterninger i en shaker, ryst godt sammen",
         "Si blandingen over i et højt glas med isterninger",
         "Top op med ginger ale og rør rundt"
-      ]
+      ],
+      "kategori": ["tequila", "new"]
     },
 
     {
@@ -344,7 +361,8 @@
         "Fyld et glas op med isterninger",
         "Hæld tequila i glasset sammen med appelsinjucie og rør rundt",
         "Tilsæt forsigtigt grenadine"
-      ]
+      ],
+      "kategori": ["tequila", "popular"]
     },
 
     {
@@ -363,7 +381,8 @@
         "Hæld midori likør og hvid rom i glasset",
         "Top med lemon/lime sodavand og rør rundt",
         "Pynt med et cocktail kirsebær"
-      ]
+      ],
+      "kategori": ["jul"]
     },
 
     {
@@ -384,7 +403,8 @@
         "Salt kanten af glasset",
         "Hæld tequila, campari, limesaft, appelsinjuice, rosmarin sirup og isterninger i en shaker, ryst godt sammen",
         "Si blandingen over i glasset med isterninger"
-      ]
+      ],
+      "kategori": ["barbie", "tequila", "new"]
     }
   ]
 }

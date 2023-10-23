@@ -1,15 +1,5 @@
-import { useEffect, useState } from "react";
-import DrinkCard from "../components/DrinkCard";
-import Dummy from "../img/tomside-light.png";
-import DrinkKort from "../components/DrinkKort";
-
-/*export default function Find() {
-  return (
-    <section>
-      <h1>Find Drink</h1>
-    </section>
-  );
-}*/
+import { useState } from "react";
+import DrinkKort from "./DrinkKort";
 
 //RMK
 export default function DrinkKortHent() {
