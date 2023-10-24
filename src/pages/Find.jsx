@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import DrinkCard from "../components/DrinkCard";
 import Dummy from "../img/tomside-light.png";
 import DrinkKort from "../components/DrinkKort";
+import Knap from "../components/Knap";
 
 /*export default function Find() {
   return (

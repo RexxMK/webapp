@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import StarBorderRoundedIcon from "@mui/icons-material/StarBorderRounded";
 import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
+import FavoritHjerteKort from "./FavoritHjerteKort";
 
 // RMK
 export default function DrinkKort({ drink }) {
@@ -14,7 +15,7 @@ export default function DrinkKort({ drink }) {
   return (
     <div className="drinkcard">
       <div className="like">
-        <FavoriteRoundedIcon />
+        <FavoritHjerteKort />
       </div>
       <div className="drinkKortInfo" onClick={handleClick}>
         <img src={drink.billede} className="drinkimg" />
