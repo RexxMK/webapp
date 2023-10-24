@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import AddCard from "../components/AddCard";
+import Knap from "../components/Knap";
 
 //SD
 
-export default function Tilfoj () {
+export default function Tilfoj() {
     const [tilfoj, setTilfoj] = useState([]);
     const [isTilfoj, setIsTilfoj] = useState(true);
     
@@ -31,6 +32,7 @@ export default function Tilfoj () {
           <h1>Tilføj</h1>
           {isTilfoj ? (
             <div>
+             <Knap to={"/nydrink"} className={"buttonFull"} label={"Ny Drink"}/>
               {tilfoj.map((tilfoj) => (
                 <AddCard key={tilfoj.id} tilfoj={tilfoj}/>
               ))}

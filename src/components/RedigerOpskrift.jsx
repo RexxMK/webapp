@@ -12,7 +12,7 @@ export default function RedigerOpskrift({ saveTilfoj, tilfoj }){
 useEffect(() => {
     if (tilfoj) {
         setNavn(tilfoj.navn);
-        setIngridienser(tilfoj.ingr);
+        setIngridienser(tilfoj.ingridienser);
         setMetode(tilfoj.metode);
     } 
 }, [tilfoj]);
@@ -25,7 +25,7 @@ async function handleSubmit(e) {
         metode: metode
     }
 
-   const validForm = formData.navn && formData.ingr && formData.metode;
+   const validForm = formData.navn && formData.ingridienser && formData.metode;
    if (validForm) {
     saveTilfoj(formData);
    } else {

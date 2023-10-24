@@ -4,7 +4,7 @@ import RedigerOpskrift from "../components/RedigerOpskrift";
 
 //SD
 
-export default function Rediger () {
+export default function Rediger() {
     const navigate = useNavigate();
   const [tilfoj, setTilfoj] = useState({});
   // The url contains a parameter which is equal

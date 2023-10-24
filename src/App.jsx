@@ -9,6 +9,7 @@ import Tilfoj from "./pages/Tilfoj";
 import Favoritter from "./pages/Favoritter";
 import Header from "./components/Header";
 import Rediger from "./pages/Rediger";
+import NyDrink from "./pages/NyDrink";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/find" element={<Find />} />
         <Route path="/tilfoj" element={<Tilfoj />} />
         <Route path="/favoritter" element={<Favoritter />} />
+        <Route path="/nydrink" element={<NyDrink />} />
         <Route path="/tilfojs/:tilfojId" element={<Rediger />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

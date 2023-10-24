@@ -3,7 +3,7 @@ import RedigerOpskrift from "../components/RedigerOpskrift";
 
 //SD
 
-export default function NyOpskrift() {
+export default function NyDrink() {
     const navigate = useNavigate();
 
     // Function that makes the creation(POST) of a
@@ -14,7 +14,7 @@ export default function NyOpskrift() {
         const url = "https://webapp-68213-default-rtdb.europe-west1.firebasedatabase.app/tilfoj.json";
         
         const response = await fetch(url, {
-            method: "POST", 
+            method: "TILFOJ", 
             body: JSON.stringify(newTilfoj) 
         });
         const data = await response.json();
@@ -27,9 +27,9 @@ export default function NyOpskrift() {
     // name of the method that creates
     // the new translation.
     return (
-       <section className="page">
+       <section>
         <h1>Create New Translation</h1>
-            <RedigerOpskrift savePost={createTilfoj} />
+            <RedigerOpskrift saveTilfoj={createTilfoj} />
        </section>
     );
 }
