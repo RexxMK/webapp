@@ -2,6 +2,7 @@ import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import StarRating from "./StarRating";
 import { useNavigate } from "react-router-dom";
+import FavoritHjerteDrink from "./FavoritHjerteDrink";
 
 // RMK
 export default function Drink({ drink }) {
@@ -23,11 +24,11 @@ export default function Drink({ drink }) {
   ));
 
   console.log(drink.billede);
-  
+
   // SD
   // Ved brug af use navigate kan vi lave en go back knap
   // Så ved tryk af knappen navigerer hjemmesiden dig til den side du var sidst på
-  const history = useNavigate()
+  const history = useNavigate();
 
   // RMK & SD
   return (
@@ -42,7 +43,7 @@ export default function Drink({ drink }) {
         <div className="opheader">
           <h2>{drink.navn}</h2>
           <div className="op-like">
-            <FavoriteRoundedIcon />
+            <FavoritHjerteDrink />
           </div>
         </div>
         <h3>Ingredienser</h3>
