@@ -287,6 +287,11 @@ h4 {
   margin: 30px 13px 40px 13px;
 }
 
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .drinkKortInfo {
   text-align: center;
   cursor: pointer;
