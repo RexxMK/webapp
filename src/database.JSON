@@ -406,5 +406,12 @@
       ],
       "kategori": ["barbie", "tequila", "new"]
     }
+  ],
+  "tilfoj": [
+    {
+      "navn": "Tester",
+      "ingridienser": "Her er flere ingridienser",
+      "metode": "Sådan gør du"
+    }
   ]
 }
