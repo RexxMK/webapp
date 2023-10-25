@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Navigation from "./components/Navigation";
@@ -23,7 +22,7 @@ function App() {
         <Route path="/tilfoj" element={<Tilfoj />} />
         <Route path="/favoritter" element={<Favoritter />} />
         <Route path="/nydrink" element={<NyDrink />} />
-        <Route path="/tilfojs/:tilfojId" element={<Rediger />} />
+        <Route path="/drinks/:tilfojId" element={<Rediger />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <Navigation />

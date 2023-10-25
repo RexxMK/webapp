@@ -64,10 +64,10 @@ export default function Rediger() {
   // name of the method that updates
   // the new translation.
   return (
-    <section className="page">
+    <section>
       <h1>Update Post</h1>
       <RedigerOpskrift tilfoj={tilfoj} saveTilfoj={saveTilfoj} />
-      <button className="btn-delete" onClick={deleteTilfoj}>
+      <button onClick={deleteTilfoj}>
         Delete
       </button>
     </section>
