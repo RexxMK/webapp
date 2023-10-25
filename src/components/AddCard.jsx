@@ -7,7 +7,7 @@ export default function AddCard({tilfoj}) {
 
   function handleClick() {
 
-    navigate(`tilfojs/${tilfoj.id}`); 
+    navigate(`drinks/${tilfoj.id}`); 
   }
     
     return (

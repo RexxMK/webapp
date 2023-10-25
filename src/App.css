@@ -269,6 +269,8 @@ h4 {
 
 .randomImg {
   width: 100%;
+  height: 350px;
+  object-fit: cover;
 }
 
 /*======================================== DRINK CARD ========================================*/
@@ -333,7 +335,6 @@ h4 {
   font-size: 1.5rem;
 }
 
-/*======================================== OPSKRIFT ========================================*/
 
 /*======================================== OPSKRIFT ========================================*/
 
@@ -433,3 +434,40 @@ h4 {
   cursor: pointer;
   margin-left: 5px;
 }
+
+
+/*======================================== HJEM ========================================*/
+
+.sliderContainer {
+  width: 100%;
+}
+
+/* Der skal ikke være pile */
+/* !important bruges til at overskride den importerede CSS */
+.slick-prev, .slick-next {
+  display: none !important;
+}
+
+/* Prikkerne */
+.slick-dots li button:before {
+  font-size: 0.8rem !important;
+  color: #838383 !important;
+  opacity: 1 !important;
+  margin-top: -20px;
+}
+
+/* Aktiv prik */
+.slick-dots li.slick-active button:before {
+  color: var(--font-color) !important;
+  opacity: 1 !important;
+}
+
+.hjemHeader {
+  margin-top: 40px;
+  margin-bottom: -10px;
+}
+
+.hjemTopHeader {
+  margin-bottom: -10px;
+}
+

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AddCard from "../components/AddCard";
 import Knap from "../components/Knap";
+import Header from "../components/Header";
 
 //SD
 
@@ -29,17 +30,21 @@ export default function Tilfoj() {
 
     return (
         <div>
+
+          <Header />
+
           <h1>Tilføj</h1>
           {isTilfoj ? (
             <div>
-             <Knap to={"/nydrink"} className={"buttonFull"} label={"Ny Drink"}/>
-              {tilfoj.map((tilfoj) => (
-                <AddCard key={tilfoj.id} tilfoj={tilfoj}/>
-              ))}
+                <h1>Tilføj</h1>
+                <Knap to={"/nydrink"} className={"buttonFull"} label={"Ny Drink"}/>
+                 {tilfoj.map((tilfoj) => (
+                    <AddCard key={tilfoj.id} tilfoj={tilfoj}/>
+                 ))}
             </div>
-          ) : (
+         ) : (
             <p>Nothing to show</p>
-          )}
+        )}
         </div>
       );
 }
