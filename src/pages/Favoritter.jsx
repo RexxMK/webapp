@@ -1,4 +1,5 @@
 import React from "react";
+import FavoritHjerteKort from "../components/FavoritHjerteKort";
 
 export default function Favoritter() {
   return (
