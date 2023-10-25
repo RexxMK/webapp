@@ -1,14 +1,13 @@
 import lightShaker from "../img/lightmodeShaker.gif";
 import darkShaker from "../img/darkmodeShaker.gif";
 import React, { useState, useEffect } from "react";
+import Header from "../components/Header";
 
 
 // DKK
 
 
 export default function Lykken() {
-
-
 
 
 
@@ -54,7 +53,7 @@ export default function Lykken() {
 
     // JSON-dataet hentes fra Firebase.
 
-    // getDrinks-funktionen er kopieret fra RK.
+    // RMK
     // Her opretter jeg to tilstandsvariabler ved hjælp af "useState".
     //"drinks" bruges til at lagre listen over drinks, og "isDrinks" bruges til at kontrollere, om der er drinks at vise.
     const [jsonData, setDrinks] = useState([]);
@@ -156,16 +155,21 @@ export default function Lykken() {
 
 
   return (
-    <section className="fixedMargin">
-      <h1>Prøv Lykken!</h1>
+
+    <section>
+
+      <Header /> 
+
+      <div className="fixedMargin">
+
+        <h1>Prøv Lykken!</h1>
 
         {/* GIF'en der vises afhænger af theme. Hvis theme er light vises lightShaker, ellers darkShaker */}
         {visKnap && (<img src={theme === "light" ? lightShaker : darkShaker} alt="Tegnet GIF af en drinkshaker, der shaker" id="shakerbillede"/>)}
 
         {visKnap && (<h3 className="shakeTxt">Shake din mobil!</h3>)}
 
-        {/* Billede og navn på en random drink
-          Indholdet mellem tuborgklammerne vises kun når currentDrink er true. */}
+        {/* Billede og navn på en random drink. Indholdet mellem tuborgklammerne vises kun når currentDrink er true. */}
         {currentDrink && (
           <div className="randomContainer">
             <img src={currentDrink.billede} alt={currentDrink.navn} className="randomImg"/>
@@ -181,6 +185,8 @@ export default function Lykken() {
         {!visKnap && (<button className="buttonFull lykkenButton">Se opskrift!</button>)}
         {!visKnap && (<button className="buttonEmpty lykkenButton" onClick={randomDrink}>Shake for at prøve igen!</button>)}
            
+      </div>
+
     </section>
   );
 }

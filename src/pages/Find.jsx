@@ -3,14 +3,10 @@ import DrinkCard from "../components/DrinkCard";
 import Dummy from "../img/tomside-light.png";
 import DrinkKort from "../components/DrinkKort";
 import Knap from "../components/Knap";
+import Drink from "../components/Drink";
+import Header from "../components/Header";
 
-/*export default function Find() {
-  return (
-    <section>
-      <h1>Find Drink</h1>
-    </section>
-  );
-}*/
+
 
 //RMK
 export default function DrinkKortHent() {
@@ -46,9 +42,14 @@ export default function DrinkKortHent() {
     getDrinks();
   }, []);
 
+
+
   //Hvis "isDrinks" er "true", vises en liste af drinks vha. "map" funktionen, ellers vises en besked om, at der ikke er noget at vise.
   return (
     <article className="page">
+
+      <Header />
+
       {isDrinks ? (
         <div className="flexbox">
           {drinks.map((drink) => (

@@ -6,14 +6,12 @@ import Lykken from "./pages/Lykken";
 import Find from "./pages/Find";
 import Tilfoj from "./pages/Tilfoj";
 import Favoritter from "./pages/Favoritter";
-import Header from "./components/Header";
 import Rediger from "./pages/Rediger";
 import NyDrink from "./pages/NyDrink";
 
 function App() {
   return (
     <div className="mobilewrap">
-      <Header />
       {/* SD */}
       <Routes>
         <Route path="/" element={<Hjem />} />
