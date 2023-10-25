@@ -1,8 +1,4 @@
 import { useEffect, useState } from "react";
-import DrinkKort from "../components/DrinkKort";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import HjemSliders from "../components/HjemSliders";
 import Header from "../components/Header";
 
