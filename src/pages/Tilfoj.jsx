@@ -36,14 +36,15 @@ export default function Tilfoj() {
           <h1>Tilføj</h1>
           {isTilfoj ? (
             <div>
-             <Knap to={"/nydrink"} className={"buttonFull"} label={"Ny Drink"}/>
-              {tilfoj.map((tilfoj) => (
-                <AddCard key={tilfoj.id} tilfoj={tilfoj}/>
-              ))}
+                <h1>Tilføj</h1>
+                <Knap to={"/nydrink"} className={"buttonFull"} label={"Ny Drink"}/>
+                 {tilfoj.map((tilfoj) => (
+                    <AddCard key={tilfoj.id} tilfoj={tilfoj}/>
+                 ))}
             </div>
-          ) : (
+         ) : (
             <p>Nothing to show</p>
-          )}
+        )}
         </div>
       );
 }
