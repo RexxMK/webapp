@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AddCard from "../components/AddCard";
 import Knap from "../components/Knap";
+import Header from "../components/Header";
 
 //SD
 
@@ -28,8 +29,12 @@ export default function Tilfoj() {
     }, []);
 
     return (
-        <div>    
-            {isTilfoj ? (
+        <div>
+
+          <Header />
+
+          <h1>Tilføj</h1>
+          {isTilfoj ? (
             <div>
                 <h1>Tilføj</h1>
                 <Knap to={"/nydrink"} className={"buttonFull"} label={"Ny Drink"}/>

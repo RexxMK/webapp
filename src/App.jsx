@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Router, Routes } from "react-router-dom";
 import "./App.css";
 import Navigation from "./components/Navigation";
 import Hjem from "./pages/Hjem";
@@ -6,14 +6,14 @@ import Lykken from "./pages/Lykken";
 import Find from "./pages/Find";
 import Tilfoj from "./pages/Tilfoj";
 import Favoritter from "./pages/Favoritter";
-import Header from "./components/Header";
 import Rediger from "./pages/Rediger";
 import NyDrink from "./pages/NyDrink";
+import Drink from "./components/Drink";
+import { Switch } from "@mui/material";
 
 function App() {
   return (
     <div className="mobilewrap">
-      <Header />
       {/* SD */}
       <Routes>
         <Route path="/" element={<Hjem />} />
