@@ -2,6 +2,7 @@ import lightShaker from "../img/lightmodeShaker.gif";
 import darkShaker from "../img/darkmodeShaker.gif";
 import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
+import { useNavigate } from "react-router-dom";
 
 
 // DKK
@@ -149,9 +150,18 @@ export default function Lykken() {
       };
 
     }, []);
-    
-    
-    
+
+
+
+/*
+    const navigate = useNavigate();
+
+    function handleClick() {
+  
+      navigate(`lykkenSeOpskrift/${current.id}`); 
+    }
+*/
+
 
 
   return (
@@ -183,6 +193,8 @@ export default function Lykken() {
 
         {/* !visKnap omvender tilstanden af visKnap, så disse knapper er først false og bliver true ved klik på ovenstående knap. */}
         {!visKnap && (<button className="buttonFull lykkenButton">Se opskrift!</button>)}
+
+        
         {!visKnap && (<button className="buttonEmpty lykkenButton" onClick={randomDrink}>Shake for at prøve igen!</button>)}
            
       </div>

@@ -8,6 +8,7 @@ import Tilfoj from "./pages/Tilfoj";
 import Favoritter from "./pages/Favoritter";
 import Rediger from "./pages/Rediger";
 import NyDrink from "./pages/NyDrink";
+import LykkenDetaljeside from "./pages/LykkenDetaljeside";
 import Drink from "./components/Drink";
 import { Switch } from "@mui/material";
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/favoritter" element={<Favoritter />} />
         <Route path="/nydrink" element={<NyDrink />} />
         <Route path="/tilfoj/tilfojs/:tilfojId" element={<Rediger />} />
+        <Route path="/lykken/lykkenSeOpskrift/:currentId" element={<LykkenDetaljeside />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <Navigation />
