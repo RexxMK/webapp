@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import StarBorderRoundedIcon from "@mui/icons-material/StarBorderRounded";
-import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
 import FavoritHjerteKort from "./FavoritHjerteKort";
 
 // RMK

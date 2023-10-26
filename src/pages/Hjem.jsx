@@ -6,6 +6,15 @@ import Header from "../components/Header";
 // DKK
 
 
+//export default function Hjem() {
+    
+/*export default function Hjem() {
+  return (
+    <section>
+      <h1>Forside</h1>
+    </section>
+  );
+}*/
 export default function Hjem() {
 
 
