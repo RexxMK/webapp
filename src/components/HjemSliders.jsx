@@ -16,7 +16,7 @@ export default function HjemSliders({ drinksListe, isDrinks }) {
         infinite: false, // Muliggør ikke uendelig rulning
         slidesToShow: 2, // Antal slides at vise ad gangen på skærmen
         slidesToScroll: 2, // Antal billeder, der rulles ad gangen
-        variableWidth: true,
+        variableWidth: true, // Tilpasser afstanden mellem cards
         dots: true, // Vis prikker til navigation
         autoplay: false, // Ingen automatisk afspilning
         speed: 500, // Overgangshastighed i millisekunder
@@ -27,7 +27,7 @@ export default function HjemSliders({ drinksListe, isDrinks }) {
       return (
         <div className="sliderContainer">
 
-          {/* 1. Hvis isDrinks er true vises en karrusel med drinkskort. Ellers beskeden "der er intet at vise. 
+          {/* 1. Hvis isDrinks er true vises en karrusel med drinkskort. Ellers beskeden "der er intet at vise". 
           2. Vi bruger Slider med de givne settings.
           3. Indholdet genereres. drinksListe er et array og med map-metoden opdeles drinksListe i sine enkelte elementer. 
           (drink) => () er en arrow function. Den tager en paramenter kaldet drink, som repræsenterer hvert element i drinkListe.
