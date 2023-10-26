@@ -1,20 +1,10 @@
 import { useEffect, useState } from "react";
 import HjemSliders from "../components/HjemSliders";
-import Header from "../components/Header";
 
 
 // DKK
 
 
-//export default function Hjem() {
-    
-/*export default function Hjem() {
-  return (
-    <section>
-      <h1>Forside</h1>
-    </section>
-  );
-}*/
 export default function Hjem() {
 
 
@@ -77,8 +67,6 @@ export default function Hjem() {
   // Med komponenten HjemSliders får vi vist de drinkkort, som de fem skyggelister indeholder i karruseller.
   return (
     <article>
-
-      <Header />
 
       <h2 className="hjemTopHeader fixedMargin">Juledrinks</h2>
       <HjemSliders drinksListe={julDrinksListe} isDrinks={isDrinks} />

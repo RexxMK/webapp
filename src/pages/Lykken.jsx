@@ -1,11 +1,11 @@
 import lightShaker from "../img/lightmodeShaker.gif";
 import darkShaker from "../img/darkmodeShaker.gif";
 import React, { useState, useEffect } from "react";
-import Header from "../components/Header";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+
 
 // DKK
+
 
 export default function Lykken() {
   /* Følgende funktion sikrer, at det rigtige shakerbillede vises fra start afhængigt af om brugeren klikker ind på Prøv Lykken i 
@@ -129,20 +129,20 @@ export default function Lykken() {
 
 
 
-/*
+
     const navigate = useNavigate();
 
     function handleClick() {
   
-      navigate(`lykkenSeOpskrift/${current.id}`); 
+      navigate(`/lykken/lykkenSeOpskrift/${currentDrink.id}`);
+
     }
-*/
+
 
 
 
   return (
     <section>
-      <Header />
 
       <div className="fixedMargin">
         <h1>Prøv Lykken!</h1>
@@ -180,9 +180,9 @@ export default function Lykken() {
 
         {/* !visKnap omvender tilstanden af visKnap, så disse knapper er først false og bliver true ved klik på ovenstående knap. */}
         {!visKnap && (
-          <button className="buttonFull lykkenButton">Se opskrift!</button>
+          <button className="buttonFull lykkenButton" onClick={handleClick}>Se opskrift!</button>
         )}
-        <Link to={"/detalje/" + currentDrink.id}>Se opskrift</Link>
+        
         {!visKnap && (
           <button className="buttonEmpty lykkenButton" onClick={randomDrink}>
             Shake for at prøve igen!
@@ -192,3 +192,5 @@ export default function Lykken() {
     </section>
   );
 }
+
+//<Link to={"/LykkenDetaljeside/" + currentDrink.id}>Se opskrift</Link>
