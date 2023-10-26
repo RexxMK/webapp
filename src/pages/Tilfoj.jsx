@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import AddCard from "../components/AddCard";
 import Knap from "../components/Knap";
-import Header from "../components/Header";
 
 //SD
 
@@ -30,8 +29,6 @@ export default function Tilfoj() {
 
     return (
         <div>
-
-          <Header />
 
           <h1>Tilføj</h1>
           {isTilfoj ? (

@@ -1,10 +1,11 @@
 import lightShaker from "../img/lightmodeShaker.gif";
 import darkShaker from "../img/darkmodeShaker.gif";
 import React, { useState, useEffect } from "react";
-import Header from "../components/Header";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 // DKK
+
 
 export default function Lykken() {
   /* Følgende funktion sikrer, at det rigtige shakerbillede vises fra start afhængigt af om brugeren klikker ind på Prøv Lykken i 
@@ -107,31 +108,41 @@ export default function Lykken() {
       // Indeholder information om eventets bevægelse i retningerne x, y og z.
       const acceleration = event.acceleration;
 
-      // Følsomhed overfor rystelse. Mindskes værdien øges følsomheden, øges værdien mindskes følsomheden.
-      const sensitivity = 25;
+        // Følsomhed overfor rystelse. Mindskes værdien øges følsomheden, øges værdien mindskes følsomheden.
+        const sensitivity = 25;
+        
+        // Hvis brugeren ryster sin mobil mere en sensitivity, genereres et random tal som ved randomDrink-funktionen og lykkenLayout køres.
+        // Med Math.abs sikrer vi, at vi kigger på bevægelsens absolutte (postive) værdi.
+        if (Math.abs(acceleration.x) > sensitivity || Math.abs(acceleration.y) > sensitivity || Math.abs(acceleration.z) > sensitivity) {
+          handleBothFunctions();
+        };
+      };
+  
+      // mobileShake skal virke for hele vinduet.
+      window.addEventListener('devicemotion', mobileShake);
+  
+      return () => {
+        window.removeEventListener('devicemotion', mobileShake);
+      };
 
-      // Hvis brugeren ryster sin mobil mere en sensitivity, genereres et random tal som ved randomDrink-funktionen og lykkenLayout køres.
-      // Med Math.abs sikrer vi, at vi kigger på bevægelsens absolutte (postive) værdi.
-      if (
-        Math.abs(acceleration.x) > sensitivity ||
-        Math.abs(acceleration.y) > sensitivity ||
-        Math.abs(acceleration.z) > sensitivity
-      ) {
-        handleBothFunctions();
-      }
+    }, []);
+
+
+
+
+    const navigate = useNavigate();
+
+    function handleClick() {
+  
+      navigate(`/lykken/lykkenSeOpskrift/${currentDrink.id}`);
+
     }
 
-    // mobileShake skal virke for hele vinduet.
-    window.addEventListener("devicemotion", mobileShake);
 
-    return () => {
-      window.removeEventListener("devicemotion", mobileShake);
-    };
-  }, []);
+
 
   return (
     <section>
-      <Header />
 
       <div className="fixedMargin">
         <h1>Prøv Lykken!</h1>
@@ -169,9 +180,9 @@ export default function Lykken() {
 
         {/* !visKnap omvender tilstanden af visKnap, så disse knapper er først false og bliver true ved klik på ovenstående knap. */}
         {!visKnap && (
-          <button className="buttonFull lykkenButton">Se opskrift!</button>
+          <button className="buttonFull lykkenButton" onClick={handleClick}>Se opskrift!</button>
         )}
-        <Link to={"/detalje/" + currentDrink.id}>Se opskrift</Link>
+        
         {!visKnap && (
           <button className="buttonEmpty lykkenButton" onClick={randomDrink}>
             Shake for at prøve igen!
@@ -181,3 +192,5 @@ export default function Lykken() {
     </section>
   );
 }
+
+//<Link to={"/LykkenDetaljeside/" + currentDrink.id}>Se opskrift</Link>
