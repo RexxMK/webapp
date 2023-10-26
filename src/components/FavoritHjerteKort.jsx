@@ -34,10 +34,16 @@ export default function FavoritHjerteKort() {
     //Her vises hjerteikonet med den aktuelle farven (enten grå eller rød)
     <div className="favoritHjerteKort">
       <label>
+        <input
+          type="checkbox"
+          style={{
+            display: "none",
+          }}
+          onClick={handleIconClick}
+        />
         <BiSolidHeartCircle
           color={iconColor}
           size={50}
-          onClick={handleIconClick}
           style={{ cursor: "pointer" }}
         />
       </label>
