@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Router, Routes } from "react-router-dom";
 import "./App.css";
 import Navigation from "./components/Navigation";
 import Hjem from "./pages/Hjem";
@@ -8,6 +8,8 @@ import Tilfoj from "./pages/Tilfoj";
 import Favoritter from "./pages/Favoritter";
 import Rediger from "./pages/Rediger";
 import NyDrink from "./pages/NyDrink";
+import Drink from "./components/Drink";
+import { Switch } from "@mui/material";
 
 function App() {
   return (
