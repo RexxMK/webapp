@@ -22,7 +22,7 @@ function App() {
         <Route path="/tilfoj" element={<Tilfoj />} />
         <Route path="/favoritter" element={<Favoritter />} />
         <Route path="/nydrink" element={<NyDrink />} />
-        <Route path="/tilfoj/drinks/:tilfojId" element={<Rediger />} />
+        <Route path="/tilfoj/tilfojs/:tilfojId" element={<Rediger />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <Navigation />

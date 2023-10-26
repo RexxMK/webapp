@@ -1,5 +1,5 @@
 
-export default function Hjem() {
+//export default function Hjem() {
     
 /*export default function Hjem() {
   return (
