@@ -334,6 +334,27 @@ h4 {
   font-size: 1.5rem;
 }
 
+/*======================================== FILTER ==========================================*/
+.checkboxButton {
+  display: inline-block;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: 0.1vw;
+  padding-bottom: 0.1vw;
+  margin: 5px;
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 3px solid #8dbe5c;
+  cursor: pointer;
+  border-radius: 50px;
+  user-select: none;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.checkboxButton input[type="checkbox"] {
+  display: none;
+}
 
 /*======================================== OPSKRIFT ========================================*/
 
@@ -434,7 +455,6 @@ h4 {
   margin-left: 5px;
 }
 
-
 /*======================================== HJEM ========================================*/
 
 .sliderContainer {
@@ -443,7 +463,8 @@ h4 {
 
 /* Der skal ikke være pile */
 /* !important bruges til at overskride den importerede CSS */
-.slick-prev, .slick-next {
+.slick-prev,
+.slick-next {
   display: none !important;
 }
 
@@ -528,7 +549,7 @@ form {
 .error {
   text-align: center;
   color: var(--font-color);
-  background-color: #CC4E45;
+  background-color: #cc4e45;
   margin-bottom: 25px;
 }
 

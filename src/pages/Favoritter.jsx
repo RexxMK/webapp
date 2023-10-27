@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+/*import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 
 export default function Favoritter() {
@@ -50,4 +50,4 @@ export default function Favoritter() {
       </ul>
     </section>
   );
-}
+}*/
