@@ -6,7 +6,13 @@ import RedigerOpskrift from "../components/RedigerOpskrift";
 export default function NyDrink() {
     const navigate = useNavigate();
     
+    // Ved brug af use navigate kan vi lave en go back knap
+    // Så ved tryk af knappen navigerer hjemmesiden dig til den side du var sidst på
+    const history = useNavigate();
+    
     async function createTilfoj(newTilfoj) {
+        newTilfoj.uid = "0";
+        
         const url = "https://webapp-68213-default-rtdb.europe-west1.firebasedatabase.app/tilfoj.json";
         
         const response = await fetch(url, {
@@ -19,9 +25,9 @@ export default function NyDrink() {
     }
 
     return (
-       <section>
-        <h1>Create New Translation</h1>
+       <section> 
             <RedigerOpskrift saveTilfoj={createTilfoj} />
+            <button type="submit" className="buttonEmpty" onClick={() => history(-1)}>Fortryd</button>
        </section>
     );
 }

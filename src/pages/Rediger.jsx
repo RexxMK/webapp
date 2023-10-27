@@ -21,6 +21,7 @@ export default function Rediger() {
   }, [url]);
 
   async function saveTilfoj(tilfojToUpdate) {
+    tilfojToUpdate.uid = tilfoj.uid;
     const response = await fetch(url, {
       method: "PUT",
       body: JSON.stringify(tilfojToUpdate)
@@ -47,10 +48,9 @@ export default function Rediger() {
 
   return (
     <section>
-      <h1>Update Post</h1>
       <RedigerOpskrift tilfoj={tilfoj} saveTilfoj={saveTilfoj} />
-      <button onClick={deleteTilfoj}>
-        Delete
+      <button onClick={deleteTilfoj} className="buttonEmpty">
+        Slet
       </button>
     </section>
   );

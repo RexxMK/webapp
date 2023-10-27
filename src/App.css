@@ -40,7 +40,7 @@ h2,
 h3,
 h4 {
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   color: var(--font-color);
 }
 
@@ -51,12 +51,10 @@ h1 {
 
 h2 {
   font-size: 1.7rem;
-  font-weight: 300;
 }
 
 h3 {
   font-size: 1.4rem;
-  font-weight: 300;
 }
 
 h4 {
@@ -291,6 +289,7 @@ h4 {
 .flexbox {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .drinkKortInfo {
@@ -471,3 +470,114 @@ h4 {
   margin-bottom: -10px;
 }
 
+/*======================================== TILFØJ ========================================*/
+
+.add {
+  width: 165px;
+  height: 235px;
+  background-color: var(--background-color);
+  filter: drop-shadow(0 0 0.5rem var(--shadow-color));
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 13px 40px 13px;
+  overflow: hidden;
+}
+
+.add svg {
+  position: absolute;
+  z-index: 1;
+  color: var(--font-color);
+  font-size: 5rem;
+}
+
+.add img {
+  height: 235px;
+  filter: blur(2px);
+}
+
+.add-head {
+  padding-left: 5%;
+}
+
+/*======================================== REDIGER OPSKRIFT ========================================*/
+form {
+  overflow: hidden;
+}
+
+.info-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-wrap h3 {
+  color: #8dbe5c;
+  padding-bottom: 10px;
+}
+
+.rediger-items {
+  padding-bottom: 50px;
+}
+
+.addbtn {
+  margin-bottom: 24px;
+}
+
+.error {
+  text-align: center;
+  color: var(--font-color);
+  background-color: #CC4E45;
+  margin-bottom: 25px;
+}
+
+.rediger-img {
+  width: 100%;
+  height: 315px;
+  object-fit: cover;
+  border-radius: 0 0 0 50px;
+  filter: drop-shadow(0 2px 5px var(--shadow-color));
+}
+
+.rediger-navn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 0 30px;
+}
+
+.rediger-navn input {
+  font-size: 1.7rem;
+  font-weight: 300;
+  background-color: transparent;
+  color: var(--font-color);
+}
+
+.rediger-navn svg {
+  font-size: 2.2rem;
+  color: var(--menu-color);
+}
+
+.trin {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.trin svg {
+  font-size: 2.25rem;
+  margin-right: 5px;
+  color: var(--menu-color);
+}
+
+.trin h4 {
+  color: var(--menu-color);
+}
+
+.rediger-items input {
+  font-size: 1.2rem;
+  background-color: transparent;
+  color: var(--font-color);
+  margin: 10px 0;
+}
