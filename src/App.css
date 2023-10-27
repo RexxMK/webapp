@@ -364,7 +364,8 @@ h4 {
   padding-bottom: 50px;
 }
 
-.items {
+.items,
+.itemsList {
   list-style: none;
   line-height: 1.8rem;
 }
@@ -408,19 +409,19 @@ h4 {
 .back {
   background-color: rgb(131, 131, 131, 0.5);
   border-radius: 25px;
-  height: 37px;
-  width: 37px;
+  height: 50px;
+  width: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
   left: 15px;
-  top: 120px;
+  top: 130px;
   z-index: 2;
 }
 
 .back svg {
-  font-size: 2rem;
+  font-size: 3rem;
   color: #f9f9f9;
 }
 

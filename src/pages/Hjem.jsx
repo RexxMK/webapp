@@ -11,7 +11,7 @@ export default function Hjem() {
 
   // JSON-data med drinksene hentes fra Firebase.
 
-  // RMK
+  // Kopieret fra RMK, Find.jsx.
   // Her opretter jeg to tilstandsvariabler ved hjælp af "useState".
   //"drinks" bruges til at lagre listen over drinks, og "isDrinks" bruges til at kontrollere, om der er drinks at vise.
   const [drinks, setDrinks] = useState([]);
