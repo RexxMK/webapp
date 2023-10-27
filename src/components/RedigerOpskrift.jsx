@@ -30,7 +30,7 @@ function handleImageChange(event) {
             setImageFile(file);
             const reader = new FileReader();
             reader.onload = event => {
-                setImage(event.target.result);
+                setBillede(event.target.result);
             };
             reader.readAsDataURL(file);
             setErrorMessage("");

@@ -582,3 +582,16 @@ form {
   color: var(--font-color);
   margin: 10px 0;
 }
+
+/*======================================== TOMSIDE ========================================*/
+
+.tomside img {
+ width: 100%;
+ padding: 30px 0;
+}
+
+.tomside p {
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #838383;
+}

@@ -2,10 +2,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import AddCard from "../components/AddCard";
-import Header from "../components/Header";
+import Knap from "../components/Knap";
 import tomsideLight from "../img/tomside-light.png";
 import tomsideDark from "../img/tomside-dark.png";
-import Knap from "../components/Knap";
 
 //SD
 
@@ -19,20 +18,24 @@ export default function Tilfoj() {
         const response = await fetch(url);
         const data = await response.json();
         if (data !== null) {
-          
+    
           const tilfojArray = Object.keys(data).map((key) => ({
             id: key,
             ...data[key],
           }));
+
           setTilfoj(tilfojArray);
+
         } else {
+
           setIsTilfoj(false);
+
         }
       }
       getTilfoj();
     }, []);
 
-    //DK Kopieret kode fra LightMode component
+    //Kopieret kode fra DK LightMode component
     //at få billedet at skiftes imellem light og dark mode
     const [theme, setTheme] = useState("dark");
       
@@ -61,7 +64,11 @@ export default function Tilfoj() {
                  ))}
             </section>
          ) : (
-            <p>Nothing to show</p>
+            <div className="fixedMargin tomside"> 
+              <p>Du har ikke tilføjet nogen opskrifter.</p>
+              <img src={theme === "light" ? tomsideLight : tomsideDark} id="tomsidebillede"/>
+              <Knap to={"/nydrink"} className={"buttonFull"} label={"Tilføj en opskrift"}/>
+            </div>
         )}
         </div>
       );
