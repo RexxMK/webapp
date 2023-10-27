@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
-import imgPlaceholder from "../img/app-fav.png"
+import StarRating from "./StarRating"
+import CreateRoundedIcon from '@mui/icons-material/CreateRounded';
+import AddRoundedIcon from '@mui/icons-material/AddRounded';
+import imgPlaceholder from "../img/placeholder.png"
 
 //SD
 
 export default function RedigerOpskrift({ saveTilfoj, tilfoj }){
     const [billede, setBillede] = useState("");
+    const [imageFile, setImageFile] = useState("");
     const [navn, setNavn] = useState("");
     const [ingridienser, setIngridienser] = useState("");
     const [metode, setMetode] = useState("");
@@ -13,7 +17,7 @@ export default function RedigerOpskrift({ saveTilfoj, tilfoj }){
 
 useEffect(() => {
     if (tilfoj) {
-        setBillede(tilfoj.billede);
+        setBillede(tilfoj.billede)
         setNavn(tilfoj.navn);
         setIngridienser(tilfoj.ingridienser);
         setMetode(tilfoj.metode);
@@ -31,7 +35,7 @@ function handleImageChange(event) {
             reader.readAsDataURL(file);
             setErrorMessage("");
         } else {
-            setErrorMessage("The image file must be below 0,5 MB");
+            setErrorMessage("Hov! Billedet skal være under 0,5 MB");
         }
     }
     async function uploadImage() {
@@ -61,7 +65,7 @@ async function handleSubmit(e) {
    if (validForm) {
     saveTilfoj(formData);
    } else {
-    setErrorMessage("Please, fill in all fields.");
+    setErrorMessage("Hey, du er ikke færdig endnu!");
    }
 }
 
@@ -69,20 +73,39 @@ return (
     <form onSubmit={handleSubmit}>
      <label>
         Image
-        <input type="file" className="file-input" accept="billede/*" onChange={handleImageChange} />
-        <img className="image-preview" src={billede} alt="Choose" onError={event => (event.target.src = imgPlaceholder)} />
+        <input type="file" accept="image/*" onChange={handleImageChange} />
+        <img className="rediger-img" src={billede} alt="Choose" onError={event => (event.target.src = imgPlaceholder)} />
     </label>
-     <label>
-         Navn<input type="text" name="navn" value={navn} placeholder="Type navn" onChange={e => setNavn(e.target.value)} />
-     </label>
-     <label>
-         Ingridienser<input type="text" name="ingridienser" value={ingridienser} placeholder="Type ingridienser" onChange={e => setIngridienser(e.target.value)} />
-     </label>
-     <label>
-         Fremgangsmåde<input type="text" name="metode" value={metode} placeholder="Type metode" onChange={e => setMetode(e.target.value)} />
-     </label>
-     <p className="text-error">{errorMessage}</p>
-     <button type="submit">Save</button>
+     <div className="info-wrap fixedMargin">
+        <label className="rediger-navn">
+            <input type="text" name="navn" value={navn} placeholder="Navnet på drink" onChange={e => setNavn(e.target.value)} />
+            <CreateRoundedIcon />
+        </label>
+        <label className="rediger-items">
+            <h3>Ingridienser</h3>
+            <input type="textbox" name="ingridienser" value={ingridienser} onChange={e => setIngridienser(e.target.value)} />
+            <div className="trin">
+                <AddRoundedIcon/>
+                <h4>Tilføj Ingridienser</h4>
+            </div>
+        </label>
+        <label className="rediger-items">
+            <h3>Fremgangsmåde</h3>
+            <input type="textbox" name="metode" value={metode} onChange={e => setMetode(e.target.value)} />
+            <div className="trin">
+                <AddRoundedIcon/>
+                <h4>Tilføj trin til fremgangsmåde</h4>
+            </div>
+        </label>
+        <div className="rediger-items">
+            <h3>Bedømmelse</h3>
+            <StarRating/>
+        </div>
+        <h4 className="error">{errorMessage}</h4>
+    </div>
+    
+    <button type="submit" className="buttonFull addbtn">Gem</button>
+     
      </form>
  );
 
