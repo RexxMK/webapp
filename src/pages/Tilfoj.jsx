@@ -5,6 +5,7 @@ import AddCard from "../components/AddCard";
 import Header from "../components/Header";
 import tomsideLight from "../img/tomside-light.png";
 import tomsideDark from "../img/tomside-dark.png";
+import Knap from "../components/Knap";
 
 //SD
 
@@ -52,6 +53,7 @@ export default function Tilfoj() {
           <Header />
 
           <h1 className="add-head">Tilføj Opskrifter</h1>
+          <h1>Tilføj</h1>
           {isTilfoj ? (
             <section className="flexbox">
                 <Link to="/nydrink" className="add">
