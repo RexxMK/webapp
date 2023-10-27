@@ -49,11 +49,7 @@ export default function Tilfoj() {
 
     return (
         <div>
-
-          <Header />
-
           <h1 className="add-head">Tilføj Opskrifter</h1>
-          <h1>Tilføj</h1>
           {isTilfoj ? (
             <section className="flexbox">
                 <Link to="/nydrink" className="add">
