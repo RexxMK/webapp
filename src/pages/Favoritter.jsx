@@ -47,12 +47,6 @@ export default function Favoritter() {
   return (
     <section>
       <h1>Favoritter</h1>
-      {/*SD*/}
-      <div className="fixedMargin tomside"> 
-        <p>Du har ikke tilføjet nogen favoritter.</p>
-        <img src={theme === "light" ? tomsideLight : tomsideDark} id="tomsidebillede"/>
-        <Knap to={"/find"} className={"buttonFull"} label={"Kom i gang!"}/>
-      </div>
       <ul>
         {data.map((item) => (
           <div key={item.id}>
@@ -72,6 +66,12 @@ export default function Favoritter() {
           </div>
         ))}
       </ul>
+       {/*SD
+       <div className="fixedMargin tomside"> 
+              <p>Du har ikke tilføjet nogen favoritter.</p>
+              <img src={theme === "light" ? tomsideLight : tomsideDark} id="tomsidebillede"/>
+              <Knap to={"/find"} className={"buttonFull"} label={"Kom i gang!"}/>
+            </div>*/}
     </section>
   );
 }
