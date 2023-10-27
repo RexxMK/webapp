@@ -12,15 +12,19 @@ export default function Drink({ drink }) {
     navigate(`drinks/${drink.id}`);
   }*/
 
+
   // Deler ingredienserne i en liste
-  const ingredienserListe = drink.ingredienser.map((ingrediens, index) => (
-    <li key={index}>{ingrediens}</li>
-  ));
+  const ingredienserListe = drink && drink.ingredienser
+  ? drink.ingredienser.map((ingrediens, index) => (
+      <li key={index}>{ingrediens}</li>
+    ))
+  : null;
 
   // Deler metoden i separate <p> elementer
-  const metodeAfsnit = drink.metode.map((afsnit, index) => (
+  const metodeAfsnit = drink && drink.metode ? drink.metode.map((afsnit, index) => (
     <li key={index}>{afsnit}</li>
-  ));
+  )) : null;
+
 
   console.log(drink.billede);
 
@@ -47,7 +51,7 @@ export default function Drink({ drink }) {
         </div>
         <h3>Ingredienser</h3>
         <div className="items">
-          <ul className="items">{ingredienserListe}</ul>
+          <ul className="itemsList">{ingredienserListe}</ul>
         </div>
         <h3>Fremgangsmåde</h3>
         <div className="howto">

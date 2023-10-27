@@ -8,6 +8,11 @@ import { useNavigate } from "react-router-dom";
 
 
 export default function Lykken() {
+  
+  
+  
+  
+  
   /* Følgende funktion sikrer, at det rigtige shakerbillede vises fra start afhængigt af om brugeren klikker ind på Prøv Lykken i 
     light eller dark mode. Har brugeren valgt dark mode når de klikker ind på Prøv Lykken skal darkShaker vises. Har de valgt light mode,
     skal lightShaker vises. (Ændrer brugeren mode imens de er på Prøv Lykken skifter billedet også, men dette sker under LightMode.jsx.) */
@@ -33,6 +38,10 @@ export default function Lykken() {
     // useEffect skal køre én gang når siden loades. Derfor de tomme [].
   }, []);
 
+
+  
+  
+  
   // Når der klikkes på knappen "Eller klik her", skal knappen, shakerbilledet og teksten forsvinde og to nye knapper dukke op.
 
   const [visKnap, setVisKnap] = useState(true); // Tilstand for visning af første knap
@@ -42,9 +51,13 @@ export default function Lykken() {
     setVisKnap(false);
   }
 
+
+
+
+
   // JSON-dataet hentes fra Firebase.
 
-  // RMK
+  // Kopieret fra RMK, Find.jsx.
   // Her opretter jeg to tilstandsvariabler ved hjælp af "useState".
   //"drinks" bruges til at lagre listen over drinks, og "isDrinks" bruges til at kontrollere, om der er drinks at vise.
   const [jsonData, setDrinks] = useState([]);
@@ -77,6 +90,10 @@ export default function Lykken() {
     getDrinks();
   }, []);
 
+
+
+
+
   // Når der klikkes på knapperne "Eller klik her!" og "Shake for at prøve igen!" skal der genereres en random drink.
 
   // Vi starter med at have currentDrink = null, så der ikke vises noget på skærmen.
@@ -92,12 +109,20 @@ export default function Lykken() {
     setCurrentDrink(randomDrink);
   }
 
+
+
+
+
   // Da to funktioner skal køre ved klik på knappen "Eller klik her!" og ved ryst af mobilen samles disse to funktioner i én.
 
   function handleBothFunctions() {
     lykkenLayout();
     randomDrink();
   }
+
+
+
+
 
   // Der skal også genereres en random drink, når brugeren ryster sin mobil. Samtidig skal lykkenLayout-funktionen køre.
 
@@ -130,12 +155,13 @@ export default function Lykken() {
 
 
 
+    // Når brugeren klikker på knappen "Se opskrift" eller billedet af drinken, skal de navigeres til den pågældende opskrifts detaljeside.
+
+    // Kopieret og tilrettet fra SD, AddCard.jsx.
     const navigate = useNavigate();
 
-    function handleClick() {
-  
-      navigate(`/lykken/lykkenSeOpskrift/${currentDrink.id}`);
-
+    function handleClick() { 
+      navigate(`lykkenSeOpskrift/${currentDrink.id}`);
     }
 
 
@@ -165,6 +191,7 @@ export default function Lykken() {
               src={currentDrink.billede}
               alt={currentDrink.navn}
               className="randomImg"
+              onClick={handleClick}
             />
             <h2 className="randomName">{currentDrink.navn}</h2>
           </div>

@@ -5,7 +5,7 @@ import tomsideDark from "../img/tomside-dark.png";
 
 
 export default function Favoritter() {
-  //const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
 
   let favoritListe = [];
 
@@ -53,6 +53,25 @@ export default function Favoritter() {
         <img src={theme === "light" ? tomsideLight : tomsideDark} id="tomsidebillede"/>
         <Knap to={"/find"} className={"buttonFull"} label={"Kom i gang!"}/>
       </div>
+      <ul>
+        {data.map((item) => (
+          <div key={item.id}>
+            {favoritListe.includes(item.id) ? (
+              <li style={{ listStyleType: "none" }}>
+                <input
+                  type="checkbox"
+                  defaultChecked={true}
+                  data-id={item.id}
+                  onChange={handleFavorite}
+                  style={{ display: "inline-block" }}
+                />
+              </li>
+            ) : (
+              console.log("Drink ikke på favoritlisten.")
+            )}
+          </div>
+        ))}
+      </ul>
     </section>
   );
 }

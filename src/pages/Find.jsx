@@ -5,8 +5,6 @@ import DrinkKort from "../components/DrinkKort";
 import Knap from "../components/Knap";
 import Drink from "../components/Drink";
 
-
-
 //RMK
 export default function DrinkKortHent() {
   // Her opretter jeg to tilstandsvariabler ved hjælp af "useState".
@@ -41,12 +39,9 @@ export default function DrinkKortHent() {
     getDrinks();
   }, []);
 
-
-
   //Hvis "isDrinks" er "true", vises en liste af drinks vha. "map" funktionen, ellers vises en besked om, at der ikke er noget at vise.
   return (
     <article className="page">
-
       {isDrinks ? (
         <div className="flexbox">
           {drinks.map((drink) => (

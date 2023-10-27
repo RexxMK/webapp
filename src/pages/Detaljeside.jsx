@@ -6,9 +6,7 @@ import Drink from "../components/Drink";
 // DKK
 
 
-export default function LykkenDetaljeside() {
-
-
+export default function Detaljeside() {
 
 
 
@@ -16,20 +14,18 @@ export default function LykkenDetaljeside() {
 
   // Kopieret og tilrettet fra SD, Rediger.jsx.
   const params = useParams();
-  const [currentDrink, setCurrentDrink] = useState({});
+  const [drink, setDrink] = useState({});
   const url =
-        `https://webapp-68213-default-rtdb.europe-west1.firebasedatabase.app/drinks/${params.currentDrinkId}.json`;
+        `https://webapp-68213-default-rtdb.europe-west1.firebasedatabase.app/drinks/${params.drinkId}.json`;
   
   useEffect(() => {
-    async function getCurrentDrink() {
+    async function getDrink() {
       const response = await fetch(url);
       const data = await response.json();
-      setCurrentDrink(data);
+      setDrink(data);
     }
-    getCurrentDrink();
+    getDrink();
   }, [url]);
-
-    
 
 
 
@@ -37,7 +33,7 @@ export default function LykkenDetaljeside() {
   return (
             
     <section className="op-wrap">
-      <Drink key={currentDrink.id} drink={currentDrink} />
+      <Drink key={drink.id} drink={drink} />
     </section>
             
     );
