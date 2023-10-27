@@ -39,13 +39,18 @@ export default function DrinkKortHent() {
     getDrinks();
   }, []);
 
+
+  const drinkOne = drinks[1];
+
   //Hvis "isDrinks" er "true", vises en liste af drinks vha. "map" funktionen, ellers vises en besked om, at der ikke er noget at vise.
   return (
     <article className="page">
+
+
       {isDrinks ? (
         <div className="flexbox">
           {drinks.map((drink) => (
-            <DrinkKort key={drink.id} drink={drink} />
+            <DrinkKort key={drinkOne.id} drink={drinkOne} />
           ))}
         </div>
       ) : (
