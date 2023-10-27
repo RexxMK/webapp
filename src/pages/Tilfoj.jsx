@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import AddCard from "../components/AddCard";
+import Header from "../components/Header";
+import tomsideLight from "../img/tomside-light.png";
+import tomsideDark from "../img/tomside-dark.png";
 import Knap from "../components/Knap";
 
 //SD
@@ -27,18 +32,34 @@ export default function Tilfoj() {
       getTilfoj();
     }, []);
 
+    //DK Kopieret kode fra LightMode component
+    //at få billedet at skiftes imellem light og dark mode
+    const [theme, setTheme] = useState("dark");
+      
+    useEffect(() => {
+        const currentTheme = document.querySelector("body").getAttribute('data-theme');
+
+    if (currentTheme === "light") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
+
+        }, []);
+
     return (
         <div>
-
-          <h1>Tilføj</h1>
+          <h1 className="add-head">Tilføj Opskrifter</h1>
           {isTilfoj ? (
-            <div>
-                <h1>Tilføj</h1>
-                <Knap to={"/nydrink"} className={"buttonFull"} label={"Ny Drink"}/>
+            <section className="flexbox">
+                <Link to="/nydrink" className="add">
+                    <AddRoundedIcon/>
+                    <img src={theme === "light" ? tomsideLight : tomsideDark} id="tomsidebillede"/>
+                </Link>
                  {tilfoj.map((tilfoj) => (
                     <AddCard key={tilfoj.id} tilfoj={tilfoj}/>
                  ))}
-            </div>
+            </section>
          ) : (
             <p>Nothing to show</p>
         )}

@@ -1,4 +1,3 @@
-import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import StarRating from "./StarRating";
 import { useNavigate } from "react-router-dom";
