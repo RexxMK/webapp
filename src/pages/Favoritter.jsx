@@ -3,7 +3,6 @@ import Knap from "../components/Knap";
 import tomsideLight from "../img/tomside-light.png";
 import tomsideDark from "../img/tomside-dark.png";
 
-
 export default function Favoritter() {
   const [data, setData] = useState([]);
 
@@ -30,19 +29,20 @@ export default function Favoritter() {
   }
 
   //Kopieret kode fra DK LightMode component
-    //at få billedet at skiftes imellem light og dark mode
-    const [theme, setTheme] = useState("dark");
-      
-    useEffect(() => {
-        const currentTheme = document.querySelector("body").getAttribute('data-theme');
+  //at få billedet at skiftes imellem light og dark mode
+  const [theme, setTheme] = useState("dark");
+
+  useEffect(() => {
+    const currentTheme = document
+      .querySelector("body")
+      .getAttribute("data-theme");
 
     if (currentTheme === "light") {
       setTheme("light");
     } else {
       setTheme("dark");
     }
-
-        }, []);
+  }, []);
 
   return (
     <section>
