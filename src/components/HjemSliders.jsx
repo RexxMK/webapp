@@ -27,11 +27,11 @@ export default function HjemSliders({ drinksListe, isDrinks }) {
       return (
         <div className="sliderContainer">
 
-          {/* 1. Hvis isDrinks er true vises en karrusel med drinkskort. Ellers beskeden "der er intet at vise". 
-          2. Vi bruger Slider med de givne settings.
-          3. Indholdet genereres. drinksListe er et array og med map-metoden opdeles drinksListe i sine enkelte elementer. 
-          (drink) => () er en arrow function. Den tager en paramenter kaldet drink, som repræsenterer hvert element i drinkListe.
-          4. Hvert element i drinksListe sættes ind i DrinkKort-opsætningen. */}
+          {/* Hvis isDrinks er true vises en karrusel med drinkskort. Ellers beskeden "der er intet at vise". 
+          Karrusellen vises med Slider og de givne settings.
+          Indholdet genereres med drinksListe.map. drinksListe er et array og med map-metoden opdeles drinksListe i sine enkelte elementer. 
+          (drink) => () er en arrow function. Den tager en paramenter kaldet drink, som repræsenterer hvert element i drinksListe.
+          Hvert af disse drink-elementer i drinksListe sættes ind i DrinkKort-opsætningen. */}
           {isDrinks ? (
             <Slider {...settings}>
               {drinksListe.map((drink) => (
