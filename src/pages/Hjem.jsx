@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import HjemSliders from "../components/HjemSliders";
-import Karrusel from "../components/Karrusel";
 
 
 // DKK
