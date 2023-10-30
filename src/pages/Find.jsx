@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import DrinkKort from "../components/DrinkKort";
 import tomsideLight from "../img/tomside-light.png";
 import tomsideDark from "../img/tomside-dark.png";
-import Knap from "../components/Knap";
-import Drink from "../components/Drink";
 import SearchIcon from '@mui/icons-material/Search';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
+import Filter from "../components/Filter";
 
 
 // DKK
@@ -122,6 +121,8 @@ export default function Find() {
     }, []);
 
 
+
+
   // DKK
   return (
     <article className="page">
@@ -130,8 +131,6 @@ export default function Find() {
         <h1>Find Drink</h1>
         <button className="filterButton buttonFull"><FilterAltIcon className="filterIcon"/> Filtrer </button>
       </div>
-
-      
      
       <form onSubmit={handleSubmit} className="fixedMargin">
         <div className="searchFormDiv">

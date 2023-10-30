@@ -681,3 +681,7 @@ form {
 .filterIcon {
   margin-right: 2px;
 }
+
+.filter {
+  display: none;
+}
