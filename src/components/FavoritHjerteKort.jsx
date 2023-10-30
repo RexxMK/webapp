@@ -1,33 +1,42 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BiSolidHeartCircle } from "react-icons/bi";
 
 // RMK
 
-export default function FavoritHjerteKort() {
+export default function FavoritHjerteKort({ drinkid, farve }) {
   //Her bruger jeg useState til at oprette en variablen iconColor med en standardfarve
-  const [iconColor, setIconColor] = useState("838383");
+  const [iconColor, setIconColor] = useState(farve);
 
-  useEffect(() => {
+  /*useEffect(() => {
     //Når hjerteikonet er blevet klikket på, bliver farven gemt i localstorage
     const savedColor = localStorage.getItem("iconColor");
     if (savedColor) {
       setIconColor(savedColor);
     }
-  }, []);
+  }, []);*/
 
-  const handleIconClick = () => {
-    //Når hjerteikonet klikkes på, vil farven på ikonet blive ændret
-    //Hvis farven er grå, ændres den til rød, og omvendt
-    let newColor;
+  const handleIconClick = (e) => {
+    const drinkIden = e.currentTarget.getAttribute("data-drinkid");
+    let favoritListe = [];
 
-    if (iconColor === "838383") {
-      newColor = "CC4E45";
-    } else {
-      newColor = "838383";
+    // Hvis der allerede er en favoritliste i localstorage, så indlæses den.
+    if (localStorage.getItem("favoritter")) {
+      favoritListe = JSON.parse(localStorage.getItem("favoritter"));
     }
 
-    setIconColor(newColor);
-    localStorage.setItem("iconColor", newColor);
+    //Når hjerteikonet klikkes på, vil farven på ikonet blive ændret
+    //Hvis farven er grå, ændres den til rød, og omvendt
+
+    if (iconColor === "838383") {
+      setIconColor("CC4E45"); // rød
+      favoritListe.push(drinkIden); // Tilføjer drinken til favoritlisten
+    } else {
+      setIconColor("838383"); // grå
+      const indeks = favoritListe.indexOf(drinkIden); // Finder drinkens position i favoritListen
+      favoritListe.splice(indeks, 1); // Fjerner drinken fra favoritListen
+    }
+
+    localStorage.setItem("favoritter", JSON.stringify(favoritListe));
   };
 
   return (
@@ -39,6 +48,7 @@ export default function FavoritHjerteKort() {
           style={{
             display: "none",
           }}
+          data-drinkid={drinkid}
           onClick={handleIconClick}
         />
         <BiSolidHeartCircle
