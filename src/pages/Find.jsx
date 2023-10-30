@@ -64,6 +64,7 @@ export default function Find() {
   function reset() {
     setSkyggeDrinksListe(drinks);
     setSoegeTekst("");
+    setIsDrinks(true);
   }
 
   // DKK
