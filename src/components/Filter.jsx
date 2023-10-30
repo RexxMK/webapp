@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Drink from "../components/Drink";
 import DrinkKort from "./DrinkKort";
 
+//RMK
 export default function Filter() {
   // Her opretter jeg to tilstandsvariabler ved hjælp af "useState".
   //"drinks" bruges til at lagre listen over drinks, og "isDrinks" bruges til at kontrollere, om der er drinks at vise.
