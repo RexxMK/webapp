@@ -1,5 +1,5 @@
-import StarBorderRoundedIcon from "@mui/icons-material/StarBorderRounded";
 import { useNavigate } from "react-router-dom";
+import CardRating from "./CardRating";
 
 //SD
 
@@ -12,15 +12,11 @@ export default function AddCard({tilfoj}) {
   }
     
     return (
-      <div className="drinkcard" onClick={handleClick}>
-        <img src={tilfoj.billede} alt={tilfoj.navn} className="drinkimg" />
-        <h3 className="drinkheader">{tilfoj.navn}</h3>
+      <div className="drinkcard">
+        <img src={tilfoj.billede} alt={tilfoj.navn} className="drinkimg" onClick={handleClick}/>
+        <h3 className="drinkheader" onClick={handleClick}>{tilfoj.navn}</h3>
         <div className="star-wrap">
-          <StarBorderRoundedIcon />
-          <StarBorderRoundedIcon />
-          <StarBorderRoundedIcon /> 
-          <StarBorderRoundedIcon />
-          <StarBorderRoundedIcon />
+          <CardRating/>
         </div>
       </div>
     );

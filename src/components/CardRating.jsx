@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 //SD
 
-export default function StarRating () {
+export default function CardRating () {
     
     {/*useState(null) så at rating er tomt når du aldrig har rated før */}
     const [rating, setRating] = useState(null)
@@ -24,7 +24,7 @@ export default function StarRating () {
                 {/*Med farven siger vi om value som er mindre eller lig med ratingValue skal være gul
                 og om value ikke er nogle af tingene så forbliver den grå
                 ? er en if statement og : er else*/}
-                <FaStar size={40} color={ratingValue <= rating ? "#EDBB59" : "var(--menu-color)"} /> 
+                <FaStar size={20} color={ratingValue <= rating ? "#EDBB59" : "var(--menu-color)"} /> 
             </label>
             )
         }
