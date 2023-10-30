@@ -666,7 +666,7 @@ form {
 /* Filtrering */
 
 .filterButton {
-  width: 35%;
+  width: 30%;
   height: 40px;
   display: flex;
   align-items: center;
@@ -680,5 +680,9 @@ form {
 }
 
 .filterIcon {
-  margin-right: 5px;
+  margin-right: 2px;
+}
+
+.filter {
+  display: none;
 }

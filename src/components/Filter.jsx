@@ -84,7 +84,7 @@ export default function Filter() {
 
   //Hvis "isDrinks" er "true", vises en liste af drinks vha. "map" funktionen, ellers vises en besked om, at der ikke er noget at vise.
   return (
-    <article className="page">
+    <article className="page filter">
       <form onSubmit={handleAktiver}>
         <h2>Smag</h2>
         <label className="checkboxButton">

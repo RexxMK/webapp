@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import DrinkKort from "../components/DrinkKort";
 import tomsideLight from "../img/tomside-light.png";
 import tomsideDark from "../img/tomside-dark.png";
-import Knap from "../components/Knap";
-import Drink from "../components/Drink";
 import SearchIcon from '@mui/icons-material/Search';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
+import Filter from "../components/Filter";
 
 
 // DKK
@@ -58,12 +57,14 @@ export default function Find() {
 
 
   // DKK
-  // Når brugeren resetter deres søgning, skal der ske 2 ting.
+  // Når brugeren resetter deres søgning, skal der ske 3 ting.
   // 1. Alle drinks skal igen vises. Derfor tages sættes skyggeDrinksListe til drinks (som netop er alle drinks).
   // 2. Brugerens søgetekst skal slettes fra søgefeltet. Den sættes derfor til en tom streng.
+  // 3. isDrinks sættes til true, så alle drinksene igen vises i tilfælde af en "tom" søgning.
   function reset() {
     setSkyggeDrinksListe(drinks);
     setSoegeTekst("");
+    setIsDrinks(true);
   }
 
   // DKK
@@ -120,6 +121,8 @@ export default function Find() {
     }, []);
 
 
+
+
   // DKK
   return (
     <article className="page">
@@ -128,8 +131,6 @@ export default function Find() {
         <h1>Find Drink</h1>
         <button className="filterButton buttonFull"><FilterAltIcon className="filterIcon"/> Filtrer </button>
       </div>
-
-      
      
       <form onSubmit={handleSubmit} className="fixedMargin">
         <div className="searchFormDiv">
