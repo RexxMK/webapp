@@ -27,7 +27,7 @@ export default function Find() {
   const [soegeTekst, setSoegeTekst] = useState("");
   //const [skyggeDrinksListe, setSkyggeDrinksListe] = useState([]);
   
-  
+
   // RMK & DKK
   // Til søg og filtrering
   const [skyggeDrinksListe, setSkyggeDrinksListe] = useState([]);
