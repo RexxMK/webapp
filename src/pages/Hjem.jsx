@@ -1,14 +1,9 @@
 import { useEffect, useState } from "react";
 import HjemSliders from "../components/HjemSliders";
 
-
 // DKK
 
-
 export default function Hjem() {
-
-
-
   // JSON-data med drinksene hentes fra Firebase.
 
   // Kopieret fra RMK, Find.jsx.
@@ -44,31 +39,32 @@ export default function Hjem() {
     getDrinks();
   }, []);
 
-
-
-
-
   // Der laves en skyggeliste for hver kategori, som filterer efter kategori
 
   /* drinks er en liste over alle drinks og deres attributter, herunder "kategori". 
   Med filter-metoden oprettes en ny liste ved at filtrere elementerne i drinks-listen baseret på betingelsen drink.kategori.includes(" ").
   Hvis en drink indeholder tekststrengen hhv. jul, barbie, popular, new eller tequila (kategorinavne) returneres true. Ellers false.
   Hvis der returneres true, vises elementet i skyggelisten. Ellers ikke. */
-  
-  const julDrinksListe = drinks.filter(drink => drink.kategori.includes("jul"));
-  const barbieDrinksListe = drinks.filter(drink => drink.kategori.includes("barbie"));
-  const popDrinksListe = drinks.filter(drink => drink.kategori.includes("popular"));
-  const newDrinksListe = drinks.filter(drink => drink.kategori.includes("new"));
-  const teqDrinksListe = drinks.filter(drink => drink.kategori.includes("tequila"));
 
-
-
-
+  const julDrinksListe = drinks.filter((drink) =>
+    drink.kategori.includes("jul")
+  );
+  const barbieDrinksListe = drinks.filter((drink) =>
+    drink.kategori.includes("barbie")
+  );
+  const popDrinksListe = drinks.filter((drink) =>
+    drink.kategori.includes("popular")
+  );
+  const newDrinksListe = drinks.filter((drink) =>
+    drink.kategori.includes("new")
+  );
+  const teqDrinksListe = drinks.filter((drink) =>
+    drink.kategori.includes("tequila")
+  );
 
   // Med komponenten HjemSliders får vi vist de drinkkort, som de fem skyggelister indeholder i karruseller.
   return (
     <article>
-
       <h2 className="hjemTopHeader fixedMargin">Juledrinks</h2>
       <HjemSliders drinksListe={julDrinksListe} isDrinks={isDrinks} />
 
@@ -83,7 +79,6 @@ export default function Hjem() {
 
       <h2 className="hjemHeader fixedMargin">Alt med tequila</h2>
       <HjemSliders drinksListe={teqDrinksListe} isDrinks={isDrinks} />
-      
     </article>
   );
 }

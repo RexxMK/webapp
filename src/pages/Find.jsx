@@ -179,6 +179,10 @@ export default function Find() {
           ))}
         </div>
       ) : (
+        <div className="fixedMargin tomside">
+          <p>Din søgning gav 0 resultater</p>
+          <img src={theme === "light" ? tomsideLight : tomsideDark} id="tomsidebillede"/>
+          <h4>Du vil måske synes om</h4>
         <div className="flexbox">
           {drinks.map((drink) => (
             <DrinkKort key={drink.id} drink={drink} />

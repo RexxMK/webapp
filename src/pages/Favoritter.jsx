@@ -63,12 +63,16 @@ export default function Favoritter() {
   );
 
   return (
-    <section className="fixedMargin">
-      <h1>Mine favoritter</h1>
+    <section>
+      <h1 className="fixedMargin">Mine favoritter</h1>
       {isDrinks && skyggeFavoritListe.length > 0 ? (
         <div className="flexbox">
           {skyggeFavoritListe.map((drink) => (
-            <DrinkKort key={drink.id} drink={drink} className="hjemDrinkCard" />
+            <DrinkKort
+              key={drink.id}
+              drink={drink}
+              className="favoritterKort"
+            />
           ))}
         </div>
       ) : (
