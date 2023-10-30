@@ -24,7 +24,7 @@ export default function StarRating () {
                 {/*Med farven siger vi om value som er mindre eller lig med ratingValue skal være gul
                 og om value ikke er nogle af tingene så forbliver den grå
                 ? er en if statement og : er else*/}
-                <FaStar size={35} color={ratingValue <= rating ? "#EDBB59" : "var(--menu-color)"} /> 
+                <FaStar size={"10%"} color={ratingValue <= rating ? "#EDBB59" : "var(--menu-color)"} /> 
             </label>
             )
         }

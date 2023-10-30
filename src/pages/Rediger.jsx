@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import RedigerOpskrift from "../components/RedigerOpskrift";
 
-//SD:
+//SD
 
 export default function Rediger() {
     const navigate = useNavigate();

@@ -61,7 +61,7 @@ export default function Find() {
       {isDrinks ? (
         <div className="flexbox">
           {drinks.map((drink) => (
-            <DrinkKort key={drinkOne.id} drink={drinkOne} />
+            <DrinkKort key={drink.id} drink={drink} />
           ))}
         </div>
       ) : (

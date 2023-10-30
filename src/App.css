@@ -329,11 +329,6 @@ h4 {
   padding: 5px 0;
 }
 
-.star-wrap svg {
-  color: var(--menu-color);
-  font-size: 1.5rem;
-}
-
 /*======================================== FILTER ==========================================*/
 .checkboxButton {
   display: inline-block;
