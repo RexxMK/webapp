@@ -4,6 +4,9 @@ import tomsideLight from "../img/tomside-light.png";
 import tomsideDark from "../img/tomside-dark.png";
 import Knap from "../components/Knap";
 import Drink from "../components/Drink";
+import SearchIcon from '@mui/icons-material/Search';
+import FilterAltIcon from '@mui/icons-material/FilterAlt';
+import RestartAltIcon from '@mui/icons-material/RestartAlt';
 
 //RMK
 /*export default function Find() {
@@ -86,9 +89,7 @@ export default function Find() {
   const [isDrinks, setIsDrinks] = useState(false);
   const [soegeTekst, setSoegeTekst] = useState("");
   const [skyggeDrinksListe, setSkyggeDrinksListe] = useState([]);
-  //Kopieret kode fra DK LightMode component
-  //at få billedet at skiftes imellem light og dark mode
-  const [theme, setTheme] = useState("dark");
+  
 
   useEffect(() => {
     async function getDrinks() {
@@ -152,36 +153,58 @@ export default function Find() {
     }
   }
 
-  //Hvis "isDrinks" er "true", vises en liste af drinks vha. "map" funktionen, ellers vises en besked om, at der ikke er noget at vise.
+
+  //Kopieret kode fra DK LightMode component
+    //at få billedet at skiftes imellem light og dark mode
+    const [theme, setTheme] = useState("dark");
+      
+    useEffect(() => {
+        const currentTheme = document.querySelector("body").getAttribute('data-theme');
+
+    if (currentTheme === "light") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
+
+    }, []);
+
+
+
   return (
     <article className="page">
-      <form onSubmit={handleSubmit}>
-        <input
-          type="search"
-          style={{ height: "25px", marginRight: "20px" }}
-          required
-          value={soegeTekst}
-          onChange={(e) => setSoegeTekst(e.target.value)}
-        />
-        <button
-          type="submit"
-          style={{ backgroundColor: "gray", marginRight: "15px" }}
-        >
-          Søg
-        </button>
-        <button type="button" onClick={reset}>
-          Reset
-        </button>
+
+      <div className="filterHeaderDiv fixedMargin">
+        <h1>Find Drink</h1>
+        <button className="filterButton buttonFull"><FilterAltIcon className="filterIcon"/> Filtrer </button>
+      </div>
+
+     
+      <form onSubmit={handleSubmit} className="fixedMargin">
+        <div className="searchFormDiv">
+          <input
+            type="search"
+            required
+            value={soegeTekst}
+            placeholder="Søg efter en drink"
+            onChange={(e) => setSoegeTekst(e.target.value)}
+            className="search"
+          />
+          <button type="button" onClick={reset} className="resetButton">
+            <RestartAltIcon />
+          </button>
+          <button
+            type="submit"
+            className="searchButton"
+          >
+            <SearchIcon />
+          </button>
+        </div>
       </form>
+      
+
       {isDrinks ? (
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "10px",
-            marginTop: "10px",
-          }}
-        >
+        <div className="flexbox">
           {skyggeDrinksListe.map((drink) => (
             <DrinkKort key={drink.id} drink={drink} />
           ))}
