@@ -188,16 +188,9 @@ export default function Find() {
         </div>
       ) : (
         <div className="fixedMargin tomside">
-          <p style={{ marginTop: "20px" }}>Tilføj ny drink.</p>
-          <img
-            src={theme === "light" ? tomsideLight : tomsideDark}
-            id="tomsidebillede"
-          />
-          <Knap
-            to={"/tilfoj"}
-            className={"buttonFull"}
-            label={"Tilføj ny drink!"}
-          />
+          <p>Din søgning gav 0 resultater</p>
+          <img src={theme === "light" ? tomsideLight : tomsideDark} id="tomsidebillede"/>
+          <h4>Du vil måske synes om</h4>
         </div>
       )}
     </article>
