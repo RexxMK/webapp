@@ -72,7 +72,7 @@ h4 {
 /* Maks skærmstørrelse */
 .mobilewrap {
   max-width: 480px;
-  min-height: 800px;
+  min-height: 810px;
   padding-bottom: 100px;
   background-color: var(--background-color);
 }
@@ -285,13 +285,13 @@ h4 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 30px 13px 40px 13px;
+  margin-bottom: 40px;
 }
 
 .flexbox {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .drinkKortInfo {
@@ -329,11 +329,6 @@ h4 {
 .drinkheader {
   font-size: 16px;
   padding: 5px 0;
-}
-
-.star-wrap svg {
-  color: var(--menu-color);
-  font-size: 1.5rem;
 }
 
 /*======================================== FILTER ==========================================*/
@@ -495,7 +490,6 @@ h4 {
   margin-bottom: -10px;
 }
 
-
 /*======================================== TILFØJ ========================================*/
 
 .add {
@@ -620,6 +614,8 @@ form {
   font-weight: 300;
   color: #838383;
 }
+
+/*======================================== FAVORITTER ========================================*/
 
 
 /*======================================== FIND DRINK ========================================*/
