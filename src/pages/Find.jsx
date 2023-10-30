@@ -58,9 +58,10 @@ export default function Find() {
 
 
   // DKK
-  // Når brugeren resetter deres søgning, skal der ske 2 ting.
+  // Når brugeren resetter deres søgning, skal der ske 3 ting.
   // 1. Alle drinks skal igen vises. Derfor tages sættes skyggeDrinksListe til drinks (som netop er alle drinks).
   // 2. Brugerens søgetekst skal slettes fra søgefeltet. Den sættes derfor til en tom streng.
+  // 3. isDrinks sættes til true, så alle drinksene igen vises i tilfælde af en "tom" søgning.
   function reset() {
     setSkyggeDrinksListe(drinks);
     setSoegeTekst("");
