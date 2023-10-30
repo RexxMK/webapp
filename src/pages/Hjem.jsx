@@ -54,6 +54,7 @@ export default function Hjem() {
   Med filter-metoden oprettes en ny liste ved at filtrere elementerne i drinks-listen baseret på betingelsen drink.kategori.includes(" ").
   Hvis en drink indeholder tekststrengen hhv. jul, barbie, popular, new eller tequila (kategorinavne) returneres true. Ellers false.
   Hvis der returneres true, vises elementet i skyggelisten. Ellers ikke. */
+  
   const julDrinksListe = drinks.filter(drink => drink.kategori.includes("jul"));
   const barbieDrinksListe = drinks.filter(drink => drink.kategori.includes("barbie"));
   const popDrinksListe = drinks.filter(drink => drink.kategori.includes("popular"));
