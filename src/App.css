@@ -622,6 +622,8 @@ form {
 
 /*======================================== FIND DRINK ========================================*/
 
+/* Søg */
+
 .search {
   background-color: transparent;
   height: 100%;
@@ -662,6 +664,8 @@ form {
 .resetButton svg {
   font-size: 2rem;
 }
+
+/* Filtrering */
 
 .filterButton {
   width: 35%;
