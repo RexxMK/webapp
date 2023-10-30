@@ -15,6 +15,7 @@
   --font-color: #f9f9f9;
   --accent-color: #8dbe5c;
   --shadow-color: #000;
+  --search-color: #373737;
 }
 
 [data-theme="light"] {
@@ -23,6 +24,7 @@
   --background-color: #f9f9f9;
   --accent-color: #8dbe5c;
   --shadow-color: #d2d2d2;
+  --search-color: #E9E9E9;
 }
 
 /* BODY */
@@ -331,11 +333,6 @@ h4 {
   padding: 5px 0;
 }
 
-.star-wrap svg {
-  color: var(--menu-color);
-  font-size: 1.5rem;
-}
-
 /*======================================== FILTER ==========================================*/
 .checkboxButton {
   display: inline-block;
@@ -621,3 +618,65 @@ form {
 }
 
 /*======================================== FAVORITTER ========================================*/
+
+
+/*======================================== FIND DRINK ========================================*/
+
+.search {
+  background-color: transparent;
+  height: 100%;
+  width: 70%;
+  color: var(--font-color);
+  font-size: 1rem;
+  padding-left: 20px;
+}
+
+.searchFormDiv {
+  height: 40px;
+  background-color: var(--search-color);
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.searchButton {
+  background-color: var(--accent-color);
+  border-radius: 0 100px 100px 0;
+  width: 15%;
+  height: 100%;
+  color: #2a2a2a;
+}
+
+.resetButton {
+  background-color: #838383;
+  width: 15%;
+  height: 100%;
+  color: #2a2a2a;
+}
+
+.searchButton svg {
+  font-size: 2rem;
+}
+
+.resetButton svg {
+  font-size: 2rem;
+}
+
+.filterButton {
+  width: 35%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin: 0 0 30px 0;
+}
+
+.filterHeaderDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filterIcon {
+  margin-right: 5px;
+}
