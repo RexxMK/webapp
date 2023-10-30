@@ -682,6 +682,13 @@ form {
   margin-right: 2px;
 }
 
-.filter {
-  display: none;
+.filter-container {
+  max-height: 0;
+  overflow: hidden;
 }
+
+.filter-container.open {
+  max-height: 100%;
+}
+
+
