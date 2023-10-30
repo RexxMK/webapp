@@ -22,7 +22,7 @@ export default function DrinkKort({ drink }) {
 
   // RMK & SD
   return (
-    <div className="drinkcard">
+    <div className="drinkcard fixedMargin">
       <div className="like">
         {favoritListe.length > 0 && favoritListe.includes(drink.id) ? (
           <FavoritHjerteKort drinkid={drink.id} farve="CC4E45" />
