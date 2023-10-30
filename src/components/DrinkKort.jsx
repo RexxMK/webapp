@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import StarBorderRoundedIcon from "@mui/icons-material/StarBorderRounded";
 import FavoritHjerteKort from "./FavoritHjerteKort";
+import CardRating from "./CardRating";
 
 // RMK
 
@@ -35,11 +35,7 @@ export default function DrinkKort({ drink }) {
         <h3 className="drinkheader">{drink.navn}</h3>
       </div>
       <div className="star-wrap">
-        <StarBorderRoundedIcon />
-        <StarBorderRoundedIcon />
-        <StarBorderRoundedIcon />
-        <StarBorderRoundedIcon />
-        <StarBorderRoundedIcon />
+        <CardRating/>
       </div>
     </div>
   );
