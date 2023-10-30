@@ -22,7 +22,7 @@ export default function DrinkKort({ drink }) {
 
   // RMK & SD
   return (
-    <div className="drinkcard fixedMargin">
+    <div className="drinkcard">
       <div className="like">
         {favoritListe.length > 0 && favoritListe.includes(drink.id) ? (
           <FavoritHjerteKort drinkid={drink.id} farve="CC4E45" />
@@ -35,7 +35,7 @@ export default function DrinkKort({ drink }) {
         <h3 className="drinkheader">{drink.navn}</h3>
       </div>
       <div className="star-wrap">
-        <CardRating/>
+        <CardRating />
       </div>
     </div>
   );
