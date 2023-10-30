@@ -2,6 +2,7 @@ import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import StarRating from "./StarRating";
 import { useNavigate } from "react-router-dom";
 import FavoritHjerteDrink from "./FavoritHjerteDrink";
+import { useEffect, useState } from "react";
 
 // RMK
 export default function Drink({ drink }) {
@@ -12,21 +13,33 @@ export default function Drink({ drink }) {
     navigate(`drinks/${drink.id}`);
   }*/
 
+  const [sandhed, setSandhed] = useState(false);
+
+  useEffect(() => {
+    let favoritListe = [];
+
+    // Hvis der allerede er en favoritliste i localstorage, så indlæses den.
+    if (localStorage.getItem("favoritter")) {
+      favoritListe = JSON.parse(localStorage.getItem("favoritter"));
+      setSandhed(favoritListe.includes(drink.id));
+    }
+  }, [drink.id]);
 
   // Deler ingredienserne i en liste
-  const ingredienserListe = drink && drink.ingredienser
-  ? drink.ingredienser.map((ingrediens, index) => (
-      <li key={index}>{ingrediens}</li>
-    ))
-  : null;
+  const ingredienserListe =
+    drink && drink.ingredienser
+      ? drink.ingredienser.map((ingrediens, index) => (
+          <li key={index}>{ingrediens}</li>
+        ))
+      : null;
 
   // Deler metoden i separate <p> elementer
-  const metodeAfsnit = drink && drink.metode ? drink.metode.map((afsnit, index) => (
-    <li key={index}>{afsnit}</li>
-  )) : null;
+  const metodeAfsnit =
+    drink && drink.metode
+      ? drink.metode.map((afsnit, index) => <li key={index}>{afsnit}</li>)
+      : null;
 
-
-  console.log(drink.billede);
+  /*console.log(drink.billede);*/
 
   // SD
   // Ved brug af use navigate kan vi lave en go back knap
@@ -46,7 +59,11 @@ export default function Drink({ drink }) {
         <div className="opheader">
           <h2>{drink.navn}</h2>
           <div className="op-like">
-            <FavoritHjerteDrink />
+            {sandhed ? (
+              <FavoritHjerteDrink drinkid={drink.id} farve="CC4E45" />
+            ) : (
+              <FavoritHjerteDrink drinkid={drink.id} farve="838383" />
+            )}
           </div>
         </div>
         <h3>Ingredienser</h3>

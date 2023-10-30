@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import Knap from "../components/Knap";
 import tomsideLight from "../img/tomside-light.png";
 import tomsideDark from "../img/tomside-dark.png";
+import DrinkKort from "../components/DrinkKort";
 
+//RMK
 export default function Favoritter() {
   const [data, setData] = useState([]);
+  const [isDrinks, setIsDrinks] = useState(true);
 
   let favoritListe = [];
 
@@ -13,26 +16,36 @@ export default function Favoritter() {
     favoritListe = JSON.parse(localStorage.getItem("favoritter"));
   }
 
-  function handleFavorite(e) {
-    const drinkId = e.currentTarget.getAttribute("data-id");
-    const checked = e.currentTarget.checked;
-    console.log(drinkId + " " + checked);
-
-    if (checked) {
-      favoritListe.push(drinkId);
-    } else {
-      const indeks = favoritListe.indexOf(drinkId);
-      favoritListe.splice(indeks, 1);
-    }
-    //Gem favoritter i localstorage
-    localStorage.setItem("favoritter", JSON.stringify(favoritListe));
-  }
-
   //Kopieret kode fra DK LightMode component
   //at få billedet at skiftes imellem light og dark mode
   const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
+    async function getDrinks() {
+      //Der defineres en URL til at hente drinks-data fra vores Firebase-database.
+      const url =
+        "https://webapp-68213-default-rtdb.europe-west1.firebasedatabase.app/drinks.json";
+
+      //Her bruges "fetch" til hente drinks-data fra vores Firebase-database og konvertere dem til JSON-format.
+      const response = await fetch(url);
+      const data = await response.json();
+
+      //Hvis der er data tilgængelig, laves dataerne til et array og opdaterer "drinks" til at indeholde denne liste af drinks.
+      if (data !== null) {
+        const drinksArray = Object.keys(data).map((key) => ({
+          id: key,
+          ...data[key],
+        }));
+        setData(drinksArray);
+      }
+
+      //Hvis der ikke er nogen data tilgængelig, opdateres "isDrinks" til "false" for at vise en meddelelse om, at der ikke er noget at vise.
+      else {
+        setIsDrinks(false);
+      }
+    }
+    getDrinks();
+
     const currentTheme = document
       .querySelector("body")
       .getAttribute("data-theme");
@@ -44,34 +57,30 @@ export default function Favoritter() {
     }
   }, []);
 
+  // Her filtrerer jeg de drinks fra, som står på favoritlisten
+  const skyggeFavoritListe = data.filter((drink) =>
+    favoritListe.includes(drink.id)
+  );
+
   return (
-    <section>
-      <h1>Favoritter</h1>
-      <ul>
-        {data.map((item) => (
-          <div key={item.id}>
-            {favoritListe.includes(item.id) ? (
-              <li style={{ listStyleType: "none" }}>
-                <input
-                  type="checkbox"
-                  defaultChecked={true}
-                  data-id={item.id}
-                  onChange={handleFavorite}
-                  style={{ display: "inline-block" }}
-                />
-              </li>
-            ) : (
-              console.log("Drink ikke på favoritlisten.")
-            )}
-          </div>
-        ))}
-      </ul>
-       {/*SD*/}
-       <div className="fixedMargin tomside"> 
-              <p>Du har ikke tilføjet nogen favoritter.</p>
-              <img src={theme === "light" ? tomsideLight : tomsideDark} id="tomsidebillede"/>
-              <Knap to={"/find"} className={"buttonFull"} label={"Kom i gang!"}/>
+    <section className="fixedMargin">
+      <h1>Mine favoritter</h1>
+      {isDrinks && skyggeFavoritListe.length > 0 ? (
+        <div className="flexbox">
+          {skyggeFavoritListe.map((drink) => (
+            <DrinkKort key={drink.id} drink={drink} className="hjemDrinkCard" />
+          ))}
         </div>
+      ) : (
+        <div className="fixedMargin tomside">
+          <p>Du har ikke tilføjet nogen favoritter.</p>
+          <img
+            src={theme === "light" ? tomsideLight : tomsideDark}
+            id="tomsidebillede"
+          />
+          <Knap to={"/find"} className={"buttonFull"} label={"Kom i gang!"} />
+        </div>
+      )}
     </section>
   );
 }
