@@ -1,42 +1,54 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BiSolidHeartCircle } from "react-icons/bi";
 
 // RMK
 
-export default function FavoritHjerteDrink() {
+export default function FavoritHjerteDrink({ drinkid, farve }) {
   //Her bruger jeg useState til at oprette en variablen iconColor med en standardfarve
-  const [iconColor, setIconColor] = useState("838383");
+  const [iconColor, setIconColor] = useState(farve);
 
-  useEffect(() => {
-    const savedColor = localStorage.getItem("iconColor");
-    if (savedColor) {
-      setIconColor(savedColor);
+  const handleIconClick = (e) => {
+    const drinkIden = e.currentTarget.getAttribute("data-drinkid");
+    let favoritListe = [];
+
+    // Hvis der allerede er en favoritliste i localstorage, så indlæses den.
+    if (localStorage.getItem("favoritter")) {
+      favoritListe = JSON.parse(localStorage.getItem("favoritter"));
     }
-  }, []);
 
-  const handleIconClick = () => {
     //Når hjerteikonet klikkes på, vil farven på ikonet blive ændret
     //Hvis farven er grå, ændres den til rød, og omvendt
-    let newColor;
+
     if (iconColor === "838383") {
-      newColor = "CC4E45";
-    } else if (iconColor === "CC4E45") {
-      newColor = "838383";
+      setIconColor("CC4E45"); // rød
+      favoritListe.push(drinkIden); // Tilføjer drinken til favoritlisten
+    } else {
+      setIconColor("838383"); // grå
+      const indeks = favoritListe.indexOf(drinkIden); // Finder drinkens position i favoritListen
+      favoritListe.splice(indeks, 1); // Fjerner drinken fra favoritListen
     }
 
-    setIconColor(newColor);
-    localStorage.setItem("iconColor", newColor);
+    localStorage.setItem("favoritter", JSON.stringify(favoritListe));
   };
 
   return (
     //Her vises hjerteikonet med den aktuelle farven (enten grå eller rød)
     <div className="favoritHjerteDrink">
-      <BiSolidHeartCircle
-        color={iconColor}
-        size={100}
-        onClick={handleIconClick}
-        style={{ cursor: "pointer" }}
-      />
+      <label>
+        <input
+          type="checkbox"
+          style={{
+            display: "none",
+          }}
+          data-drinkid={drinkid}
+          onClick={handleIconClick}
+        />
+        <BiSolidHeartCircle
+          color={iconColor}
+          size={100}
+          style={{ cursor: "pointer" }}
+        />
+      </label>
     </div>
   );
 }
