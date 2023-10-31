@@ -39,15 +39,22 @@ function handleImageChange(event) {
         }
     }
     async function uploadImage() {
-        const url = `https://firebasestorage.googleapis.com/v0/b/webapp-68213.appspot.com/o/${imageFile.name}`;
-        const response = await fetch(url, {
-            method: "POST",
-            body: imageFile,
-            headers: { "Content-Type": imageFile.type }
-        });
-        const data = await response.json();
-        console.log(data);
-        const imageUrl = `${url}?alt=media`;
+
+        let imageUrl = "";
+
+        if (imageFile) { // Er der angivet et billede, så ...
+            const url = `https://firebasestorage.googleapis.com/v0/b/webapp-68213.appspot.com/o/${imageFile.name}`;
+            const response = await fetch(url, {
+                method: "POST",
+                body: imageFile,
+                headers: { "Content-Type": imageFile.type }
+            });
+            const data = await response.json();
+            console.log(data);
+            imageUrl = `${url}?alt=media`;
+        } else { // Hvis ikke der er angivet et billede, så sæt billede = det allerede eksisterende
+            imageUrl = billede;
+        }
         return imageUrl;
     }
 
@@ -71,8 +78,7 @@ async function handleSubmit(e) {
 
 return (
     <form onSubmit={handleSubmit}>
-     <label>
-        Image
+     <label className="rediger-img">
         <input type="file" accept="image/*" onChange={handleImageChange} />
         <img className="rediger-img" src={billede} alt="Choose" onError={event => (event.target.src = imgPlaceholder)} />
     </label>

@@ -31,6 +31,8 @@ export default function Find() {
   // Til søg og filtrering
   const [skyggeDrinksListe, setSkyggeDrinksListe] = useState([]);
 
+  const [visning, setVisning] = useState("none")
+
 
   // RMK
   useEffect(() => {
@@ -126,6 +128,7 @@ export default function Find() {
     setSkyggeDrinksListe(drinks);
     setSoegeTekst("");
     setIsDrinks(true);
+    setVisning("none");
   }
 
   // handleSubmit-funktionen skal kaldes, når brugeren laver en søgning.
@@ -156,8 +159,11 @@ export default function Find() {
 
       // I så fald er der ingen drinks at vise.
       setIsDrinks(false);
+      const antalDrinks = 4;
+      setSkyggeDrinksListe(drinks.slice(0, antalDrinks));
+      setVisning("block");
     } else {
-
+      setVisning("none");
       // Ellers er der drinks at vise, hvilket sker ved at sætte skyggeDrinksListe til at være søgeresultatet.
       setIsDrinks(true);
       setSkyggeDrinksListe(soegeResultat);
@@ -450,14 +456,18 @@ export default function Find() {
         </div>
 
       ) : (
-
-        <div className="fixedMargin tomside">
+        //SD
+        <div className="fixedMargin tomside" style={{ display: visning }}>
           <p>Din søgning gav 0 resultater</p>
           <img src={theme === "light" ? tomsideLight : tomsideDark} id="tomsidebillede" />
           <h4>Du vil måske synes om</h4>
+          <div className="flexbox">
+            {skyggeDrinksListe.map((drink) => (
+              <DrinkKort key={drink.id} drink={drink} />
+            ))}
+          </div>
         </div>
       )}
-
     </article>
   );
 }
