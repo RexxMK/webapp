@@ -334,27 +334,6 @@ h4 {
   padding: 5px 0;
 }
 
-/*======================================== FILTER ==========================================*/
-.checkboxButton {
-  display: inline-block;
-  padding-left: 1vw;
-  padding-right: 1vw;
-  padding-top: 0.1vw;
-  padding-bottom: 0.1vw;
-  margin: 5px;
-  background-color: #2a2a2a;
-  color: #fff;
-  border: 3px solid #8dbe5c;
-  cursor: pointer;
-  border-radius: 50px;
-  user-select: none;
-  text-align: center;
-  font-size: 1.2rem;
-}
-
-.checkboxButton input[type="checkbox"] {
-  display: none;
-}
 
 /*======================================== OPSKRIFT ========================================*/
 
@@ -603,7 +582,7 @@ form {
   margin: 10px 0;
 }
 
-/*======================================== TOMSIDE ========================================*/
+/*======================================== TOM SIDE ========================================*/
 
 .tomside img {
   width: 100%;
@@ -640,9 +619,9 @@ form {
   margin-bottom: 30px;
 }
 
-.searchButton {
+.searchButton,
+.resetButton {
   background-color: var(--accent-color);
-  border-radius: 0 100px 100px 0;
   width: 15%;
   height: 100%;
   color: #2a2a2a;
@@ -650,9 +629,11 @@ form {
 
 .resetButton {
   background-color: #838383;
-  width: 15%;
-  height: 100%;
-  color: #2a2a2a;
+}
+
+.searchButton {
+  background-color: var(--accent-color);
+  border-radius: 0 100px 100px 0;
 }
 
 .searchButton svg {
@@ -663,7 +644,7 @@ form {
   font-size: 2rem;
 }
 
-/* Filtrering */
+/* Filtreringsknap */
 
 .filterButton {
   width: 30%;
@@ -692,4 +673,44 @@ form {
   max-height: 100%;
 }
 
+/* Filter */
 
+.checkboxButton {
+  display: inline-block;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: 0.1vw;
+  padding-bottom: 0.1vw;
+  margin: 5px;
+  background-color: var(--background-color);
+  color: var(--font-color);
+  border: 3px solid var(--accent-color);
+  cursor: pointer;
+  border-radius: 50px;
+  user-select: none;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.checkboxButton input[type="checkbox"] {
+  display: none;
+}
+
+.checkboxButton input[type="checkbox"]:checked + label {
+  background-color: red;
+  color: #2a2a2a;
+}
+
+.filterHeader {
+  margin-bottom: 5px;
+  margin-top: 30px;
+}
+
+.filterTopHeader {
+  margin-bottom: 5px;  
+}
+
+.aktiverButton {
+  margin-top: 30px;
+  margin-bottom: 100px;
+}

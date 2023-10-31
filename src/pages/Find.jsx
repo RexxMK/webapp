@@ -5,7 +5,6 @@ import tomsideDark from "../img/tomside-dark.png";
 import SearchIcon from '@mui/icons-material/Search';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
-import Filter from "../components/Filter";
 
 
 // DKK & RMK
@@ -68,6 +67,7 @@ export default function Find() {
   function handleCheckbox(e) {
     const checkboxStatus = e.currentTarget.checked; // er true(checked) eller false(ikke checked)
     const searchWord = e.currentTarget.getAttribute("data-searchWord"); // gemmer på søgeordet
+    
     if (checkboxStatus) {
       searchWordListe.push(searchWord); // Indsætter søgeordet på søgeordslisten
     } else {
@@ -77,6 +77,11 @@ export default function Find() {
 
     setSearchWordListe(searchWordListe);
   }
+
+
+
+  
+
 
 
   // RMK
@@ -109,6 +114,7 @@ export default function Find() {
       setSkyggeDrinksListe(searchResultatListe);
     }
   }
+
 
 
   // DKK
@@ -159,20 +165,31 @@ export default function Find() {
   }
 
 
-    // Kopieret fra DKK Lykken.jsx.
-    // Til at få billedet at skiftes imellem light og dark mode
-    const [theme, setTheme] = useState("dark");
-      
-    useEffect(() => {
-        const currentTheme = document.querySelector("body").getAttribute('data-theme');
+  // Kopieret fra DKK Lykken.jsx.
+  /* Følgende funktion sikrer, at det rigtige shakerbillede vises fra start afhængigt af om brugeren klikker ind på Prøv Lykken i 
+  light eller dark mode. Har brugeren valgt dark mode når de klikker ind på Prøv Lykken skal darkShaker vises. Har de valgt light mode,
+  skal lightShaker vises. (Ændrer brugeren mode imens de er på Prøv Lykken skifter billedet også, men dette sker under LightMode.jsx.) */
 
+  // Variabel som kan være dark eller light.
+  const [theme, setTheme] = useState("dark");
+
+  // Vi tjekker om temaet i body er dark eller light og sætter currentTheme lig denne.
+  useEffect(() => {
+    const currentTheme = document
+      .querySelector("body")
+      .getAttribute("data-theme");
+
+    // Hvis temaet i body er light sættes theme til light. Ellers dark.
     if (currentTheme === "light") {
       setTheme("light");
     } else {
       setTheme("dark");
     }
 
-    }, []);
+    console.log("Current Theme:", theme);
+
+    // useEffect skal køre én gang når siden loades. Derfor de tomme [].
+  }, []);
 
 
 
@@ -188,6 +205,9 @@ export default function Find() {
 
 
 
+
+  
+      
   
   return (
     <article className="page">
@@ -201,7 +221,7 @@ export default function Find() {
       {/* RMK */}
       <div className={`fixedMargin filter-container ${isFilterOpen ? 'open' : 'closed'}`}>
         <form onSubmit={handleAktiver}>
-          <h2>Smag</h2>
+          <h2 className="filterTopHeader">Smag</h2>
           <label className="checkboxButton">
             Sød
             <input
@@ -240,7 +260,7 @@ export default function Find() {
         </label>
       </form>
       <form onSubmit={handleAktiver}>
-        <h2>Alkohol</h2>
+        <h2 className="filterHeader">Alkohol</h2>
         <label className="checkboxButton">
           Vodka
           <input
@@ -279,7 +299,7 @@ export default function Find() {
         </label>
       </form>
       <form onSubmit={handleAktiver}>
-        <h2>Mixer</h2>
+        <h2 className="filterHeader">Mixer</h2>
         <label className="checkboxButton">
           Cola
           <input
@@ -326,7 +346,7 @@ export default function Find() {
           />
         </label>
         <form onSubmit={handleAktiver}>
-          <h2>Sirup</h2>
+          <h2 className="filterHeader">Sirup</h2>
           <label className="checkboxButton">
             Mango
             <input
@@ -365,7 +385,7 @@ export default function Find() {
           </label>
         </form>
         <form onSubmit={handleAktiver}>
-          <h2>Antal ingredienser</h2>
+          <h2 className="filterHeader">Antal ingredienser</h2>
           <label className="checkboxButton">
             2-3
             <input
@@ -394,7 +414,7 @@ export default function Find() {
             />
           </label>
         </form>
-        <button type="submit" onClick={toggleFilter}>Aktiver</button>
+        <button type="submit" onClick={toggleFilter} className="buttonFull aktiverButton">Find drinks</button>
       </form>
       </div>
      
