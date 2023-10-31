@@ -3,6 +3,7 @@ import Knap from "../components/Knap";
 import tomsideLight from "../img/tomside-light.png";
 import tomsideDark from "../img/tomside-dark.png";
 import DrinkKort from "../components/DrinkKort";
+import Drink from "../components/Drink";
 
 //RMK
 export default function Favoritter() {
