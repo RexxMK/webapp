@@ -7,14 +7,6 @@ export default function FavoritHjerteKort({ drinkid, farve }) {
   //Her bruger jeg useState til at oprette en variablen iconColor med en standardfarve
   const [iconColor, setIconColor] = useState(farve);
 
-  /*useEffect(() => {
-    //Når hjerteikonet er blevet klikket på, bliver farven gemt i localstorage
-    const savedColor = localStorage.getItem("iconColor");
-    if (savedColor) {
-      setIconColor(savedColor);
-    }
-  }, []);*/
-
   const handleIconClick = (e) => {
     const drinkIden = e.currentTarget.getAttribute("data-drinkid");
     let favoritListe = [];
