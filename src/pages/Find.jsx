@@ -461,7 +461,6 @@ export default function Find() {
         //SD
         <div className="fixedMargin tomside" style={{ display: visning }}>
           <p>0 resultater</p>
-        <div className="tomside" style={{ display: visning }}>
           <p className="fixedMargin">Din søgning gav 0 resultater</p>
           <img src={theme === "light" ? tomsideLight : tomsideDark} id="tomsidebillede" />
           <h4 className="tomsideHeader fixedMargin">Du vil måske synes om</h4>
