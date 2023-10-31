@@ -35,7 +35,7 @@ export default function DrinkKort({ drink }) {
         <h3 className="drinkheader">{drink.navn}</h3>
       </div>
       <div className="star-wrap">
-        <CardRating />
+        <CardRating cardId={drink.id} />
       </div>
     </div>
   );

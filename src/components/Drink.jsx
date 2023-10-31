@@ -26,6 +26,8 @@ export default function Drink({ drink, drinkid }) {
       ? drink.metode.map((afsnit, index) => <li key={index}>{afsnit}</li>)
       : null;
 
+  /*console.log(drink.billede);*/
+
   // SD
   // Ved brug af use navigate kan vi lave en go back knap
   // Så ved tryk af knappen navigerer hjemmesiden dig til den side du var sidst på
@@ -60,7 +62,7 @@ export default function Drink({ drink, drinkid }) {
           <ul>{metodeAfsnit}</ul>
         </div>
         <h3>Bedømmelse</h3>
-        <StarRating />
+        <StarRating cardId={drink.id} />
       </div>
     </section>
   );

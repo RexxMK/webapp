@@ -110,13 +110,8 @@ export default function Find() {
       // Er der ingen drinks som matcher , så er der ingen drinks at vise
       setIsDrinks(false);
 
-      const antalDrinks = 4;
-      setSkyggeDrinksListe(drinks.slice(0, antalDrinks));
-      setVisning("block");
-
     } else {
       setSkyggeDrinksListe(searchResultatListe);
-      setVisning("none");
     }
   }
 
