@@ -276,6 +276,7 @@ h4 {
 /*======================================== DRINK CARD ========================================*/
 
 .drinkcard {
+  position: relative;
   width: 165px;
   height: 235px;
   background-color: var(--background-color);
@@ -287,7 +288,6 @@ h4 {
   align-items: center;
   margin-bottom: 30px;
   margin-top: 5px;
-
   margin-left: 20px;
 }
 

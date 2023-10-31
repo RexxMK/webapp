@@ -126,8 +126,6 @@ export default function Lykken() {
 
   // Der skal også genereres en random drink, når brugeren ryster sin mobil. Samtidig skal lykkenLayout-funktionen køre.
 
-  const [randomNumber, setRandomNumber] = useState(null);
-
   useEffect(() => {
     function mobileShake(event) {
       // Indeholder information om eventets bevægelse i retningerne x, y og z.
