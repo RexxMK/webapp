@@ -25,7 +25,7 @@ export default function RedigerOpskrift({ saveTilfoj, tilfoj }) {
 
   function handleImageChange(event) {
     const file = event.target.files[0];
-    if (file.size < 500000) {
+    if (file.size < 5000000) {
       setImageFile(file);
       const reader = new FileReader();
       reader.onload = (event) => {
@@ -34,7 +34,7 @@ export default function RedigerOpskrift({ saveTilfoj, tilfoj }) {
       reader.readAsDataURL(file);
       setErrorMessage("");
     } else {
-      setErrorMessage("Hov! Billedet skal være under 0,5 MB");
+      setErrorMessage("Hov! Billedet skal være under 5 MB");
     }
   }
   async function uploadImage() {
