@@ -65,8 +65,8 @@ h4 {
 
 /* Fast margin */
 .fixedMargin {
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
 }
 
 /* Maks skærmstørrelse */
@@ -276,7 +276,7 @@ h4 {
 /*======================================== DRINK CARD ========================================*/
 
 .drinkcard {
-  width: 165px;
+  width: 46vw;
   height: 235px;
   background-color: var(--background-color);
   filter: drop-shadow(0 0 0.5rem var(--shadow-color));
@@ -288,7 +288,7 @@ h4 {
   margin-bottom: 30px;
   margin-top: 5px;
 
-  margin-left: 20px;
+  margin-left: 2.7vw;
 }
 
 .flexbox {
@@ -323,7 +323,7 @@ h4 {
 }
 
 .drinkimg {
-  width: 150px;
+  width: 42vw;
   height: 150px;
   object-fit: cover;
   margin-top: 10px;
@@ -333,7 +333,6 @@ h4 {
   font-size: 16px;
   padding: 5px 0;
 }
-
 
 /*======================================== OPSKRIFT ========================================*/
 
@@ -475,7 +474,7 @@ h4 {
 /*======================================== TILFØJ ========================================*/
 
 .add {
-  width: 165px;
+  width: 46vw;
   height: 235px;
   background-color: var(--background-color);
   filter: drop-shadow(0 0 0.5rem var(--shadow-color));
@@ -486,7 +485,7 @@ h4 {
   align-items: center;
   margin-top: 5px;
   margin-bottom: 30px;
-  margin-left: 20px;
+  margin-left: 2.7vw;
   overflow: hidden;
 }
 
@@ -610,7 +609,6 @@ form {
   margin-bottom: 10px;
 }
 
-
 /*======================================== FIND DRINK ========================================*/
 
 /* Søg */
@@ -725,7 +723,7 @@ form {
 }
 
 .filterTopHeader {
-  margin-bottom: 5px;  
+  margin-bottom: 5px;
 }
 
 .aktiverButton {

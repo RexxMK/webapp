@@ -8,12 +8,15 @@ export default function CardRating({ cardId }) {
   //localStorageKey dannes ved at tilføje cardId til en string, der bruges som en key til at gemme rating for hvert kort
   const localStorageKey = `cardRating_${cardId}`;
 
+  //useState bruges til at oprette en tilstand, rating, som indeholder ratingværdien for det pågældende kort
   const [rating, setRating] = useState(() => {
+    //Den starter med at hente rating fra localStorage, og hvis den ikke findes, er den som standard null
     const storedRating = localStorage.getItem(localStorageKey);
     return storedRating ? parseInt(storedRating, 10) : null;
   });
 
-  // En effekt, der kører, når rating ændres, for at opdatere localStorage.
+  //useEffect reagerer på ændringer i rating og opdaterer localStorage med den nye ratingværdi
+  //Det sikrer, at ratingen for hvert kort gemmes separat
   useEffect(() => {
     if (rating !== null) {
       localStorage.setItem(localStorageKey, rating);
@@ -39,7 +42,10 @@ export default function CardRating({ cardId }) {
               type="radio"
               name={`rating_${cardId}`}
               value={ratingValue}
+              //Når man klikker på en stjerne, opdateres rating til stjernens værdi ved hjælp af setRating(ratingValue)
+              //Dette skifter stjernernes farve og markerer dem som vurderet
               onClick={() => setRating(ratingValue)}
+              //defaultChecked bruges til at markere den korrekte stjerne baseret på den aktuelle rating
               defaultChecked={ratingValue === rating}
             />
             {/*Med farven siger vi om value som er mindre eller lig med ratingValue skal være gul

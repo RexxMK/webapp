@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 
 // RMK
 
-export default function CardRating({ cardId }) {
-  const localStorageKey = `cardRating_${cardId}`;
+export default function StarRating({ starId }) {
+  const localStorageKey = `starRating_${starId}`;
   const [rating, setRating] = useState(() => {
     const storedRating = localStorage.getItem(localStorageKey);
     return storedRating ? parseInt(storedRating, 10) : null;
@@ -34,7 +34,7 @@ export default function CardRating({ cardId }) {
             {/*Når du klikker på en stjerne skifter du state value til det value stjernen er */}
             <input
               type="radio"
-              name={`rating_${cardId}`}
+              name={`rating_${starId}`}
               value={ratingValue}
               onClick={() => setRating(ratingValue)}
               defaultChecked={ratingValue === rating}

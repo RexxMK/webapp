@@ -1,7 +1,7 @@
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
-import StarRating from "./StarRating";
 import { useNavigate } from "react-router-dom";
 import FavoritHjerteDrink from "./FavoritHjerteDrink";
+import StarRating from "./StarRating";
 
 // RMK
 export default function Drink({ drink, drinkid }) {
@@ -62,7 +62,7 @@ export default function Drink({ drink, drinkid }) {
           <ul>{metodeAfsnit}</ul>
         </div>
         <h3>Bedømmelse</h3>
-        <StarRating cardId={drink.id} />
+        <StarRating starId={drink.id} />
       </div>
     </section>
   );
