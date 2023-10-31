@@ -68,10 +68,6 @@ export default function Tilfoj() {
       ) : (
         <div className="fixedMargin tomside">
           <p>Du har ikke tilføjet nogen opskrifter.</p>
-          <label className="container">
-            <input type="checkbox" defaultChecked={false}/>
-            <span className="checkmark">Sød</span>
-          </label>
           <img
             src={theme === "light" ? tomsideLight : tomsideDark}
             id="tomsidebillede"
