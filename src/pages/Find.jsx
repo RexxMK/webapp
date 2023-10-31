@@ -24,14 +24,15 @@ export default function Find() {
   // DKK
   // Til søgefunktionen
   const [soegeTekst, setSoegeTekst] = useState("");
-  //const [skyggeDrinksListe, setSkyggeDrinksListe] = useState([]);
+
+  // Til om den tomme side ved ingen søgeresultater skal vises eller ej.
+  const [visning, setVisning] = useState("none");
   
 
   // RMK & DKK
   // Til søg og filtrering
   const [skyggeDrinksListe, setSkyggeDrinksListe] = useState([]);
-
-  const [visning, setVisning] = useState("none")
+  
 
 
   // RMK
@@ -159,9 +160,12 @@ export default function Find() {
 
       // I så fald er der ingen drinks at vise.
       setIsDrinks(false);
+
+      // Ved ingen søgeresultater får brugeren foreslået 4 drinks.
       const antalDrinks = 4;
       setSkyggeDrinksListe(drinks.slice(0, antalDrinks));
       setVisning("block");
+
     } else {
       setVisning("none");
       // Ellers er der drinks at vise, hvilket sker ved at sætte skyggeDrinksListe til at være søgeresultatet.
@@ -447,7 +451,7 @@ export default function Find() {
         </div>
       </form>
 
-      {/* RMK, DKK & SD */}
+      {/* RMK & DKK */}
       {isDrinks ? (
         <div className="flexbox">
           {skyggeDrinksListe.map((drink) => (
@@ -457,10 +461,10 @@ export default function Find() {
 
       ) : (
         //SD
-        <div className="fixedMargin tomside" style={{ display: visning }}>
-          <p>Din søgning gav 0 resultater</p>
+        <div className="tomside" style={{ display: visning }}>
+          <p className="fixedMargin">Din søgning gav 0 resultater</p>
           <img src={theme === "light" ? tomsideLight : tomsideDark} id="tomsidebillede" />
-          <h4>Du vil måske synes om</h4>
+          <h4 className="tomsideHeader fixedMargin">Du vil måske synes om</h4>
           <div className="flexbox">
             {skyggeDrinksListe.map((drink) => (
               <DrinkKort key={drink.id} drink={drink} />

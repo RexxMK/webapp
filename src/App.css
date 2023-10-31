@@ -592,15 +592,22 @@ form {
 
 /*======================================== TOM SIDE ========================================*/
 
-.tomside img {
-  width: 100%;
+#tomsidebillede {
+  display: block;
+  width: 90%;
   padding: 30px 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .tomside p {
   font-size: 1.3rem;
   font-weight: 300;
   color: #838383;
+}
+
+.tomsideHeader {
+  margin-bottom: 10px;
 }
 
 
