@@ -22,7 +22,7 @@ export default function AddCard({ tilfoj }) {
         {tilfoj.navn}
       </h3>
       <div className="star-wrap">
-        <CardRating cardId={drink.id} />
+        <CardRating />
       </div>
     </div>
   );
