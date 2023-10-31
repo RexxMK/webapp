@@ -603,6 +603,10 @@ form {
   margin: 10px 0;
 }
 
+.rediger-img input {
+  display: none;
+}
+
 /*======================================== TOMSIDE ========================================*/
 
 .tomside img {
