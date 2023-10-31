@@ -3,8 +3,11 @@ import { useEffect, useState } from "react";
 
 // RMK
 
+//CardRating tager en enkelt prop, cardId, som identificerer det kort, som vurderingen refererer til
 export default function CardRating({ cardId }) {
+  //localStorageKey dannes ved at tilføje cardId til en string, der bruges som en key til at gemme rating for hvert kort
   const localStorageKey = `cardRating_${cardId}`;
+
   const [rating, setRating] = useState(() => {
     const storedRating = localStorage.getItem(localStorageKey);
     return storedRating ? parseInt(storedRating, 10) : null;
