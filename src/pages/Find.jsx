@@ -83,10 +83,6 @@ export default function Find() {
 
 
 
-  
-
-
-
   // RMK
   function handleAktiver(e) {
     e.preventDefault();
@@ -113,8 +109,14 @@ export default function Find() {
     if (skyggeDrinksListe.length === 0) {
       // Er der ingen drinks som matcher , så er der ingen drinks at vise
       setIsDrinks(false);
+
+      const antalDrinks = 4;
+      setSkyggeDrinksListe(drinks.slice(0, antalDrinks));
+      setVisning("block");
+
     } else {
       setSkyggeDrinksListe(searchResultatListe);
+      setVisning("none");
     }
   }
 
@@ -133,6 +135,7 @@ export default function Find() {
     setVisning("none");
   }
 
+  // DKK
   // handleSubmit-funktionen skal kaldes, når brugeren laver en søgning.
   function handleSubmit(e) {
 
@@ -165,13 +168,15 @@ export default function Find() {
       // Ved ingen søgeresultater får brugeren foreslået 4 drinks.
       const antalDrinks = 4;
       setSkyggeDrinksListe(drinks.slice(0, antalDrinks));
+
       setVisning("block");
 
     } else {
-      setVisning("none");
+
       // Ellers er der drinks at vise, hvilket sker ved at sætte skyggeDrinksListe til at være søgeresultatet.
       setIsDrinks(true);
       setSkyggeDrinksListe(soegeResultat);
+      setVisning("none");
     }
   }
 
@@ -460,9 +465,8 @@ export default function Find() {
 
       ) : (
         //SD
-        <div className="fixedMargin tomside" style={{ display: visning }}>
-          <p>0 resultater</p>
-          <p className="fixedMargin">Din søgning gav 0 resultater</p>
+        <div className="tomside" style={{ display: visning }}>
+          <p className="fixedMargin">0 resultater</p>
           <img src={theme === "light" ? tomsideLight : tomsideDark} id="tomsidebillede" />
           <h4 className="tomsideHeader fixedMargin">Du vil måske synes om</h4>
           <div className="flexbox">

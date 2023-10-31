@@ -691,10 +691,10 @@ form {
 
 .checkmark {
   display: inline-block;
-  padding-left: 1vw;
-  padding-right: 1vw;
-  padding-top: 0.1vw;
-  padding-bottom: 0.1vw;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  padding-top: 0.2vw;
+  padding-bottom: 0.2vw;
   margin: 5px;
   background-color: var(--background-color);
   color: var(--font-color);
