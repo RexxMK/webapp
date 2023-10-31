@@ -334,27 +334,6 @@ h4 {
   padding: 5px 0;
 }
 
-/*======================================== FILTER ==========================================*/
-.checkboxButton {
-  display: inline-block;
-  padding-left: 1vw;
-  padding-right: 1vw;
-  padding-top: 0.1vw;
-  padding-bottom: 0.1vw;
-  margin: 5px;
-  background-color: #2a2a2a;
-  color: #fff;
-  border: 3px solid #8dbe5c;
-  cursor: pointer;
-  border-radius: 50px;
-  user-select: none;
-  text-align: center;
-  font-size: 1.2rem;
-}
-
-.checkboxButton input[type="checkbox"] {
-  display: none;
-}
 
 /*======================================== OPSKRIFT ========================================*/
 
@@ -603,11 +582,22 @@ form {
   margin: 10px 0;
 }
 
-/*======================================== TOMSIDE ========================================*/
+.rediger-img input {
+  display: none;
+}
 
-.tomside img {
-  width: 100%;
+.rediger-img input {
+  display: none;
+}
+
+/*======================================== TOM SIDE ========================================*/
+
+#tomsidebillede {
+  display: block;
+  width: 90%;
   padding: 30px 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .tomside p {
@@ -616,7 +606,10 @@ form {
   color: #838383;
 }
 
-/*======================================== FAVORITTER ========================================*/
+.tomsideHeader {
+  margin-bottom: 10px;
+}
+
 
 /*======================================== FIND DRINK ========================================*/
 
@@ -640,9 +633,9 @@ form {
   margin-bottom: 30px;
 }
 
-.searchButton {
+.searchButton,
+.resetButton {
   background-color: var(--accent-color);
-  border-radius: 0 100px 100px 0;
   width: 15%;
   height: 100%;
   color: #2a2a2a;
@@ -650,9 +643,11 @@ form {
 
 .resetButton {
   background-color: #838383;
-  width: 15%;
-  height: 100%;
-  color: #2a2a2a;
+}
+
+.searchButton {
+  background-color: var(--accent-color);
+  border-radius: 0 100px 100px 0;
 }
 
 .searchButton svg {
@@ -663,7 +658,7 @@ form {
   font-size: 2rem;
 }
 
-/* Filtrering */
+/* Filtreringsknap */
 
 .filterButton {
   width: 30%;
@@ -692,4 +687,48 @@ form {
   max-height: 100%;
 }
 
+/* Filter */
 
+.checkmark {
+  display: inline-block;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  padding-top: 0.2vw;
+  padding-bottom: 0.2vw;
+  margin: 5px;
+  background-color: var(--background-color);
+  color: var(--font-color);
+  border: 3px solid var(--accent-color);
+  cursor: pointer;
+  border-radius: 50px;
+  user-select: none;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.checkboxButton input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkboxButton input:checked ~ .checkmark {
+  background-color: var(--accent-color);
+  color: #2a2a2a;
+}
+
+.filterHeader {
+  margin-bottom: 5px;
+  margin-top: 30px;
+}
+
+.filterTopHeader {
+  margin-bottom: 5px;  
+}
+
+.aktiverButton {
+  margin-top: 30px;
+  margin-bottom: 100px;
+}

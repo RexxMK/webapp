@@ -5,7 +5,6 @@ import tomsideDark from "../img/tomside-dark.png";
 import SearchIcon from '@mui/icons-material/Search';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
-import Filter from "../components/Filter";
 
 
 // DKK & RMK
@@ -25,12 +24,15 @@ export default function Find() {
   // DKK
   // Til søgefunktionen
   const [soegeTekst, setSoegeTekst] = useState("");
-  //const [skyggeDrinksListe, setSkyggeDrinksListe] = useState([]);
+
+  // Til om den tomme side ved ingen søgeresultater skal vises eller ej.
+  const [visning, setVisning] = useState("none");
   
-  
+
   // RMK & DKK
   // Til søg og filtrering
   const [skyggeDrinksListe, setSkyggeDrinksListe] = useState([]);
+  
 
 
   // RMK
@@ -68,6 +70,7 @@ export default function Find() {
   function handleCheckbox(e) {
     const checkboxStatus = e.currentTarget.checked; // er true(checked) eller false(ikke checked)
     const searchWord = e.currentTarget.getAttribute("data-searchWord"); // gemmer på søgeordet
+    
     if (checkboxStatus) {
       searchWordListe.push(searchWord); // Indsætter søgeordet på søgeordslisten
     } else {
@@ -77,6 +80,7 @@ export default function Find() {
 
     setSearchWordListe(searchWordListe);
   }
+
 
 
   // RMK
@@ -105,10 +109,12 @@ export default function Find() {
     if (skyggeDrinksListe.length === 0) {
       // Er der ingen drinks som matcher , så er der ingen drinks at vise
       setIsDrinks(false);
+
     } else {
       setSkyggeDrinksListe(searchResultatListe);
     }
   }
+
 
 
   // DKK
@@ -116,12 +122,15 @@ export default function Find() {
   // 1. Alle drinks skal igen vises. Derfor tages sættes skyggeDrinksListe til drinks (som netop er alle drinks).
   // 2. Brugerens søgetekst skal slettes fra søgefeltet. Den sættes derfor til en tom streng.
   // 3. isDrinks sættes til true, så alle drinksene igen vises i tilfælde af en "tom" søgning.
+  // 4. Tekst og billede ved ingen søgeresultater skal ikke vises, altså have display: none.
   function reset() {
     setSkyggeDrinksListe(drinks);
     setSoegeTekst("");
     setIsDrinks(true);
+    setVisning("none");
   }
 
+  // DKK
   // handleSubmit-funktionen skal kaldes, når brugeren laver en søgning.
   function handleSubmit(e) {
 
@@ -150,29 +159,48 @@ export default function Find() {
 
       // I så fald er der ingen drinks at vise.
       setIsDrinks(false);
+
+      // Ved ingen søgeresultater får brugeren foreslået 4 drinks.
+      const antalDrinks = 4;
+      setSkyggeDrinksListe(drinks.slice(0, antalDrinks));
+
+      setVisning("block");
+
     } else {
 
       // Ellers er der drinks at vise, hvilket sker ved at sætte skyggeDrinksListe til at være søgeresultatet.
       setIsDrinks(true);
       setSkyggeDrinksListe(soegeResultat);
+      setVisning("none");
     }
   }
 
 
-    // Kopieret fra DKK Lykken.jsx.
-    // Til at få billedet at skiftes imellem light og dark mode
-    const [theme, setTheme] = useState("dark");
-      
-    useEffect(() => {
-        const currentTheme = document.querySelector("body").getAttribute('data-theme');
+  // Kopieret fra DKK Lykken.jsx.
+  /* Følgende funktion sikrer, at det rigtige shakerbillede vises fra start afhængigt af om brugeren klikker ind på Prøv Lykken i 
+  light eller dark mode. Har brugeren valgt dark mode når de klikker ind på Prøv Lykken skal darkShaker vises. Har de valgt light mode,
+  skal lightShaker vises. (Ændrer brugeren mode imens de er på Prøv Lykken skifter billedet også, men dette sker under LightMode.jsx.) */
 
+  // Variabel som kan være dark eller light.
+  const [theme, setTheme] = useState("dark");
+
+  // Vi tjekker om temaet i body er dark eller light og sætter currentTheme lig denne.
+  useEffect(() => {
+    const currentTheme = document
+      .querySelector("body")
+      .getAttribute("data-theme");
+
+    // Hvis temaet i body er light sættes theme til light. Ellers dark.
     if (currentTheme === "light") {
       setTheme("light");
     } else {
       setTheme("dark");
     }
 
-    }, []);
+    console.log("Current Theme:", theme);
+
+    // useEffect skal køre én gang når siden loades. Derfor de tomme [].
+  }, []);
 
 
 
@@ -188,6 +216,9 @@ export default function Find() {
 
 
 
+
+  
+      
   
   return (
     <article className="page">
@@ -201,200 +232,198 @@ export default function Find() {
       {/* RMK */}
       <div className={`fixedMargin filter-container ${isFilterOpen ? 'open' : 'closed'}`}>
         <form onSubmit={handleAktiver}>
-          <h2>Smag</h2>
+          <h2 className="filterTopHeader">Smag</h2>
           <label className="checkboxButton">
-            Sød
-            <input
-              type="checkbox"
+            <input type="checkbox"
               defaultChecked={false}
               data-searchWord="sød"
-              onChange={handleCheckbox}
-            />
+              onChange={handleCheckbox}/>
+            <span className="checkmark">Sød</span>
           </label>
           <label className="checkboxButton">
-            Sur
             <input
               type="checkbox"
               defaultChecked={false}
               data-searchWord="sur"
               onChange={handleCheckbox}
             />
+            <span className="checkmark">Sur</span>
           </label>
           <label className="checkboxButton">
-            Bitter
             <input
               type="checkbox"
               defaultChecked={false}
               data-searchWord="bitter"
               onChange={handleCheckbox}
             />
+            <span className="checkmark">Bitter</span>
           </label>
           <label className="checkboxButton">
-            Frisk
           <input
             type="checkbox"
             defaultChecked={false}
             data-searchWord="frisk"
             onChange={handleCheckbox}
           />
+          <span className="checkmark">Frisk</span>
         </label>
       </form>
       <form onSubmit={handleAktiver}>
-        <h2>Alkohol</h2>
+        <h2 className="filterHeader">Alkohol</h2>
         <label className="checkboxButton">
-          Vodka
           <input
             type="checkbox"
             defaultChecked={false}
             data-searchWord="vodka"
             onChange={handleCheckbox}
           />
+          <span className="checkmark">Vodka</span>
         </label>
         <label className="checkboxButton">
-          Gin
           <input
             type="checkbox"
             defaultChecked={false}
             data-searchWord="gin"
             onChange={handleCheckbox}
           />
+          <span className="checkmark">Gin</span>
         </label>
         <label className="checkboxButton">
-          Rom
           <input
             type="checkbox"
             defaultChecked={false}
             data-searchWord="rom"
             onChange={handleCheckbox}
           />
+          <span className="checkmark">Rom</span>
         </label>
         <label className="checkboxButton">
-          Tequila
           <input
             type="checkbox"
             defaultChecked={false}
             data-searchWord="tequila"
             onChange={handleCheckbox}
           />
+          <span className="checkmark">Tequila</span>
         </label>
       </form>
       <form onSubmit={handleAktiver}>
-        <h2>Mixer</h2>
+        <h2 className="filterHeader">Mixer</h2>
         <label className="checkboxButton">
-          Cola
           <input
             type="checkbox"
             defaultChecked={false}
             data-searchWord="cola"
             onChange={handleCheckbox}
           />
+          <span className="checkmark">Cola</span>
         </label>
         <label className="checkboxButton">
-          Sprite
           <input
             type="checkbox"
             defaultChecked={false}
             data-searchWord="sprite"
             onChange={handleCheckbox}
           />
+          <span className="checkmark">Sprite</span>
         </label>
         <label className="checkboxButton">
-          Fanta
           <input
             type="checkbox"
             defaultChecked={false}
             data-searchWord="fanta"
             onChange={handleCheckbox}
           />
+          <span className="checkmark">Fanta</span>
         </label>
         <label className="checkboxButton">
-          Appelsinjuice
           <input
             type="checkbox"
             defaultChecked={false}
             data-searchWord="appelsinjuice"
             onChange={handleCheckbox}
           />
+          <span className="checkmark">Appelsinjuice</span>
         </label>
         <label className="checkboxButton">
-          Æblejuice
           <input
             type="checkbox"
             defaultChecked={false}
             data-searchWord="æblejuice"
             onChange={handleCheckbox}
           />
+          <span className="checkmark">Æblejuice</span>
         </label>
         <form onSubmit={handleAktiver}>
-          <h2>Sirup</h2>
+          <h2 className="filterHeader">Sirup</h2>
           <label className="checkboxButton">
-            Mango
             <input
               type="checkbox"
               defaultChecked={false}
               data-searchWord="mango"
               onChange={handleCheckbox}
             />
+            <span className="checkmark">Mango</span>
           </label>
           <label className="checkboxButton">
-            Grenadine
             <input
               type="checkbox"
               defaultChecked={false}
               data-searchWord="grenadine"
               onChange={handleCheckbox}
             />
+            <span className="checkmark">Grenadine</span>
           </label>
           <label className="checkboxButton">
-            Blue Curacao
             <input
               type="checkbox"
               defaultChecked={false}
               data-searchWord="blue curacao"
               onChange={handleCheckbox}
             />
+            <span className="checkmark">Blue Curacao</span>
           </label>
           <label className="checkboxButton">
-            Sirup
             <input
               type="checkbox"
               defaultChecked={false}
               data-searchWord="sirup"
               onChange={handleCheckbox}
             />
+            <span className="checkmark">Sirup</span>
           </label>
         </form>
         <form onSubmit={handleAktiver}>
-          <h2>Antal ingredienser</h2>
+          <h2 className="filterHeader">Antal ingredienser</h2>
           <label className="checkboxButton">
-            2-3
             <input
               type="checkbox"
               defaultChecked={false}
               data-searchWord="2-3"
               onChange={handleCheckbox}
             />
+            <span className="checkmark">2-3</span>
           </label>
           <label className="checkboxButton">
-            4-5
             <input
               type="checkbox"
               defaultChecked={false}
               data-searchWord="4-5"
               onChange={handleCheckbox}
             />
+            <span className="checkmark">4-5</span>
           </label>
           <label className="checkboxButton">
-            6 eller flere
             <input
               type="checkbox"
               defaultChecked={false}
               data-searchWord="6 eller flere"
               onChange={handleCheckbox}
             />
+            <span className="checkmark">6 eller flere</span>
           </label>
         </form>
-        <button type="submit" onClick={toggleFilter}>Aktiver</button>
+        <button type="submit" onClick={toggleFilter} className="buttonFull aktiverButton">Find drinks</button>
       </form>
       </div>
      
@@ -421,7 +450,7 @@ export default function Find() {
         </div>
       </form>
 
-      {/* RMK, DKK & SD */}
+      {/* RMK & DKK */}
       {isDrinks ? (
         <div className="flexbox">
           {skyggeDrinksListe.map((drink) => (
@@ -430,14 +459,18 @@ export default function Find() {
         </div>
 
       ) : (
-
-        <div className="fixedMargin tomside">
-          <p>Din søgning gav 0 resultater</p>
+        //SD
+        <div className="tomside" style={{ display: visning }}>
+          <p className="fixedMargin">0 resultater</p>
           <img src={theme === "light" ? tomsideLight : tomsideDark} id="tomsidebillede" />
-          <h4>Du vil måske synes om</h4>
+          <h4 className="tomsideHeader fixedMargin">Du vil måske synes om</h4>
+          <div className="flexbox">
+            {skyggeDrinksListe.map((drink) => (
+              <DrinkKort key={drink.id} drink={drink} />
+            ))}
+          </div>
         </div>
       )}
-
     </article>
   );
 }
