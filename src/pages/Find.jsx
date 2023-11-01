@@ -88,8 +88,12 @@ export default function Find() {
         const s2 = drink.ingredienser.find((ingrediens) =>
           ingrediens.toLowerCase().includes(searchWord.toLowerCase())
         ); // Søg blandt ingredienser
+        const s3 = drink.smag.find(
+          (elem) => elem.toLowerCase().includes(searchWord.toLowerCase()) // Søg i smag
+        );
+        const s4 = drink.antalingredienser.includes(searchWord); // Søg i antal
 
-        return s1 || s2; // Hvis enten s1 eller s2 er sand, så eksisterer søgeordet i drink navn eller ingredienser
+        return s1 || s2 || s3 || s4; // Hvis enten s1, s2, s3 eller s4 er sand, så eksisterer søgeordet i drink navn eller ingredienser
       });
 
       searchResultatListe = temp;
