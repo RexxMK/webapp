@@ -88,12 +88,8 @@ export default function Find() {
         const s2 = drink.ingredienser.find((ingrediens) =>
           ingrediens.toLowerCase().includes(searchWord.toLowerCase())
         ); // Søg blandt ingredienser
-        const s3 = drink.smag.find(
-          (elem) => elem.toLowerCase().includes(searchWord.toLowerCase()) // Søg i smag
-        );
-        const s4 = drink.antalingredienser.includes(searchWord); // Søg i antal
 
-        return s1 || s2 || s3 || s4; // Hvis enten s1, s2, s3 eller s4 er sand, så eksisterer søgeordet i drink navn eller ingredienser
+        return s1 || s2; // Hvis enten s1 eller s2 er sand, så eksisterer søgeordet i drink navn eller ingredienser
       });
 
       searchResultatListe = temp;
@@ -241,307 +237,313 @@ export default function Find() {
             <span className="checkmark">Bitter</span>
           </label>
           <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="frisk"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Frisk</span>
-        </label>
-      </form>
-      <form onSubmit={handleAktiver}>
-        <h2 className="filterHeader">Alkohol</h2>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="vodka"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Vodka</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="gin"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Gin</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="rom"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Rom</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="tequila"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Tequila</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="cointreau"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Cointreau</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="prosecco"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Prosecco</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="hyldeblomstlikør"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Hyldeblomstlikør</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="ferskenlikør"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Ferskenlikør</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="solbærlikør"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Solbærlikør</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="midori likør"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Melonlikør</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="campari"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Campari</span>
-        </label>
-      </form>
-      <form onSubmit={handleAktiver}>
-        <h2 className="filterHeader">Mixer</h2>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="cola"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Cola</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="appelsinjuice"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Appelsinjuice</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="danskvand"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Danskvand</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="lemon/lime sodavand"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Lemon/Limesodavand</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="pink lemonade"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Pink Lemonade</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="tranebærjuice"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Tranebærjuice</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="ananasjuice"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Ananasjuice</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="limejuice"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Limejuice</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="limesaft"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Limesaft</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="tonic"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Tonic</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="ginger ale"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Ginger Ale</span>
-        </label>
-        <form onSubmit={handleAktiver}>
-          <h2 className="filterHeader">Sirup</h2>
-          <label className="checkboxButton">
             <input
               type="checkbox"
               defaultChecked={false}
-              data-searchWord="mango"
+              data-searchWord="frisk"
               onChange={handleCheckbox}
             />
-            <span className="checkmark">Mangosirup</span>
-          </label>
-          <label className="checkboxButton">
-            <input
-              type="checkbox"
-              defaultChecked={false}
-              data-searchWord="grenadine"
-              onChange={handleCheckbox}
-            />
-            <span className="checkmark">Grenadine</span>
-          </label>
-          <label className="checkboxButton">
-            <input
-              type="checkbox"
-              defaultChecked={false}
-              data-searchWord="blue curacao"
-              onChange={handleCheckbox}
-            />
-            <span className="checkmark">Blue Curacao</span>
-          </label>
-          <label className="checkboxButton">
-            <input
-              type="checkbox"
-              defaultChecked={false}
-              data-searchWord="sirup"
-              onChange={handleCheckbox}
-            />
-            <span className="checkmark">Sirup</span>
-          </label>
-          <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="jordbærsirup"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Jordbærsirup</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="Rosmarinsirup"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Rosmarinsirup</span>
-        </label>
-        </form>
-        <form onSubmit={handleAktiver}>
-          <h2 className="filterHeader">Antal ingredienser</h2>
-          <label className="checkboxButton">
-            <input
-              type="checkbox"
-              defaultChecked={false}
-              data-searchWord="2-3"
-              onChange={handleCheckbox}
-            />
-            <span className="checkmark">2-3</span>
-          </label>
-          <label className="checkboxButton">
-            <input
-              type="checkbox"
-              defaultChecked={false}
-              data-searchWord="4-5"
-              onChange={handleCheckbox}
-            />
-            <span className="checkmark">4-5</span>
-          </label>
-          <label className="checkboxButton">
-            <input
-              type="checkbox"
-              defaultChecked={false}
-              data-searchWord="6 eller flere"
-              onChange={handleCheckbox}
-            />
-            <span className="checkmark">6 eller flere</span>
+            <span className="checkmark">Frisk</span>
           </label>
         </form>
-        <button type="submit" onClick={toggleFilter} className="buttonFull aktiverButton">Find drinks</button>
-      </form>
+        <form onSubmit={handleAktiver}>
+          <h2 className="filterHeader">Alkohol</h2>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="vodka"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Vodka</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="gin"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Gin</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="rom"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Rom</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="tequila"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Tequila</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="cointreau"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Cointreau</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="prosecco"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Prosecco</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="hyldeblomstlikør"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Hyldeblomstlikør</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="ferskenlikør"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Ferskenlikør</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="solbærlikør"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Solbærlikør</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="midori likør"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Melonlikør</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="campari"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Campari</span>
+          </label>
+        </form>
+        <form onSubmit={handleAktiver}>
+          <h2 className="filterHeader">Mixer</h2>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="cola"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Cola</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="appelsinjuice"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Appelsinjuice</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="danskvand"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Danskvand</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="lemon/lime sodavand"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Lemon/Limesodavand</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="pink lemonade"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Pink Lemonade</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="tranebærjuice"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Tranebærjuice</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="ananasjuice"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Ananasjuice</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="limejuice"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Limejuice</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="limesaft"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Limesaft</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="tonic"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Tonic</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="ginger ale"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Ginger Ale</span>
+          </label>
+          <form onSubmit={handleAktiver}>
+            <h2 className="filterHeader">Sirup</h2>
+            <label className="checkboxButton">
+              <input
+                type="checkbox"
+                defaultChecked={false}
+                data-searchWord="mango"
+                onChange={handleCheckbox}
+              />
+              <span className="checkmark">Mangosirup</span>
+            </label>
+            <label className="checkboxButton">
+              <input
+                type="checkbox"
+                defaultChecked={false}
+                data-searchWord="grenadine"
+                onChange={handleCheckbox}
+              />
+              <span className="checkmark">Grenadine</span>
+            </label>
+            <label className="checkboxButton">
+              <input
+                type="checkbox"
+                defaultChecked={false}
+                data-searchWord="blue curacao"
+                onChange={handleCheckbox}
+              />
+              <span className="checkmark">Blue Curacao</span>
+            </label>
+            <label className="checkboxButton">
+              <input
+                type="checkbox"
+                defaultChecked={false}
+                data-searchWord="sirup"
+                onChange={handleCheckbox}
+              />
+              <span className="checkmark">Sirup</span>
+            </label>
+            <label className="checkboxButton">
+              <input
+                type="checkbox"
+                defaultChecked={false}
+                data-searchWord="jordbærsirup"
+                onChange={handleCheckbox}
+              />
+              <span className="checkmark">Jordbærsirup</span>
+            </label>
+            <label className="checkboxButton">
+              <input
+                type="checkbox"
+                defaultChecked={false}
+                data-searchWord="Rosmarinsirup"
+                onChange={handleCheckbox}
+              />
+              <span className="checkmark">Rosmarinsirup</span>
+            </label>
+          </form>
+          <form onSubmit={handleAktiver}>
+            <h2 className="filterHeader">Antal ingredienser</h2>
+            <label className="checkboxButton">
+              <input
+                type="checkbox"
+                defaultChecked={false}
+                data-searchWord="2-3"
+                onChange={handleCheckbox}
+              />
+              <span className="checkmark">2-3</span>
+            </label>
+            <label className="checkboxButton">
+              <input
+                type="checkbox"
+                defaultChecked={false}
+                data-searchWord="4-5"
+                onChange={handleCheckbox}
+              />
+              <span className="checkmark">4-5</span>
+            </label>
+            <label className="checkboxButton">
+              <input
+                type="checkbox"
+                defaultChecked={false}
+                data-searchWord="6 eller flere"
+                onChange={handleCheckbox}
+              />
+              <span className="checkmark">6 eller flere</span>
+            </label>
+          </form>
+          <button
+            type="submit"
+            onClick={toggleFilter}
+            className="buttonFull aktiverButton"
+          >
+            Find drinks
+          </button>
+        </form>
       </div>
 
       {/* DKK */}
