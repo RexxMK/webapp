@@ -619,7 +619,7 @@ form {
   width: 70%;
   color: var(--font-color);
   font-size: 1rem;
-  padding-left: 20px;
+  padding-left: 10px;
 }
 
 .searchFormDiv {
