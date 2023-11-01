@@ -3,7 +3,6 @@ import Knap from "../components/Knap";
 import tomsideLight from "../img/tomside-light.png";
 import tomsideDark from "../img/tomside-dark.png";
 import DrinkKort from "../components/DrinkKort";
-import Drink from "../components/Drink";
 
 //RMK
 export default function Favoritter() {
@@ -66,14 +65,18 @@ export default function Favoritter() {
   return (
     <section>
       <h1 className="fixedMargin">Mine favoritter</h1>
+      {/* Her returneres enten en liste over favoritdrinks eller en besked om, at der ikke er nogen favoritter, 
+      afhængigt af isDrinks og længden af skyggeFavoritListe. */}
       {isDrinks && skyggeFavoritListe.length > 0 ? (
         <div className="flexbox">
+          {/* Hvis der er drinks at vise, oprettes en liste af DrinkKort-komponenter for hver favoritdrink */}
           {skyggeFavoritListe.map((drink) => (
             <DrinkKort key={drink.id} drink={drink} />
           ))}
         </div>
       ) : (
         <div className="fixedMargin tomside">
+          {/* Hvis der ikke er nogen favoritter, vises en besked sammen med et billede og en knap, til at komme i gang med at finde drinks */}
           <p>Du har ikke tilføjet nogen favoritter.</p>
           <img
             src={theme === "light" ? tomsideLight : tomsideDark}

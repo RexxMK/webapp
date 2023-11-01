@@ -2,16 +2,13 @@ import { useEffect, useState } from "react";
 import DrinkKort from "../components/DrinkKort";
 import tomsideLight from "../img/tomside-light.png";
 import tomsideDark from "../img/tomside-dark.png";
-import SearchIcon from '@mui/icons-material/Search';
-import FilterAltIcon from '@mui/icons-material/FilterAlt';
-import RestartAltIcon from '@mui/icons-material/RestartAlt';
-
+import SearchIcon from "@mui/icons-material/Search";
+import FilterAltIcon from "@mui/icons-material/FilterAlt";
+import RestartAltIcon from "@mui/icons-material/RestartAlt";
 
 // DKK & RMK
 
-
 export default function Find() {
-
   // RMK
   // Her oprettes tilstandsvariabler ved hjælp af "useState".
   // "drinks" bruges til at lagre listen over drinks, og "isDrinks" bruges til at kontrollere, om der er drinks at vise.
@@ -20,20 +17,16 @@ export default function Find() {
   // Til filtrering
   const [searchWordListe, setSearchWordListe] = useState([]);
 
-
   // DKK
   // Til søgefunktionen
   const [soegeTekst, setSoegeTekst] = useState("");
 
   // Til om den tomme side ved ingen søgeresultater skal vises eller ej.
   const [visning, setVisning] = useState("none");
-  
 
   // RMK & DKK
   // Til søg og filtrering
   const [skyggeDrinksListe, setSkyggeDrinksListe] = useState([]);
-  
-
 
   // RMK
   useEffect(() => {
@@ -62,15 +55,13 @@ export default function Find() {
       }
     }
     getDrinks();
-
   }, []);
-
 
   // RMK
   function handleCheckbox(e) {
-    const checkboxStatus = e.currentTarget.checked; // er true(checked) eller false(ikke checked)
+    const checkboxStatus = e.currentTarget.checked; // Her tjekkes om checkboksen er true(checked) eller false(ikke checked)
     const searchWord = e.currentTarget.getAttribute("data-searchWord"); // gemmer på søgeordet
-    
+
     if (checkboxStatus) {
       searchWordListe.push(searchWord); // Indsætter søgeordet på søgeordslisten
     } else {
@@ -80,8 +71,6 @@ export default function Find() {
 
     setSearchWordListe(searchWordListe);
   }
-
-
 
   // RMK
   function handleAktiver(e) {
@@ -109,13 +98,10 @@ export default function Find() {
     if (skyggeDrinksListe.length === 0) {
       // Er der ingen drinks som matcher , så er der ingen drinks at vise
       setIsDrinks(false);
-
     } else {
       setSkyggeDrinksListe(searchResultatListe);
     }
   }
-
-
 
   // DKK
   // Når brugeren resetter deres søgning, skal der ske 3 ting.
@@ -133,14 +119,12 @@ export default function Find() {
   // DKK
   // handleSubmit-funktionen skal kaldes, når brugeren laver en søgning.
   function handleSubmit(e) {
-
     // Normalt genindlæses siden ved en formularindsendelse. Dette forhindres her med preventDefault.
     e.preventDefault();
 
     /* Med filter-metoden gennemgås hvert element i drinks og det vurderes om elementet skal inkluderes i det nye array, soegeResultat, 
-    baseret på de to betingelser, s1 og s2. */ 
+    baseret på de to betingelser, s1 og s2. */
     let soegeResultat = drinks.filter((drink) => {
-
       // Med s1 tjekkes om søgeteksten (som er gemt i soegeTekst) er inkluderet i navnet på en drink.
       // toLowerCase() sørger for at alt læses med små bogstaver, så der ikke gøres forskel på små og store bogstaver.
       const s1 = drink.navn.toLowerCase().includes(soegeTekst.toLowerCase());
@@ -156,7 +140,6 @@ export default function Find() {
 
     // Hvis længden på søgeresultatet er 0, betyder det, at der ikke blev fundet nogen drinks, der matcher søgeteksten.
     if (soegeResultat.length === 0) {
-
       // I så fald er der ingen drinks at vise.
       setIsDrinks(false);
 
@@ -165,16 +148,13 @@ export default function Find() {
       setSkyggeDrinksListe(drinks.slice(0, antalDrinks));
 
       setVisning("block");
-
     } else {
-
       // Ellers er der drinks at vise, hvilket sker ved at sætte skyggeDrinksListe til at være søgeresultatet.
       setIsDrinks(true);
       setSkyggeDrinksListe(soegeResultat);
       setVisning("none");
     }
   }
-
 
   // Kopieret fra DKK Lykken.jsx.
   /* Følgende funktion sikrer, at det rigtige shakerbillede vises fra start afhængigt af om brugeren klikker ind på Prøv Lykken i 
@@ -202,42 +182,41 @@ export default function Find() {
     // useEffect skal køre én gang når siden loades. Derfor de tomme [].
   }, []);
 
+  // DKK
+  // Når der klikkes på "Filtrer"-knappen, skal filteret åbne eller lukke afhængigt af, hvad den er, idet der klikkes.
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
 
+  // Med !isFilterOpen omvendes tilstanden af isFilterOpen.
+  function toggleFilter() {
+    setIsFilterOpen(!isFilterOpen);
+  }
 
-
-    // DKK
-    // Når der klikkes på "Filtrer"-knappen, skal filteret åbne eller lukke afhængigt af, hvad den er, idet der klikkes.
-    const [isFilterOpen, setIsFilterOpen] = useState(false);
-
-    // Med !isFilterOpen omvendes tilstanden af isFilterOpen.
-    function toggleFilter() {
-      setIsFilterOpen(!isFilterOpen);
-    }
-
-
-
-
-  
-      
-  
   return (
     <article className="page">
-
       {/* DKK */}
       <div className="filterHeaderDiv fixedMargin">
         <h1>Find Drink</h1>
-        <button className="filterButton buttonFull" onClick={toggleFilter}><FilterAltIcon className="filterIcon"/> Filtrer </button>
+        <button className="filterButton buttonFull" onClick={toggleFilter}>
+          <FilterAltIcon className="filterIcon" /> Filtrer{" "}
+        </button>
       </div>
 
       {/* RMK */}
-      <div className={`fixedMargin filter-container ${isFilterOpen ? 'open' : 'closed'}`}>
+      <div
+        className={`fixedMargin filter-container ${
+          isFilterOpen ? "open" : "closed"
+        }`}
+      >
+        {/* Her er alle knapperne i filteret */}
         <form onSubmit={handleAktiver}>
           <h2 className="filterTopHeader">Smag</h2>
           <label className="checkboxButton">
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={false}
               data-searchWord="sød"
-              onChange={handleCheckbox}/>
+              onChange={handleCheckbox}
+            />
             <span className="checkmark">Sød</span>
           </label>
           <label className="checkboxButton">
@@ -259,175 +238,181 @@ export default function Find() {
             <span className="checkmark">Bitter</span>
           </label>
           <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="frisk"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Frisk</span>
-        </label>
-      </form>
-      <form onSubmit={handleAktiver}>
-        <h2 className="filterHeader">Alkohol</h2>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="vodka"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Vodka</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="gin"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Gin</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="rom"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Rom</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="tequila"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Tequila</span>
-        </label>
-      </form>
-      <form onSubmit={handleAktiver}>
-        <h2 className="filterHeader">Mixer</h2>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="cola"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Cola</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="sprite"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Sprite</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="fanta"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Fanta</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="appelsinjuice"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Appelsinjuice</span>
-        </label>
-        <label className="checkboxButton">
-          <input
-            type="checkbox"
-            defaultChecked={false}
-            data-searchWord="æblejuice"
-            onChange={handleCheckbox}
-          />
-          <span className="checkmark">Æblejuice</span>
-        </label>
-        <form onSubmit={handleAktiver}>
-          <h2 className="filterHeader">Sirup</h2>
-          <label className="checkboxButton">
             <input
               type="checkbox"
               defaultChecked={false}
-              data-searchWord="mango"
+              data-searchWord="frisk"
               onChange={handleCheckbox}
             />
-            <span className="checkmark">Mango</span>
-          </label>
-          <label className="checkboxButton">
-            <input
-              type="checkbox"
-              defaultChecked={false}
-              data-searchWord="grenadine"
-              onChange={handleCheckbox}
-            />
-            <span className="checkmark">Grenadine</span>
-          </label>
-          <label className="checkboxButton">
-            <input
-              type="checkbox"
-              defaultChecked={false}
-              data-searchWord="blue curacao"
-              onChange={handleCheckbox}
-            />
-            <span className="checkmark">Blue Curacao</span>
-          </label>
-          <label className="checkboxButton">
-            <input
-              type="checkbox"
-              defaultChecked={false}
-              data-searchWord="sirup"
-              onChange={handleCheckbox}
-            />
-            <span className="checkmark">Sirup</span>
+            <span className="checkmark">Frisk</span>
           </label>
         </form>
         <form onSubmit={handleAktiver}>
-          <h2 className="filterHeader">Antal ingredienser</h2>
+          <h2 className="filterHeader">Alkohol</h2>
           <label className="checkboxButton">
             <input
               type="checkbox"
               defaultChecked={false}
-              data-searchWord="2-3"
+              data-searchWord="vodka"
               onChange={handleCheckbox}
             />
-            <span className="checkmark">2-3</span>
+            <span className="checkmark">Vodka</span>
           </label>
           <label className="checkboxButton">
             <input
               type="checkbox"
               defaultChecked={false}
-              data-searchWord="4-5"
+              data-searchWord="gin"
               onChange={handleCheckbox}
             />
-            <span className="checkmark">4-5</span>
+            <span className="checkmark">Gin</span>
           </label>
           <label className="checkboxButton">
             <input
               type="checkbox"
               defaultChecked={false}
-              data-searchWord="6 eller flere"
+              data-searchWord="rom"
               onChange={handleCheckbox}
             />
-            <span className="checkmark">6 eller flere</span>
+            <span className="checkmark">Rom</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="tequila"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Tequila</span>
           </label>
         </form>
-        <button type="submit" onClick={toggleFilter} className="buttonFull aktiverButton">Find drinks</button>
-      </form>
+        <form onSubmit={handleAktiver}>
+          <h2 className="filterHeader">Mixer</h2>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="cola"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Cola</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="sprite"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Sprite</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="fanta"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Fanta</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="appelsinjuice"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Appelsinjuice</span>
+          </label>
+          <label className="checkboxButton">
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              data-searchWord="æblejuice"
+              onChange={handleCheckbox}
+            />
+            <span className="checkmark">Æblejuice</span>
+          </label>
+          <form onSubmit={handleAktiver}>
+            <h2 className="filterHeader">Sirup</h2>
+            <label className="checkboxButton">
+              <input
+                type="checkbox"
+                defaultChecked={false}
+                data-searchWord="mango"
+                onChange={handleCheckbox}
+              />
+              <span className="checkmark">Mango</span>
+            </label>
+            <label className="checkboxButton">
+              <input
+                type="checkbox"
+                defaultChecked={false}
+                data-searchWord="grenadine"
+                onChange={handleCheckbox}
+              />
+              <span className="checkmark">Grenadine</span>
+            </label>
+            <label className="checkboxButton">
+              <input
+                type="checkbox"
+                defaultChecked={false}
+                data-searchWord="blue curacao"
+                onChange={handleCheckbox}
+              />
+              <span className="checkmark">Blue Curacao</span>
+            </label>
+            <label className="checkboxButton">
+              <input
+                type="checkbox"
+                defaultChecked={false}
+                data-searchWord="sirup"
+                onChange={handleCheckbox}
+              />
+              <span className="checkmark">Sirup</span>
+            </label>
+          </form>
+          <form onSubmit={handleAktiver}>
+            <h2 className="filterHeader">Antal ingredienser</h2>
+            <label className="checkboxButton">
+              <input
+                type="checkbox"
+                defaultChecked={false}
+                data-searchWord="2-3"
+                onChange={handleCheckbox}
+              />
+              <span className="checkmark">2-3</span>
+            </label>
+            <label className="checkboxButton">
+              <input
+                type="checkbox"
+                defaultChecked={false}
+                data-searchWord="4-5"
+                onChange={handleCheckbox}
+              />
+              <span className="checkmark">4-5</span>
+            </label>
+            <label className="checkboxButton">
+              <input
+                type="checkbox"
+                defaultChecked={false}
+                data-searchWord="6 eller flere"
+                onChange={handleCheckbox}
+              />
+              <span className="checkmark">6 eller flere</span>
+            </label>
+          </form>
+          <button
+            type="submit"
+            onClick={toggleFilter}
+            className="buttonFull aktiverButton"
+          >
+            Find drinks
+          </button>
+        </form>
       </div>
-     
-     {/* DKK */}
+
+      {/* DKK */}
       <form onSubmit={handleSubmit} className="fixedMargin">
         <div className="searchFormDiv">
           <input
@@ -441,10 +426,7 @@ export default function Find() {
           <button type="button" onClick={reset} className="resetButton">
             <RestartAltIcon />
           </button>
-          <button
-            type="submit"
-            className="searchButton"
-          >
+          <button type="submit" className="searchButton">
             <SearchIcon />
           </button>
         </div>
@@ -457,12 +439,14 @@ export default function Find() {
             <DrinkKort key={drink.id} drink={drink} />
           ))}
         </div>
-
       ) : (
         //SD
         <div className="tomside" style={{ display: visning }}>
           <p className="fixedMargin">0 resultater</p>
-          <img src={theme === "light" ? tomsideLight : tomsideDark} id="tomsidebillede" />
+          <img
+            src={theme === "light" ? tomsideLight : tomsideDark}
+            id="tomsidebillede"
+          />
           <h4 className="tomsideHeader fixedMargin">Du vil måske synes om</h4>
           <div className="flexbox">
             {skyggeDrinksListe.map((drink) => (

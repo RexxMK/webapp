@@ -7,12 +7,12 @@ import StarRating from "./StarRating";
 export default function Drink({ drink, drinkid }) {
   let favoritListe = [];
 
-  // Hvis der allerede er en favoritliste i localstorage, så indlæses den.
+  // Hvis der allerede er en favoritliste i localstorage, så indlæses den
   if (localStorage.getItem("favoritter")) {
     favoritListe = JSON.parse(localStorage.getItem("favoritter"));
   }
 
-  // Deler ingredienserne i en liste
+  // Deler ingredienserne op i en HTML-liste (ingredienserListe) ved hjælp af map-funktionen, hvis der er ingredienser tilgængelige
   const ingredienserListe =
     drink && drink.ingredienser
       ? drink.ingredienser.map((ingrediens, index) => (
@@ -20,13 +20,11 @@ export default function Drink({ drink, drinkid }) {
         ))
       : null;
 
-  // Deler metoden i separate <p> elementer
+  // Deler fremgangsmåden op i separate <li>-elementer i en anden HTML-liste (metodeAfsnit), hvis der er en fremgangsmåde tilgængelig.
   const metodeAfsnit =
     drink && drink.metode
       ? drink.metode.map((afsnit, index) => <li key={index}>{afsnit}</li>)
       : null;
-
-  /*console.log(drink.billede);*/
 
   // SD
   // Ved brug af use navigate kan vi lave en go back knap

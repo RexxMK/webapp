@@ -8,6 +8,8 @@ export default function FavoritHjerteDrink({ drinkid, farve }) {
   const [iconColor, setIconColor] = useState(farve);
 
   const handleIconClick = (e) => {
+    //Når brugeren klikker på hjerteikonet, bliver drinkIden hentet fra det element, der blev klikket på
+    //og der oprettes en tom liste kaldet favoritListe
     const drinkIden = e.currentTarget.getAttribute("data-drinkid");
     let favoritListe = [];
 
@@ -28,6 +30,7 @@ export default function FavoritHjerteDrink({ drinkid, farve }) {
       favoritListe.splice(indeks, 1); // Fjerner drinken fra favoritListen
     }
 
+    //Den opdaterede favoritliste gemmes i lokal lagring ved hjælp af localStorage.setItem
     localStorage.setItem("favoritter", JSON.stringify(favoritListe));
   };
 
