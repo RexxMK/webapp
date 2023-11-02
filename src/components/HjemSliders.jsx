@@ -3,10 +3,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
 // DKK
 
-// Til at lave karrusellerne med drinkCards på forsiden bruges React-pluginnet React Slick. Hertil er importeret noget CSS.
 
+// Til at lave karrusellerne med drinkCards på forsiden bruges React-pluginnet React Slick. Hertil er importeret noget CSS.
 export default function HjemSliders({ drinksListe, isDrinks }) {
   // Indstillnger til karusellerne defineres, så React Slick ved hvad de betyder.
   const settings = {
