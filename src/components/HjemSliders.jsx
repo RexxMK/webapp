@@ -42,5 +42,6 @@ export default function HjemSliders({ drinksListe, isDrinks }) {
         <p>Der er intet at vise.</p>
       )}
     </div>
+    
   );
 }

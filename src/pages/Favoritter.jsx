@@ -16,9 +16,6 @@ export default function Favoritter() {
     favoritListe = JSON.parse(localStorage.getItem("favoritter"));
   }
 
-  //Kopieret kode fra DK LightMode component
-  //at få billedet at skiftes imellem light og dark mode
-  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
     async function getDrinks() {
@@ -46,6 +43,9 @@ export default function Favoritter() {
     }
     getDrinks();
 
+    //Kopieret kode fra DKK Lykken page
+    //at få billedet at skiftes imellem light og dark mode
+    const [theme, setTheme] = useState("dark");
     const currentTheme = document
       .querySelector("body")
       .getAttribute("data-theme");
