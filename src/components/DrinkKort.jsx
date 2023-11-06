@@ -31,7 +31,7 @@ export default function DrinkKort({ drink }) {
         )}
       </div>
       <div className="drinkKortInfo" onClick={handleClick}>
-        <img src={drink.billede} className="drinkimg" />
+        <img src={drink.billede} className="drinkimg" alt="Billede af drink" />
         <h3 className="drinkheader">{drink.navn}</h3>
       </div>
       <div className="star-wrap">
