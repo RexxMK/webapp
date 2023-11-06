@@ -32,7 +32,7 @@ export default function Tilfoj() {
     getTilfoj();
   }, []);
 
-  //Kopieret kode fra DK LightMode component
+  //Kopieret kode fra DKK Lykken page
   //at få billedet at skiftes imellem light og dark mode
   const [theme, setTheme] = useState("dark");
 

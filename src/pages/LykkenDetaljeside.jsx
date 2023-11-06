@@ -10,8 +10,6 @@ export default function LykkenDetaljeside() {
 
 
 
-
-
   // Drinken med det rigtige id hentes.
 
   // Kopieret og tilrettet fra SD, Rediger.jsx.
@@ -30,8 +28,6 @@ export default function LykkenDetaljeside() {
   }, [url]);
 
     
-
-
 
   // Den pågældende drink indsættes i skabelonen for opsætningen af en drinkopskrift, Drink.jsx.
   return (

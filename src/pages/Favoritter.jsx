@@ -16,9 +16,6 @@ export default function Favoritter() {
     favoritListe = JSON.parse(localStorage.getItem("favoritter"));
   }
 
-  //Kopieret kode fra DK LightMode component
-  //at få billedet at skiftes imellem light og dark mode
-  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
     async function getDrinks() {
@@ -45,17 +42,31 @@ export default function Favoritter() {
       }
     }
     getDrinks();
+  }, []);
 
+
+  // Kopieret fra DKK Lykken page
+  const [theme, setTheme] = useState("dark");
+
+  // Vi tjekker om temaet i body er dark eller light og sætter currentTheme lig denne.
+  useEffect(() => {
     const currentTheme = document
       .querySelector("body")
       .getAttribute("data-theme");
 
+    // Hvis temaet i body er light sættes theme til light. Ellers dark.
     if (currentTheme === "light") {
       setTheme("light");
     } else {
       setTheme("dark");
     }
+
+    console.log("Current Theme:", theme);
+
+    // useEffect skal køre én gang når siden loades. Derfor de tomme [].
   }, []);
+
+  
 
   // Her filtrerer jeg de drinks fra, som står på favoritlisten
   const skyggeFavoritListe = data.filter((drink) =>
