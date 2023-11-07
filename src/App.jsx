@@ -11,7 +11,6 @@ import NyDrink from "./pages/NyDrink";
 import LykkenDetaljeside from "./pages/LykkenDetaljeside";
 import Header from "./components/Header";
 import Detaljeside from "./pages/Detaljeside";
-import { Switch } from "@mui/material";
 
 function App() {
   return (
