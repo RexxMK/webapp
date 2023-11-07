@@ -4,7 +4,7 @@ import { BiSolidHeartCircle } from "react-icons/bi";
 // RMK
 
 export default function FavoritHjerteKort({ drinkid, farve }) {
-  //Her bruger jeg useState til at oprette en variablen iconColor med en standardfarve
+  //Her bruger jeg useState til at oprette en variabel iconColor med en standardfarve
   const [iconColor, setIconColor] = useState(farve);
 
   const handleIconClick = (e) => {

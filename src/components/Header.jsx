@@ -1,8 +1,9 @@
-// Komponent til logo og light/dark mode knap.
-
 import LightMode from "./LightMode";
 
+
 // DKK
+
+
 export default function Header() {
 
     return (

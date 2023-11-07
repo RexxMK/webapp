@@ -88,12 +88,8 @@ export default function Find() {
         const s2 = drink.ingredienser.find((ingrediens) =>
           ingrediens.toLowerCase().includes(searchWord.toLowerCase())
         ); // Søg blandt ingredienser
-        const s3 = drink.smag.find(
-          (elem) => elem.toLowerCase().includes(searchWord.toLowerCase()) // Søg i smag
-        );
-        const s4 = drink.antalingredienser.includes(searchWord); // Søg i antal
 
-        return s1 || s2 || s3 || s4; // Hvis enten s1, s2, s3 eller s4 er sand, så eksisterer søgeordet i drink navn eller ingredienser
+        return s1 || s2; // Hvis enten s1 eller s2 er sand, så eksisterer søgeordet i drink navn eller ingredienser
       });
 
       searchResultatListe = temp;
@@ -102,8 +98,16 @@ export default function Find() {
     if (skyggeDrinksListe.length === 0) {
       // Er der ingen drinks som matcher , så er der ingen drinks at vise
       setIsDrinks(false);
+
+      // Er der ingen drinks som matcher , så er der ingen drinks at vise
+      const antalDrinks = 4;
+      setSkyggeDrinksListe(drinks.slice(0, antalDrinks));
+      setVisning("block");
+
     } else {
       setSkyggeDrinksListe(searchResultatListe);
+
+      setVisning("none");
     }
   }
 
@@ -459,15 +463,6 @@ export default function Find() {
             <input
               type="checkbox"
               defaultChecked={false}
-              data-searchWord="mango"
-              onChange={handleCheckbox}
-            />
-            <span className="checkmark">Mangosirup</span>
-          </label>
-          <label className="checkboxButton">
-            <input
-              type="checkbox"
-              defaultChecked={false}
               data-searchWord="grenadine"
               onChange={handleCheckbox}
             />
@@ -504,7 +499,7 @@ export default function Find() {
           <input
             type="checkbox"
             defaultChecked={false}
-            data-searchWord="Rosmarinsirup"
+            data-searchWord="rosmarin sirup"
             onChange={handleCheckbox}
           />
           <span className="checkmark">Rosmarinsirup</span>
