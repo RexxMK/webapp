@@ -10,9 +10,12 @@ export default function NyDrink() {
     // Så ved tryk af knappen navigerer hjemmesiden dig til den side du var sidst på
     const history = useNavigate();
     
+    //Det er functionen som lover os at lave en ny opskrift
+    //Functionen gør så at det nye object bliver added til vores database
     async function createTilfoj(newTilfoj) {
-        newTilfoj.uid = "0";
+        newTilfoj.uid = "0"; //default bruger id
         
+        //url er realtime databasen
         const url = "https://webapp-68213-default-rtdb.europe-west1.firebasedatabase.app/tilfoj.json";
         
         const response = await fetch(url, {
@@ -24,6 +27,9 @@ export default function NyDrink() {
         navigate("/tilfoj");
     }
 
+    //vi bruger komponenten redigerOpskrift
+    //og ved at tilføje saveTilfoj funktionen
+    //sikrer vi at den nye opskrift bliver vist
     return (
        <section> 
             <RedigerOpskrift saveTilfoj={createTilfoj} />

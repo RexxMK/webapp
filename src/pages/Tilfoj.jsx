@@ -9,16 +9,27 @@ import tomsideDark from "../img/tomside-dark.png";
 //SD
 
 export default function Tilfoj() {
+  //tilfoj og isTilfoj er hooks
+  //tilfoj holder data'et som bliver fetchet
   const [tilfoj, setTilfoj] = useState([]);
+  //isTilfoj checker om der er noget i databasen
+  //om der ikke er så vises der en anden information
   const [isTilfoj, setIsTilfoj] = useState(true);
 
   useEffect(() => {
     async function getTilfoj() {
+
+      //Url er realtime databasen
+      //Realtime databasen bliver fetched
       const url =
         "https://webapp-68213-default-rtdb.europe-west1.firebasedatabase.app/tilfoj.json";
       const response = await fetch(url);
       const data = await response.json();
       if (data !== null) {
+        //Hvis der er noget gemt i realtime databasen
+        //Så bliver bliver det vist på siden 
+        //Det er en map af et array og om der er nogle objekter i array'et
+        //så bliver mappen vist
         const tilfojArray = Object.keys(data).map((key) => ({
           id: key,
           ...data[key],
@@ -26,6 +37,9 @@ export default function Tilfoj() {
 
         setTilfoj(tilfojArray);
       } else {
+
+        //hvis der er ikke noget på realtime database
+        //så bliver setIsTilføj falsk og en tom side bliver vist
         setIsTilfoj(false);
       }
     }
@@ -51,6 +65,9 @@ export default function Tilfoj() {
   return (
     <div>
       <h1 className="fixedMargin">Tilføj Opskrifter</h1>
+
+      {/*Hvis der allerede er nogle opskrifter på siden
+      bliver det her vist*/}
       {isTilfoj ? (
         <section className="flexbox">
           <Link to="/nydrink" className="add">
@@ -66,6 +83,7 @@ export default function Tilfoj() {
           ))}
         </section>
       ) : (
+        //Hvis der er ingen opskrifter så bliver denne tom side vist
         <div className="fixedMargin tomside">
           <p>Du har ikke tilføjet nogen opskrifter.</p>
           <img

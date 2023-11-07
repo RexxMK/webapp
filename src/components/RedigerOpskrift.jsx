@@ -5,7 +5,9 @@ import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import imgPlaceholder from "../img/placeholder.png";
 
 //SD
-
+//Denne komponent har kalder tilbage til saveTilfoj
+//Så om vi klikker på noget som har allerede felterne udfyldt
+//Så bliver det vist i denne komponent
 export default function RedigerOpskrift({ saveTilfoj, tilfoj }) {
   const [billede, setBillede] = useState("");
   const [imageFile, setImageFile] = useState("");
@@ -16,16 +18,24 @@ export default function RedigerOpskrift({ saveTilfoj, tilfoj }) {
 
   useEffect(() => {
     if (tilfoj) {
+      //Det samme sker her
+      //Om felterne var fyldte før så er de det når denne komponetn bliver vist
       setBillede(tilfoj.billede);
       setNavn(tilfoj.navn);
       setIngridienser(tilfoj.ingridienser);
       setMetode(tilfoj.metode);
     }
-  }, [tilfoj]);
+  }, [tilfoj]); 
+  //use effect bliver kaldt hver gang man laver en ændring på opskriften
 
+
+  //functionen bliver kalt hver gang brugeren vælger et billede
   function handleImageChange(event) {
     const file = event.target.files[0];
     if (file.size < 5000000) {
+      //for at det skal være muligt for at kunne tilføje et billede med telefon kameraet
+      //så må vi have en maks på 5MB, d.v.s. at billedet har ikke lov at være større end 5MB
+      
       setImageFile(file);
       const reader = new FileReader();
       reader.onload = (event) => {
@@ -34,6 +44,9 @@ export default function RedigerOpskrift({ saveTilfoj, tilfoj }) {
       reader.readAsDataURL(file);
       setErrorMessage("");
     } else {
+
+      //for at brugeren også ved maks størrelsen på billedet
+      //så kommer en error message når brugeren har vælgt et som er mere end 5MB
       setErrorMessage("Hov! Billedet skal være under 5 MB");
     }
   }
@@ -41,7 +54,9 @@ export default function RedigerOpskrift({ saveTilfoj, tilfoj }) {
     let imageUrl = "";
 
     if (imageFile) {
-      // Er der angivet et billede, så ...
+      // om der allerede er et billede så...
+     
+      //url er fra vores firestorage hvor alle billederne bliver gemt
       const url = `https://firebasestorage.googleapis.com/v0/b/webapp-68213.appspot.com/o/${imageFile.name}`;
       const response = await fetch(url, {
         method: "POST",
@@ -52,38 +67,57 @@ export default function RedigerOpskrift({ saveTilfoj, tilfoj }) {
       console.log(data);
       imageUrl = `${url}?alt=media`;
     } else {
-      // Hvis ikke der er angivet et billede, så sæt billede = det allerede eksisterende
+      
+      // Hvis ikke der er angivet et billede, så vil en place holder billede blive vist i stedet for
       imageUrl = billede;
     }
     return imageUrl;
   }
 
+  //Når et felt bliver udfyldt bliver et object lavet (formData)
   async function handleSubmit(e) {
     e.preventDefault();
     const imageUrl = await uploadImage();
     const formData = {
+     
+      //De fire attributer på vores opskrift objekt
+      //Denne funktion gør det muligt at lave en ny opskrift eller at redigere opskriften
+      //Med at skrive informationen i vores tekst input
+      //Vi bruger imageUrl, for at ramme den uploaded version af billedet og ikke "billedet selv"
       billede: imageUrl,
       navn: navn,
       ingridienser: ingridienser,
       metode: metode,
     };
 
+    //For at sikkre at alle felter bliver udfuldt bruger vi denne funktion
     const validForm =
       formData.billede &&
       formData.navn &&
       formData.ingridienser &&
       formData.metode;
+      
+      //Når alle atributter er udfyldt eller valid
+      //Så kan funktionen saveTilføj gå igennem
     if (validForm) {
       saveTilfoj(formData);
+      
+      //Men om alt ikke er udfyldt så kommer en error message
+      //Så brugern ved at der er noget han mangler
     } else {
       setErrorMessage("Hey, du er ikke færdig endnu!");
     }
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+      
+    //Her kalder vi funktionen handleSubmit og siger at den skal gå igennem on submit
+      //Det følger med at gem knappen er type submit
+      <form onSubmit={handleSubmit}>
       <label className="rediger-img">
         <input type="file" accept="image/*" onChange={handleImageChange} />
+        
+        {/*Her definerer vi vores place holder billede*/}
         <img
           className="rediger-img"
           src={billede}
